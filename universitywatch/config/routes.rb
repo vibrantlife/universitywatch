@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'schools/index'
-
-  get 'schools/show'
-
   resources :schools, only: [:index, :show] do
     collection do
-      get :search, :action => 'search_school', :as => 'search'
+      get 'search/:school_acronym', :action => 'search_school', :as => 'search'
       get 'state/:state_name', :action => 'state', :as => 'state'
     end
     resources :crimes, only: [:index]
