@@ -1,6 +1,6 @@
 class SchoolsController < ApplicationController
   def index
-     @school = School.all
+     @schools = School.all
   end
 
   def show
@@ -8,15 +8,18 @@ class SchoolsController < ApplicationController
   end
 
   def search_school
-    # params[:school_acronym]
-
-    school = School.where(acronym: params[:school_acronym]).first
-    p school
+    school = School.where(school_params).first
     redirect_to school_crimes_path(school.id)
   end
 
   def state
     # params[:state_name]
+  end
+
+  private
+
+  def school_params
+    params.require(:school).permit(:name)
   end
 
 end

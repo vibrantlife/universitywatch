@@ -1,2 +1,5 @@
-<h1>Schools#index</h1>
-<p>Find me in app/views/schools/index.html.erb</p>
+<%= form_for "school", url: search_schools_path, action: "search_school" do |f| %>
+  <%= f.text_field  :name %>
+  <%= f.submit "Search" %>
+<% end %>
+
