@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150327002138) do
     t.integer  "auto_theft"
     t.integer  "arson"
     t.integer  "school_id"
+    t.integer  "year"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
