@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'schools#index'
+
+  # set up compare route
 
   resources :schools, only: [:index, :show] do
     collection do
