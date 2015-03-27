@@ -33,15 +33,15 @@ ActiveRecord::Schema.define(version: 20150327002138) do
 
   create_table "schools", force: :cascade do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "school_type"
     t.string   "state"
     t.string   "city"
     t.integer  "population"
     t.string   "acronym"
     t.string   "street"
     t.string   "zip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
