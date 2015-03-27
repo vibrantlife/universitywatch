@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'json'
 
-file = File.read('/Users/Afton1/Documents/Bootcamp/phase-3/universitywatch/universitywatch/db/campus-crime-data.json')
+file = File.read('/Users/apprentice/Desktop/universitywatch/universitywatch/db/campus-crime-data.json')
 crimes_array = JSON.parse(file)
 crimes_array.each do |school|
     population = school["women_total"].to_i + school["men_total"].to_i
@@ -23,6 +23,38 @@ crimes_array.each do |school|
         zip: school["ZIP"]
         )
 
+    Crime.create(
+        murder: school["MURD11"].to_i,
+        manslaughter: school["NEG_M11"].to_i,
+        f_sex: school["FORCIB11"].to_i,
+        nf_sex: school["NONFOR11"].to_i,
+        robbery: school["ROBBE11"].to_i,
+        ag_assault: school["AGG_A11"].to_i,
+        burglary: school["BRGLA11"].to_i,
+        auto_theft: school["VEHIC11"].to_i,
+        arson: school["ARSON11"].to_i,
+        school: new_school,
+        year: 2011
+
+
+        )
+
+    Crime.create(
+        murder: school["MURD12"].to_i,
+        manslaughter: school["NEG_M12"].to_i,
+        f_sex: school["FORCIB12"].to_i,
+        nf_sex: school["NONFOR12"].to_i,
+        robbery: school["ROBBE12"].to_i,
+        ag_assault: school["AGG_A12"].to_i,
+        burglary: school["BRGLA12"].to_i,
+        auto_theft: school["VEHIC12"].to_i,
+        arson: school["ARSON12"].to_i,
+        school: new_school,
+        year: 2012
+
+
+        )
+
 
     Crime.create(
         murder: school["MURD13"].to_i,
@@ -34,7 +66,9 @@ crimes_array.each do |school|
         burglary: school["BRGLA13"].to_i,
         auto_theft: school["VEHIC13"].to_i,
         arson: school["ARSON13"].to_i,
-        school: new_school
+        school: new_school,
+        year: 2013
+
 
         )
 
