@@ -17,6 +17,10 @@ class SchoolsController < ApplicationController
 
   def state
     # params[:state_name]
+
+  end
+
+  def states
   end
 
 end
