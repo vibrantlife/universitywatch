@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'json'
+
+file = File.read('/Users/Afton1/Documents/Bootcamp/phase-3/universitywatch/universitywatch/db/campus-crime-data.json')
+crimes_hash = JSON.parse(file)
+# p crimes_hash[0]
+
+
