@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  root 'schools#index'
+
+  # set up compare route
+
+  resources :schools, only: [:index, :show] do
+    collection do
+      get 'search/:school_acronym', :action => 'search_school', :as => 'search'
+      get 'state/:state_name', :action => 'state', :as => 'state'
+    end
+    resources :crimes, only: [:index]
+  end
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

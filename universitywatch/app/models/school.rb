@@ -1,3 +1,6 @@
 class School < ActiveRecord::Base
-    has_one :crime
+    has_many :crimes
+
+
+
 end
