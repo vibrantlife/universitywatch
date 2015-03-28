@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'json'
 
-file = File.read('/Users/apprentice/Desktop/universitywatch/universitywatch/db/campus-crime-data.json')
+file = File.read(File.expand_path('db/campus-crime-data.json', Rails.root))
 crimes_array = JSON.parse(file)
 crimes_array.each do |school|
     population = school["women_total"].to_i + school["men_total"].to_i

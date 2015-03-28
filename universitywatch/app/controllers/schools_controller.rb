@@ -13,7 +13,12 @@ class SchoolsController < ApplicationController
   end
 
   def state
-    # params[:state_name]
+    state = params[:state_name]
+    @schools = School.where(state: state)
+    render :json => @schools
+  end
+
+  def states
   end
 
   private
