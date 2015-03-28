@@ -3,35 +3,49 @@
   <%= f.submit "Search" %>
 <% end %>
 
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">UniversityWatch</a>
+<div class="container-fluid">
+  <div class="row">
+    <nav class="navbar navbar-default">    
+      <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">UniversityWatch</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Search by State <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Data</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
     </div>
+  </nav>
+</div><!-- /.container-fluid -->
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Search by State <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Data</a></li>
-        <li><a href="#">About Us</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-  <div class="banner-panel row">
-    <div class="col-sm-12">
-      <p class="large-text">UniversityWatch blah blah blah blah</p>
-      <p>blah blah blah blah blah</p>
+<div class="container-fluid">
+<!--   <div class="banner-panel row"> -->
+  <div class="row">
+    <div class="col-md-10">
+      <div class="description pull-left">
+        UniversityWatch blah blah blah blah
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 murder-odo">0</div>
+    <div class="col-md-3 assaults-odo">2000</div>
+    <div class="col-md-3 sexual-odo">89</div>
+    <div class="col-md-3 women-assault-odo">345</div>
+  </div>
+<!--   </div> -->
+</div>
+    <!-- 
       <div class="text row">
         <div class="col-xs-4 col-sm-2">
         </div>
@@ -52,15 +66,13 @@
             women assaulted during college</p>
         </div>
         <div class="col-xs-4 col-sm-2">
-        </div>
-      </div>
-    </div>
-  </div>
+        </div> -->
 
-  <div class="container-fluid">
-    <img src="https://s3.amazonaws.com/static.bitly.com/graphics/blog/2013/10/map+no+legend.png" width="800px">
+  
 
-  </div>
+<div class="container-fluid">
+  <img src="https://s3.amazonaws.com/static.bitly.com/graphics/blog/2013/10/map+no+legend.png" width="800px">
+</div>
 
   <div class="crime-categories row">
 
@@ -120,29 +132,3 @@
       </div>
     </div>
 </div>
-
-<script>
-  setTimeout(function(){
-    odometer.innerHTML = 100;
-}, 1000);
-
-var el = document.querySelector('#murder-odometer');
-murderMeter = new Odometer({
-  el: el,
-  value: 0,
-  theme: 'default'
-});
-
-murderMeter.update(100)
-
-var elAssaults = document.querySelector('#assaults-odometer');
-assaultsMeter = new Odometer({
-  el: elAssaults,
-  value: 0,
-  theme: 'default'
-});
-
-assaultsMeter.update(16000)
-
-
-</script>
