@@ -8,11 +8,16 @@
 // compiled file.
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
-// about supported directives.
+// about supported directives.<div></div>
 //
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require d3
+//= require topojson
+//= require datamaps.all
+//= require datamaps.usa
+//= require datamaps.none.min
 //= require turbolinks
 //= require_tree .
 
