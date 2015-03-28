@@ -1,8 +1,3 @@
-<%= form_for "school", url: search_schools_path, action: "search_school" do |f| %>
-  <%= f.text_field  :name %>
-  <%= f.submit "Search" %>
-<% end %>
-
 <div class="container-fluid">
   <div class="row">
     <nav class="navbar navbar-default">    
@@ -37,38 +32,22 @@
       </div>
     </div>
   </div>
+
   <div class="row">
     <div class="col-md-3 murder-odo">0</div>
     <div class="col-md-3 assaults-odo">2000</div>
     <div class="col-md-3 sexual-odo">89</div>
     <div class="col-md-3 women-assault-odo">345</div>
   </div>
+
+  <div class="row">
+    <%= form_for "school", url: search_schools_path, :html => {class: 'form-wrapper'}, action: "search_school" do |f| %>
+      <%= f.text_field :name %>
+      <%= f.submit "Search", :class => 'submit_btn' %>
+    <% end %>
+  </div>
 <!--   </div> -->
 </div>
-    <!-- 
-      <div class="text row">
-        <div class="col-xs-4 col-sm-2">
-        </div>
-        <div class="col-xs-4 col-sm-2">
-          <p><span class="large-text odometer" id="murder-odometer"></span> <br>
-            murders</p>
-        </div>
-        <div class="col-xs-4 col-sm-2">
-          <p><span class="large-text" id="assaults-odometer">16,000</span><br>
-            assaults</p>
-        </div>
-        <div class="col-xs-4 col-sm-2">
-          <p><span class="large-text">9 </span><br>
-            sexual assaults per day</p>
-        </div>
-        <div class="col-xs-4 col-sm-2">
-          <p><span class="large-text">1 in 5 </span><br>
-            women assaulted during college</p>
-        </div>
-        <div class="col-xs-4 col-sm-2">
-        </div> -->
-
-  
 
 <div class="container-fluid">
   <img src="https://s3.amazonaws.com/static.bitly.com/graphics/blog/2013/10/map+no+legend.png" width="800px">
