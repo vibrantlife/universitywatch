@@ -15,3 +15,13 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+
+// $(function(){
+//   var googleApiLink = '' + school_acronym + '&key=';
+//   $.getJSON( googleApiLink, {
+//     format: 'JSON'
+//   }).done(function(data){
+
+//   })
+// });

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :schools, only: [:index, :show] do
     collection do
-      get 'search/:school_acronym', :action => 'search_school', :as => 'search'
+      post 'search', :action => 'search_school', :as => 'search'
       get 'state/:state_name', :action => 'state', :as => 'state'
     end
     resources :crimes, only: [:index]
