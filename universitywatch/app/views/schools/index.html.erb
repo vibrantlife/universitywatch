@@ -1,7 +1,6 @@
 <div class="container-fluid">
   <div class="row">
     <nav class="navbar navbar-default">    
-      <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
@@ -11,7 +10,6 @@
           </button>
           <a class="navbar-brand" href="#">UniversityWatch</a>
       </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="#">Search by State <span class="sr-only">(current)</span></a></li>
@@ -19,8 +17,8 @@
           <li><a href="#">About Us</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
+      </nav>
     </div>
-  </nav>
 </div><!-- /.container-fluid -->
 
 <div class="container-fluid">
@@ -59,17 +57,30 @@
 
     <div class="row">
       <div class="col-md-4">
-        <%= image_tag "icon-murder.png" %>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"> <%= image_tag "icon-murder.png" %></div>
+          <div class="col-md-4"></div>
+        </div>
         <p class="category-title">Murder</p>
         <p>The willful (non-negligent) killing of one human being by another.</p>
       </div>
       <div class="col-md-4">
-        <%= image_tag "icon-manslaughter.png" %>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"><%= image_tag "icon-manslaughter.png" %></div>
+          <div class="col-md-4"></div>
+        </div>
         <p class="category-title">Manslaughter</p>
         <p>The killing of another person through gross negligence.</p>
       </div>
       <div class="col-md-4">
-        <%= image_tag "icon-sexual-assault-f.png" %>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"> <%= image_tag "icon-sexual-assault-f.png" %></div>
+          <div class="col-md-4"></div>
+        </div>
+       
         <p class="category-title">Sexual Assault - Forcible</p>
         <p>Any sexual act directed against another person, forcibly and/or against that person's will; or not forcibly or against the person's will where the victim is incapable of giving consent.</p>
       </div>
@@ -77,17 +88,32 @@
 
     <div class="row">
       <div class="col-md-4">
-        <%= image_tag "icon-sexual-assault-nonforcible.png" %>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"><%= image_tag "icon-sexual-assault-nonforcible.png" %></div>
+          <div class="col-md-4"></div>
+        </div>
+        
         <p class="category-title">Sexual Assault - Nonforcible</p>
         <p>Unlawful, non-forcible sexual intercourse.</p>
       </div>
       <div class="col-md-4">
-        <%= image_tag "icon-robbery.png" %>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"><%= image_tag "icon-robbery.png" %></div>
+          <div class="col-md-4"></div>
+        </div>
+        
         <p class="category-title">Robbery</p>
         <p>The taking or attempting to take anything of value from the care, custody, or control of a person or persons by force or threat of force or violence and/or by putting the victim in fear.</p>
       </div>
       <div class="col-md-4">
-        <%= image_tag "icon-aggravated-assault.png" %>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"><%= image_tag "icon-aggravated-assault.png" %></div>
+            <div class="col-md-4"></div>
+        </div>
+        
         <p class="category-title">Aggravated Assault</p>
         <p>An unlawful attack by one person upon another for the purpose of inflicting severe or aggravated bodily injury. This type of assault usually is accompanied by the use of a weapon or by means likely to produce death or great bodily harm.</p>
       </div>
@@ -95,17 +121,32 @@
 
     <div class="row">
       <div class="col-md-4">
-        <%= image_tag "icon-burglary.png" %>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"><%= image_tag "icon-burglary.png" %></div>
+            <div class="col-md-4"></div>
+        </div>
+        
         <p class="category-title">Burglary</p>
         <p>The unlawful entry of a structure to commit a felony or a theft.</p>
       </div>
       <div class="col-md-4">
-        <%= image_tag "icon-motor-vehicle-theft.png" %>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"><%= image_tag "icon-motor-vehicle-theft.png" %></div>
+            <div class="col-md-4"></div>
+        </div>
+        
         <p class="category-title">Motor Vehicle Theft</p>
         <p>The theft or attempted theft of a motor vehicle.</p>
       </div>
       <div class="col-md-4">
-        <%= image_tag "icon-arson.png" %>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"><%= image_tag "icon-arson.png" %></div>
+            <div class="col-md-4"></div>
+        </div>
+        
         <p class="category-title">Arson</p>
         <p>Any willful or malicious burning or attempt to burn, with or without intent to defraud, a dwelling house, public building, motor vehicle or aircraft, personal property of another, etc.</p>
       </div>
