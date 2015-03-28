@@ -8,6 +8,7 @@ $(function(){
 			$(queryStat).html(value);
 		}, speed);
 	}
+	
 	ticking('.murder-odo', 100, 80);
 	ticking('.assaults-odo', 2000, 5);
 	ticking('.sexual-odo', 89, 90);
