@@ -3,10 +3,11 @@ Rails.application.routes.draw do
 
   # set up compare route
 
-  resources :schools, only: [:index, :show] do
+  resources :schools, only: [:index] do
     collection do
       post 'search', :action => 'search_school', :as => 'search'
       get 'state/:state_name', :action => 'state', :as => 'state'
+      get 'states', :action => 'states', :as => 'states'
     end
     resources :crimes, only: [:index]
   end
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+    # get 'states/' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
