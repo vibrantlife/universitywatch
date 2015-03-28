@@ -15,9 +15,8 @@
 //= require bootstrap-sprockets
 //= require d3
 //= require topojson
-//= require datamaps.all
-//= require datamaps.usa
 //= require datamaps.none.min
+//= require datamaps.all.min
 //= require turbolinks
 //= require_tree .
 
