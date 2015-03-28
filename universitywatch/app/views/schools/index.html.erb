@@ -22,11 +22,11 @@
         <div class="col-xs-4 col-sm-2">
         </div>
         <div class="col-xs-4 col-sm-2">
-          <p><span class="large-text">100+</span> <br>
+          <p><span class="large-text odometer" id="murder-odometer"></span> <br>
             murders</p>
         </div>
         <div class="col-xs-4 col-sm-2">
-          <p><span class="large-text">16,000</span><br>
+          <p><span class="large-text" id="assaults-odometer">16,000</span><br>
             assaults</p>
         </div>
         <div class="col-xs-4 col-sm-2">
@@ -106,3 +106,29 @@
       </div>
     </div>
 </div>
+
+<script>
+  setTimeout(function(){
+    odometer.innerHTML = 100;
+}, 1000);
+
+var el = document.querySelector('#murder-odometer');
+murderMeter = new Odometer({
+  el: el,
+  value: 0,
+  theme: 'default'
+});
+
+murderMeter.update(100)
+
+var elAssaults = document.querySelector('#assaults-odometer');
+assaultsMeter = new Odometer({
+  el: elAssaults,
+  value: 0,
+  theme: 'default'
+});
+
+assaultsMeter.update(16000)
+
+
+</script>
