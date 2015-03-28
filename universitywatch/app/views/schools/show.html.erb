@@ -36,7 +36,7 @@
       <h1>TABLE DATA CHART</h1>
       <p>2013</p>
       <% @crimes.where(year: 2011).each do |crime| %>
-        <table>
+        <table class="table table-striped table-responsive">
           <tr>
             <th>Murder</th>
             <td><%= crime.murder %>
@@ -82,15 +82,14 @@
 
 
 </div> <!-- End Container Div -->
-
 <script>
   var chart = c3.generate({
       bindto: '#chart',
       data: {
         columns: [
-          ['2011', 30, 200, 100, 400, 150, 250],
-          ['2012', 50, 20, 10, 40, 15, 25],
-          ['2013', 12, 60, 50, 90, 165, 265]
+          ['2011', <%= @crime_2011.murder %>, <%= @crime_2011.manslaughter %>, <%= @crime_2011.f_sex %>, <%= @crime_2011.nf_sex %>, <%= @crime_2011.robbery %>, <%= @crime_2011.ag_assault %>, <%= @crime_2011.burglary %>, <%= @crime_2011.auto_theft %>, <%= @crime_2011.arson %>],
+          ['2012', <%= @crime_2012.murder %>, <%= @crime_2012.manslaughter %>, <%= @crime_2012.f_sex %>, <%= @crime_2012.nf_sex %>, <%= @crime_2012.robbery %>, <%= @crime_2012.ag_assault %>, <%= @crime_2012.burglary %>, <%= @crime_2012.auto_theft %>, <%= @crime_2012.arson %>],
+          ['2013', <%= @crime_2013.murder %>, <%= @crime_2013.manslaughter %>, <%= @crime_2013.f_sex %>, <%= @crime_2013.nf_sex %>, <%= @crime_2013.robbery %>, <%= @crime_2013.ag_assault %>, <%= @crime_2013.burglary %>, <%= @crime_2013.auto_theft %>, <%= @crime_2013.arson %>]
         ],
         types: {
                 2011: 'bar',
@@ -101,8 +100,13 @@
                     2011: '#ff0000',
                     2012: '#00ff00',
                     2013: '#0000ff'
-                },
-      }
+                }
+      },
+      axis: {
+              x: {
+                  type: 'category',
+                  categories: ['Murder', 'Manslaughter', 'Forcible Sex', 'Non-Forcible Sex', 'Robbery', 'Aggravated Assault', 'Burglary', 'Auto Theft', 'Arson'] }
+            },
   });
 
 </script>
