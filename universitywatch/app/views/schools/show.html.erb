@@ -1,20 +1,20 @@
 
 <div class="container">
-  <div class="row">
+  <div class="banner-panel row">
+    <div class="col-lg-1 col-md-1 circle"><%= @school.acronym %></div>
     <div class="col-lg-1 col-md-1"></div>
-    <div class="col-lg-1 col-md-1 circle">Circle Icon</div>
-    <div class="col-lg-4 col-md-4">
-      <h3>School Name</h3>
+    <div class="col-lg-5 col-md-5">
+      <h3><%= @school.name %></h3>
       <div class="col-lg-6 col-md-6">
         <p>Location</p>
-        <p>City, State</p>
+        <p><%= @school.city %>, <%= @school.state %></p>
         <br>
         <p>School Population</p>
-        <p>20,000</p>
+        <p><%= @school.population %></p>
       </div>
       <div class="col-lg-6 col-md-6">
         <p>Type</p>
-        <p>Private/Public/Trade</p>
+        <p><%= @school.school_type %></p>
 
         <br>
 
@@ -22,7 +22,7 @@
         <p>Info</p>
       </div>
     </div>
-    <div class="col-lg-6 col-md-6">LOTS OF CIRCLE PERCENTAGES</div>
+    <div class="col-lg-5 col-md-5">LOTS OF CIRCLE PERCENTAGES</div>
   </div> <!-- End Row Div -->
 
   <div class="row">
@@ -34,6 +34,47 @@
   <div class="row">
     <div class="col-lg-12 col-md-12">
       <h1>TABLE DATA CHART</h1>
+      <p>2013</p>
+      <% @crimes.where(year: 2011).each do |crime| %>
+        <table>
+          <tr>
+            <th>Murder</th>
+            <td><%= crime.murder %>
+          </tr>
+          <tr>
+            <th>manslaughter</th>
+            <td><%= crime.manslaughter %>
+          </tr>
+          <tr>
+            <th>Forcible Sex</th>
+            <td><%= crime.f_sex %>
+          </tr>
+          <tr>
+            <th>Non-Forcible Sex</th>
+            <td><%= crime.nf_sex %>
+          </tr>
+          <tr>
+            <th>Robbery</th>
+            <td><%= crime.robbery %>
+          </tr>
+          <tr>
+            <th>Aggravated Assault</th>
+            <td><%= crime.ag_assault %>
+          </tr>
+          <tr>
+            <th>Burglary</th>
+            <td><%= crime.burglary %>
+          </tr>
+          <tr>
+            <th>Auto Theft</th>
+            <td><%= crime.auto_theft %>
+          </tr>
+          <tr>
+            <th>Arson</th>
+            <td><%= crime.arson %>
+          </tr>
+        </table>
+      <% end %>
     </div>
   </div>
 
@@ -41,14 +82,27 @@
 
 
 </div> <!-- End Container Div -->
+
 <script>
   var chart = c3.generate({
       bindto: '#chart',
       data: {
         columns: [
-          ['data1', 30, 200, 100, 400, 150, 250],
-          ['data2', 50, 20, 10, 40, 15, 25]
-        ]
+          ['2011', 30, 200, 100, 400, 150, 250],
+          ['2012', 50, 20, 10, 40, 15, 25],
+          ['2013', 12, 60, 50, 90, 165, 265]
+        ],
+        types: {
+                2011: 'bar',
+                2012: 'bar',
+                2013: 'bar'
+              },
+        colors: {
+                    2011: '#ff0000',
+                    2012: '#00ff00',
+                    2013: '#0000ff'
+                },
       }
   });
+
 </script>
