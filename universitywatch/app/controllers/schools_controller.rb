@@ -4,12 +4,13 @@ class SchoolsController < ApplicationController
   end
 
   def show
-
+    @school = School.find(params[:id])
+    @crimes = @school.crimes
   end
 
   def search_school
     school = School.where(school_params).first
-    redirect_to school_crimes_path(school.id)
+    redirect_to school_path(school)
   end
 
   def state
