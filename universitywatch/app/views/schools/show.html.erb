@@ -28,6 +28,7 @@
   <div class="row">
     <div class="col-lg-12 col-md-12">
       <h1>STACKED BAR CHART</h1>
+      <div id="chart"></div>
     </div>
   </div>
   <div class="row">
@@ -40,3 +41,14 @@
 
 
 </div> <!-- End Container Div -->
+<script>
+  var chart = c3.generate({
+      bindto: '#chart',
+      data: {
+        columns: [
+          ['data1', 30, 200, 100, 400, 150, 250],
+          ['data2', 50, 20, 10, 40, 15, 25]
+        ]
+      }
+  });
+</script>
