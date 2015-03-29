@@ -16,3 +16,9 @@ class CreateCrimes < ActiveRecord::Migration
     end
   end
 end
+
+
+
+
+
+
