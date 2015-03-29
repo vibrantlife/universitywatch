@@ -41,6 +41,12 @@ class SchoolsController < ApplicationController
   def states
   end
 
+  def compare
+    @schools = School.all
+    render 'schools/comparison'
+  end
+
+
   private
 
   def school_params

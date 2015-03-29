@@ -174,8 +174,8 @@ DEPENDENCIES
   c3-rails
   coffee-rails (~> 4.1.0)
   d3-rails
-  hirb
   dotenv
+  hirb
   jbuilder (~> 2.0)
   jquery-rails
   json
