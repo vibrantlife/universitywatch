@@ -12,7 +12,7 @@
 // get list of all schools for state
   var getStateSchools = function(){
     var classes= $(this).attr("class").split(' ');
-    var state = classes[1];
+    state = classes[1];
     $.ajax({
       url: '/schools/state/' + state,
       type: 'GET',
@@ -29,7 +29,7 @@
         handlebarScript = '<tr><th><a href="/schools/'+response[i].id+'">'+response[i].name+'</a></th><th>'+response[i].street+'</th><th>' + response[i].city + ', ' + response[i].state + '</th></tr>';
         $('.table-hover').append(handlebarScript);
       }
-      // getSchoolsByType();
+      $('#dropdown-type').on('click', 'a', getSchoolsByType);
     })
     .fail(function() {
       console.log("error");
@@ -73,11 +73,32 @@ $(document).ready(function(){
     })
   });
 
-$('#dropdown-type').on('click', 'a', getClick);
 });
 
-var getClick = function(){
+var getSchoolsByType = function(){
   var type = $(this).text();
+  console.log(state);
+  $.ajax({
+    url: '/schools/state/' + state + '/' + type,
+    type: 'GET',
+    dataType: 'json',
+  })
+  .done(function(schoolsTypeData) {
+    $('#school_table').text('');
+    var tableSetup = '<div id="table_generator"><table class="table table-hover"><tr><th>School Name</th><th>School Street</th><th>City, State</th></tr></table></div>';
+    $('#school_table').append(tableSetup);
+    for(var i=0; i < schoolsTypeData.length; i++){
+      var handlebarScript = '';
+      handlebarScript = '<tr><th><a href="/schools/'+schoolsTypeData[i].id+'">'+schoolsTypeData[i].name+'</a></th><th>'+schoolsTypeData[i].street+'</th><th>' + schoolsTypeData[i].city + ', ' + schoolsTypeData[i].state + '</th></tr>';
+      $('.table-hover').append(handlebarScript);
+    }
+  })
+  .fail(function() {
+    console.log("error");
+  })
+  .always(function() {
+    console.log("complete");
+  });
 
 }
 
