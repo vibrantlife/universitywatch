@@ -1,8 +1,13 @@
-$(document).ready(function(){
-  console.log("here");
-  $('.datamaps-subunit').on('click', getStateSchools)
+// $(document).ready(function(){
+//   console.log("here");
+//   var map = new Datamap({
+//     element: $('#state_container'),
+//     scope: 'usa'
+//   });
+//   $('.datamaps-subunit').on('click', getStateSchools);
+// });
 
-});
+
 
   var getStateSchools = function(){
     var classes= $(this).attr("class").split(' ');
@@ -28,3 +33,5 @@ $(document).ready(function(){
     });
 
   };
+
+

@@ -8,9 +8,9 @@ $(function(){
 			$(queryStat).html(value);
 		}, speed);
 	}
-	ticking('.murder-odo', 100, 80);
-	ticking('.assaults-odo', 2000, 5);
-	ticking('.sexual-odo', 89, 90);
-	ticking('.women-assault-odo', 345, 50);
+	ticking('.auto-odo', 3261, 3);
+	ticking('.assaults-odo', 2303, 3);
+	ticking('.forcible-odo', 5052, 1);
+	ticking('.robbery-odo', 1568, 2);
 
 });

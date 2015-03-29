@@ -9,10 +9,14 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+//= require c3
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require d3
+//= require topojson
+//= require datamaps.none.min
+//= require datamaps.all.min
 //= require turbolinks
 //= require_tree .
 
