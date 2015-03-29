@@ -1,0 +1,148 @@
+$white: #fff;
+$violet: #9a61a3;
+
+// Fonts
+*{
+  font-family: 'Roboto', sans-serif;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  margin:0px;
+  padding:0px;
+}
+
+#mainMenu{
+  display:block;
+  width:100%;
+  position:fixed;
+  top:0px;
+  left:0px;
+  z-index:99999;
+  padding:0px;
+  background:$violet;
+  &:after{
+    content:"";
+    display:block;
+    float:none;
+    clear:both;
+  }
+  #searchForm{
+    float:right;
+    border-left:1px solid $violet;
+    border-right:1px solid $violet;
+    padding:0px 20px;
+    transition:all 300ms;
+    position:relative;
+    &:before{
+      display:block;
+      content:"";
+      width:0px;
+      height:100%;
+      position:absolute;
+      top:0px;
+      right:0px;
+      z-index:1;
+      transition:all 300ms;
+      background:$white;
+    }
+    &.active{
+      &:before{
+        width:100%;
+      }
+      > input, > button{
+        color:$violet;
+        &[type="text"]{
+          border-color:$violet
+        }
+      }
+    }
+     > input, > button{
+          position:relative;
+          z-index:2;
+          border:0px;
+          -webkit-appearance:none;
+          background:transparent;
+          color:$white;
+         &[type="text"]{
+           border-bottom:1px solid $white;
+           text-transform:uppercase;
+           height:30px;
+           font-size:13px;
+           width:150px;
+           display:inline-block;
+           transition:all 300ms;
+         }
+         &[type="submit"]{
+           font-size:20px;
+           cursor:pointer;
+         }
+         &:active, &:focus{
+           outline:0px;
+         }
+        }
+  }
+  > ul{
+    display:block;
+    line-height:73px;
+    >li{
+      float:left;
+      height:73px;
+      border-right:1px solid $violet;
+      position:relative;
+      list-style-type:none;
+      &:before{
+        display:block;
+        content:"";
+        width:100%;
+        height:0px;
+        position:absolute;
+        top:0px;
+        left:0px;
+        z-index:1;
+        transition:all 150ms;
+        background:$white;
+      }
+      &:hover, &.active{
+        &:before{
+          height:100%;
+        }
+        > a{
+           color:$violet;
+        }
+      }
+      &:first-child{
+        border:0px;
+      }
+      &#logo{
+        background:#f0da9a;
+        > a{
+          color:$violet;
+          font-family: 'Gloria Hallelujah', cursive;
+          text-transform:none;
+          font-size:1.4em;
+        }
+      }
+      > a{
+        text-transform:uppercase;
+        color:$white;
+        text-decoration:none;
+        padding:0px 40px 0px 15px;
+        line-height:90px;
+        transition: all 300ms;
+        display:block;
+        height:73px;
+        font-size:13px;
+        position:relative;
+        z-index:2;
+      }
+      > ul{
+        display:none;
+        position:fixed;
+        left:0px;
+        width:100%;
+        background:$violet;
+
+      }
+    }
+  }
+}
