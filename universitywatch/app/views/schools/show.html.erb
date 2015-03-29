@@ -1,2 +1,112 @@
-<h1>Schools#show</h1>
-<p>Find me in app/views/schools/show.html.erb</p>
+
+<div class="container">
+  <div class="banner-panel row">
+    <div class="col-lg-1 col-md-1 circle"><%= @school.acronym %></div>
+    <div class="col-lg-1 col-md-1"></div>
+    <div class="col-lg-5 col-md-5">
+      <h3><%= @school.name %></h3>
+      <div class="col-lg-6 col-md-6">
+        <p>Location</p>
+        <p><%= @school.city %>, <%= @school.state %></p>
+        <br>
+        <p>School Population</p>
+        <p><%= @school.population %></p>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <p>Type</p>
+        <p><%= @school.school_type %></p>
+
+        <br>
+
+        <p>Tidbit?</p>
+        <p>Info</p>
+      </div>
+    </div>
+    <div class="col-lg-5 col-md-5">LOTS OF CIRCLE PERCENTAGES</div>
+  </div> <!-- End Row Div -->
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <h1>STACKED BAR CHART</h1>
+      <div id="chart"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <h1>TABLE DATA CHART</h1>
+      <p>2013</p>
+      <% @crimes.where(year: 2011).each do |crime| %>
+        <table class="table table-striped table-responsive">
+          <tr>
+            <th>Murder</th>
+            <td><%= crime.murder %>
+          </tr>
+          <tr>
+            <th>manslaughter</th>
+            <td><%= crime.manslaughter %>
+          </tr>
+          <tr>
+            <th>Forcible Sex</th>
+            <td><%= crime.f_sex %>
+          </tr>
+          <tr>
+            <th>Non-Forcible Sex</th>
+            <td><%= crime.nf_sex %>
+          </tr>
+          <tr>
+            <th>Robbery</th>
+            <td><%= crime.robbery %>
+          </tr>
+          <tr>
+            <th>Aggravated Assault</th>
+            <td><%= crime.ag_assault %>
+          </tr>
+          <tr>
+            <th>Burglary</th>
+            <td><%= crime.burglary %>
+          </tr>
+          <tr>
+            <th>Auto Theft</th>
+            <td><%= crime.auto_theft %>
+          </tr>
+          <tr>
+            <th>Arson</th>
+            <td><%= crime.arson %>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+
+
+
+
+</div> <!-- End Container Div -->
+<script>
+  var chart = c3.generate({
+      bindto: '#chart',
+      data: {
+        columns: [
+          ['2011', <%= @crime_2011.murder %>, <%= @crime_2011.manslaughter %>, <%= @crime_2011.f_sex %>, <%= @crime_2011.nf_sex %>, <%= @crime_2011.robbery %>, <%= @crime_2011.ag_assault %>, <%= @crime_2011.burglary %>, <%= @crime_2011.auto_theft %>, <%= @crime_2011.arson %>],
+          ['2012', <%= @crime_2012.murder %>, <%= @crime_2012.manslaughter %>, <%= @crime_2012.f_sex %>, <%= @crime_2012.nf_sex %>, <%= @crime_2012.robbery %>, <%= @crime_2012.ag_assault %>, <%= @crime_2012.burglary %>, <%= @crime_2012.auto_theft %>, <%= @crime_2012.arson %>],
+          ['2013', <%= @crime_2013.murder %>, <%= @crime_2013.manslaughter %>, <%= @crime_2013.f_sex %>, <%= @crime_2013.nf_sex %>, <%= @crime_2013.robbery %>, <%= @crime_2013.ag_assault %>, <%= @crime_2013.burglary %>, <%= @crime_2013.auto_theft %>, <%= @crime_2013.arson %>]
+        ],
+        types: {
+                2011: 'bar',
+                2012: 'bar',
+                2013: 'bar'
+              },
+        colors: {
+                    2011: '#ff0000',
+                    2012: '#00ff00',
+                    2013: '#0000ff'
+                }
+      },
+      axis: {
+              x: {
+                  type: 'category',
+                  categories: ['Murder', 'Manslaughter', 'Forcible Sex', 'Non-Forcible Sex', 'Robbery', 'Aggravated Assault', 'Burglary', 'Auto Theft', 'Arson'] }
+            },
+  });
+
+</script>

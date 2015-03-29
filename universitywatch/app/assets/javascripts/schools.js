@@ -1,8 +1,13 @@
-$(document).ready(function(){
-  console.log("here");
-  $('.datamaps-subunit').on('click', getStateSchools)
+// $(document).ready(function(){
+//   console.log("here");
+//   var map = new Datamap({
+//     element: $('#state_container'),
+//     scope: 'usa'
+//   });
+//   $('.datamaps-subunit').on('click', getStateSchools);
+// });
 
-});
+
 
   var getStateSchools = function(){
     var classes= $(this).attr("class").split(' ');
@@ -15,6 +20,9 @@ $(document).ready(function(){
     })
     .done(function(response) {
       console.log("success", response);
+      $('#school_table').text('');
+      var handlebarScript = '<div class="row">School Name</div><script id="table_generator" type="text/x-handlebars-template">{{#each state_info}}<div class="row">{{name}}</div>{{/each}}</script>';
+      $('#school_table').append(handlebarScript);
       var context = {state_info: response};
       var html = $('#table_generator').html();
       var templatingFunction = Handlebars.compile(html);
@@ -28,3 +36,5 @@ $(document).ready(function(){
     });
 
   };
+
+

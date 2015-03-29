@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # set up compare route
 
-  resources :schools, only: [:index] do
+  resources :schools, only: [:index, :show] do
     collection do
       post 'search', :action => 'search_school', :as => 'search'
       get 'state/:state_name', :action => 'state', :as => 'state'
