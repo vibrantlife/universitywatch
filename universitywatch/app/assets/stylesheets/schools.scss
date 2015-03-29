@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .banner-panel {
-  background-color: lightgrey;
+  background-color: #F8F8F8;
 }
 
 .col-sm-12 {
@@ -27,14 +27,20 @@
 }
 
 .crime-categories {
-  background-color: lightgrey;
+  background-color: #F8F8F8;
   height: 50%;
 }
 
-.col-md-4 {
-  text-align: center;
+.col-md-4 p {
+  text-align: justify;
 }
 
 .col-md-4 img {
   width: 100px;
 }
+
+#murder-odometer, #assaults-odometer {
+  font-size: 3em;
+}
+
+
