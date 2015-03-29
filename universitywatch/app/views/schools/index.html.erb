@@ -1,6 +1,5 @@
 <div class="container-fluid">
   <div class="row">
-
     <nav class="navbar navbar-default">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -50,7 +49,7 @@
 
   <div class="row">
     <%= form_for "school", url: search_schools_path, :html => {class: 'form-wrapper'}, action: "search_school" do |f| %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class: 'search-bar' %>
       <%= f.submit "Search", :class => 'submit_btn' %>
     <% end %>
   </div>

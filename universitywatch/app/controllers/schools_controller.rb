@@ -12,8 +12,14 @@ class SchoolsController < ApplicationController
   end
 
   def search_school
-    school = School.where(school_params).first
-    redirect_to school_path(school)
+    school = School.where(school_params)[0]
+    redirect_to school
+  end
+
+  def json_search
+    p params
+    search_value = School.search_by_school_info(params[:school_name]).limit(10)
+    render json: search_value
   end
 
   def state
