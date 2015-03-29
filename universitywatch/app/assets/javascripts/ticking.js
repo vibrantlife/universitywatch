@@ -8,6 +8,7 @@ $(function(){
 			$(queryStat).html(value);
 		}, speed);
 	}
+
 	ticking('.auto-odo', 3261, 3);
 	ticking('.assaults-odo', 2303, 3);
 	ticking('.forcible-odo', 5052, 1);
