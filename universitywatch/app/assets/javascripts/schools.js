@@ -21,16 +21,13 @@
     .done(function(response) {
       console.log("success", response);
       $('#school_table').text('');
-      var handlebarScript = '';
+      var tableSetup = '<div id="table_generator"><table class="table table-hover"><tr><th>School Name</th><th>School Street</th></tr></table></div>';
+      $('#school_table').append(tableSetup);
       for(var i=0; i < response.length; i++){
-        handlebarScript = '<div class="row"><script id="table_generator" type="text/x-handlebars-template"><table class="table table-hover"><tr><th>School Name</th><th>School Street</th></tr>{{#each state_info}}<tr><th><a href="/schools/'+response[i].id+'">{{name}}</a></th><th>{{street}}</th></tr>{{/each}}</table></script></div>';
+        var handlebarScript = '';
+        handlebarScript = '<tr><th><a href="/schools/'+response[i].id+'">'+response[i].name+'</a></th><th>'+response[i].street+'</th></tr>';
+        $('.table-hover').append(handlebarScript);
       }
-
-      $('#school_table').append(handlebarScript);
-      var context = {state_info: response};
-      var html = $('#table_generator').html();
-      var templatingFunction = Handlebars.compile(html);
-      $('#school_table').append(templatingFunction(context));
     })
     .fail(function() {
       console.log("error");
