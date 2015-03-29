@@ -8,18 +8,19 @@
 // });
 
 
+
 // get list of all schools for state
   var getStateSchools = function(){
     var classes= $(this).attr("class").split(' ');
     var state = classes[1];
-    console.log(state);
     $.ajax({
       url: '/schools/state/' + state,
       type: 'GET',
       dataType: 'json',
     })
     .done(function(response) {
-      console.log("success", response);
+      // console.log("success", response);
+      $('#dropdown-type').removeAttr('style');
       $('#school_table').text('');
       var tableSetup = '<div id="table_generator"><table class="table table-hover"><tr><th>School Name</th><th>School Street</th><th>City, State</th></tr></table></div>';
       $('#school_table').append(tableSetup);
@@ -28,6 +29,7 @@
         handlebarScript = '<tr><th><a href="/schools/'+response[i].id+'">'+response[i].name+'</a></th><th>'+response[i].street+'</th><th>' + response[i].city + ', ' + response[i].state + '</th></tr>';
         $('.table-hover').append(handlebarScript);
       }
+      // getSchoolsByType();
     })
     .fail(function() {
       console.log("error");
@@ -37,6 +39,16 @@
     });
 
   };
+
+//get schools based on state and type
+// we need to get the state
+// get the type from text between a tags
+
+
+// var getSchoolsByType = function(){
+//   // $('#dropdown-type').on('click', 'a', console.log('dropdown clicked'));
+//   console.log('working function');
+// }
 
 // search bar
 $(document).ready(function(){
@@ -61,5 +73,12 @@ $(document).ready(function(){
     })
   });
 
-
+$('#dropdown-type').on('click', 'a', getClick);
 });
+
+var getClick = function(){
+  var type = $(this).text();
+
+}
+
+

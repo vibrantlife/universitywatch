@@ -42,7 +42,6 @@ class SchoolsController < ApplicationController
   def type
     state = params[:state_name]
     school_type = params[:school_type]
-    p school_type
     state_school_type = School.where(state: state, school_type: school_type)
     render :json => state_school_type
   end
