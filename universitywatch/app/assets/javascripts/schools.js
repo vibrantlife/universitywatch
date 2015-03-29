@@ -21,7 +21,7 @@
     .done(function(response) {
       console.log("success", response);
       $('#school_table').text('');
-      var tableSetup = '<div id="table_generator"><table class="table table-hover"><tr><th>School Name</th><th>School Street</th></tr></table></div>';
+      var tableSetup = '<div id="table_generator"><table class="table table-hover"><tr><th>School Name</th><th>School Street</th><</tr></table></div>';
       $('#school_table').append(tableSetup);
       for(var i=0; i < response.length; i++){
         var handlebarScript = '';

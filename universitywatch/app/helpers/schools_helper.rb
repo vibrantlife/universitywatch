@@ -26,3 +26,4 @@ module SchoolsHelper
   end
 
 end
+
