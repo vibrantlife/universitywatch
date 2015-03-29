@@ -20,6 +20,9 @@
     })
     .done(function(response) {
       console.log("success", response);
+      $('#school_table').text('');
+      var handlebarScript = '<div class="row">School Name</div><script id="table_generator" type="text/x-handlebars-template">{{#each state_info}}<div class="row">{{name}}</div>{{/each}}</script>';
+      $('#school_table').append(handlebarScript);
       var context = {state_info: response};
       var html = $('#table_generator').html();
       var templatingFunction = Handlebars.compile(html);
