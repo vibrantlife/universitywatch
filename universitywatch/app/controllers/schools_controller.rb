@@ -1,6 +1,16 @@
 class SchoolsController < ApplicationController
   def index
      @schools = School.all
+     @forcible_sex2011 = []
+     @crimes = Crime.where(year: 2011)
+     @crimes.each { |crime| @forcible_sex2011 << crime.f_sex}
+     @murder2011 = []
+     @crimes.each { |crime| @murder2011 << crime.murder}
+     @manslaughter2011 = []
+     @crimes.each { |crime| @manslaughter2011 << crime.manslaughter}
+     @nonforcible_sex2011 = []
+     @crimes.each { |crime| @nonforcible_sex2011 << crime.nf_sex}
+
   end
 
   def show
