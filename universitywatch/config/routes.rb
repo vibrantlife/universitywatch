@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get 'state/:state_name', :action => 'state', :as => 'state'
       get 'states', :action => 'states', :as => 'states'
       get 'compare', :action => 'compare', :as => 'compare'
+      get 'compare_two', :action => 'compare_two', :as => 'compare_two'
     end
     resources :crimes, only: [:index]
   end

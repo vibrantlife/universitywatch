@@ -1,6 +1,7 @@
 $(document).ready(function(){
-  $(".search-bar").on("keyup", function(){
-    var data = $(".search-bar").val();
+  $(".search-bar").on("keyup", function(event){
+    var data = $(this).val();
+    console.log(data);
     url = "/schools/json_search/" + data;
     $.ajax({
       url: url

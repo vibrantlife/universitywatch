@@ -46,6 +46,12 @@ class SchoolsController < ApplicationController
     render 'schools/comparison'
   end
 
+  def compare_two
+    @school_one = School.where(name: params[:first_school]).first
+    @school_two = School.where(name: params[:second_school]).first
+
+    render :json => {first_school: @school_one, second_school: @school_two}
+  end
 
   private
 
