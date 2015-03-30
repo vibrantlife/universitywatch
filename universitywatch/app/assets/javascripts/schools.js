@@ -19,14 +19,14 @@
       dataType: 'json',
     })
     .done(function(response) {
-      // console.log("success", response);
-      $('#dropdown-type').removeAttr('style');
+      console.log("success", response.entries);
+;      $('#dropdown-type').removeAttr('style');
       $('#school_table').text('');
       var tableSetup = '<div id="table_generator"><table class="table table-hover"><tr><th>School Name</th><th>School Street</th><th>City, State</th></tr></table></div>';
       $('#school_table').append(tableSetup);
-      for(var i=0; i < response.length; i++){
+      for(var i=0; i < response.entries.length; i++){
         var handlebarScript = '';
-        handlebarScript = '<tr><th><a href="/schools/'+response[i].id+'">'+response[i].name+'</a></th><th>'+response[i].street+'</th><th>' + response[i].city + ', ' + response[i].state + '</th></tr>';
+        handlebarScript = '<tr><th><a href="/schools/'+response.entries[i].id+'">'+response.entries[i].name+'</a></th><th>'+response.entries[i].street+'</th><th>' + response.entries[i].city + ', ' + response.entries[i].state + '</th></tr>';
         $('.table-hover').append(handlebarScript);
       }
       $('#dropdown-type').on('click', 'a', getSchoolsByType);
