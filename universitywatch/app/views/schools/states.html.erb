@@ -16,9 +16,10 @@
 
   <div class="container">
       <div class="row">
+        <button id="previous" class="btn btn-primary">Previous</button>
+        <button id="next" class="btn btn-primary">Next</button>
         <div id="school_table">
         </div>
-        <button id="next">More...</button>
       </div>
   </div>
 </div>
@@ -39,10 +40,18 @@
 
       $('#next').click(function(){
           var currentPage = parseInt($('#school_table').data('currentPage'));
-     var stateName = $('#school_table').data('stateName');
+          var stateName = $('#school_table').data('stateName');
 
           getStateSchools(stateName, currentPage + 1);
         });
+
+     $('#previous').click(function(){
+         var currentPage = parseInt($('#school_table').data('currentPage'));
+         var stateName = $('#school_table').data('stateName');
+
+         getStateSchools(stateName, currentPage - 1);
+       });
+
     });
 </script>
 
