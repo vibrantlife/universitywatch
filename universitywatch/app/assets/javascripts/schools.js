@@ -75,6 +75,7 @@ $(document).ready(function(){
 
 });
 
+
 var getSchoolsByType = function(){
   var type = $(this).text();
   console.log(state);

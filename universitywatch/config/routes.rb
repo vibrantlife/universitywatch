@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       post 'search', :action => 'search_school', :as => 'search'
       get 'state/:state_name', :action => 'state', :as => 'state'
       get 'states', :action => 'states', :as => 'states'
+      get 'compare', :action => 'compare', :as => 'compare'
+      get 'compare_two', :action => 'compare_two', :as => 'compare_two'
       get 'state/:state_name/:school_type', :action => 'type', :as => 'type'
     end
     resources :crimes, only: [:index]
