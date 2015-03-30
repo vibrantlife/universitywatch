@@ -41,6 +41,18 @@ class SchoolsController < ApplicationController
   def states
   end
 
+  def compare
+    @schools = School.all
+    render 'schools/comparison'
+  end
+
+  def compare_two
+    @school_one = School.where(name: params[:first_school]).first.crimes
+    @school_two = School.where(name: params[:second_school]).first.crimes
+
+    render :json => {first_school: @school_one, second_school: @school_two}
+  end
+
   private
 
   def school_params
