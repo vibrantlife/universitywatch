@@ -22,7 +22,13 @@ class SchoolsController < ApplicationController
 
   def search_school
     school = School.where(school_params)[0]
-    redirect_to school
+    if school
+      redirect_to school
+    else
+      flash[:errors] = "No results. Please try again."
+      # @error = "No results. Please try again."
+      redirect_to root_url
+    end
   end
 
   def json_search
@@ -37,18 +43,12 @@ class SchoolsController < ApplicationController
     render :json => @schools
   end
 
-  # route: schools/state/:statename/:school_type
-  # schools/state/CA/private
   def type
     state = params[:state_name]
     school_type = params[:school_type]
     state_school_type = School.where(state: state, school_type: school_type)
     render :json => state_school_type
   end
-  # select school type
-  # a = []
-  # School.all.each {|school| a << school.school_type}
-  # a.uniq
 
   def states
   end

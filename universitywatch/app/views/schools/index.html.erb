@@ -27,16 +27,17 @@
   </div>
 
   <div class="row">
-    <%= form_for "school", url: search_schools_path, :html => {class: 'form-wrapper'}, action: "search_school" do |f| %>
-      <%= f.text_field :name, class: 'search-bar' %>
-      <%= f.submit "Search", :class => 'submit_btn' %>
-    <% end %>
+    <div class="search-bar">
+      <%= form_for "school", url: search_schools_path, :html => {class: 'form-wrapper'}, action: "search_school" do |f| %>
+        <%= f.text_field :name, class: 'search-bar' %>
+        <%= f.submit "Search", :class => 'submit_btn' %>
+      <% end %>
+      <% if flash[:errors] %>
+        <p class="error-message"><%= flash[:errors] %></p>
+      <% end %>
+    </div>
   </div>
 
-</div>
-
-<div class="container-fluid scatter-section">
-  <%= render "schools/scatter" %>
 </div>
 
   <div class="crime-categories row">
