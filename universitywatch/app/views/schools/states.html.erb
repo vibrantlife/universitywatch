@@ -18,6 +18,7 @@
         <div id="school_table">
         </div>
       </div>
+      <div id="page-selection"></div>
   </div>
 
 </div>
@@ -33,6 +34,7 @@
         scope: 'usa'
       });
       $('.datamaps-subunit').on('click', getStateSchools);
+      $('#page-selection').bootpag({total: 10})
     });
 </script>
 
