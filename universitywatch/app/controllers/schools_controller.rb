@@ -53,6 +53,28 @@ class SchoolsController < ApplicationController
   def states
   end
 
+
+
+
+
+
+  def geo_location
+    @schools = School.all
+    render 'schools/get_geo_info'
+  end
+
+
+  def geo_info
+    @schools = School.all
+    @school_array = []
+    @schools.each do |school|
+      string = "#{school.street} #{school.city} #{school.state}"
+      @school_array.push(string)
+    end
+    p @school_array[0]
+    render json: {school_address_array: @school_array}
+  end
+
   private
 
   def school_params

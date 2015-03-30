@@ -11,7 +11,8 @@ Rails.application.routes.draw do
       get 'states', :action => 'states', :as => 'states'
       get 'state/:state_name/:school_type', :action => 'type', :as => 'type'
 
-      get 'geo_location_info', :action => 'geo_info', :as => 'geo_info'
+      get 'geo_location_info', :action => 'geo_location', :as => 'geo_location_info'
+      get 'geo_info', :action => 'geo_info', :as => 'geo_info'
     end
     resources :crimes, only: [:index]
   end
