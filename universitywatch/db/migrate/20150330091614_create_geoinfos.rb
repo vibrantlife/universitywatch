@@ -3,7 +3,7 @@ class CreateGeoinfos < ActiveRecord::Migration
     create_table :geoinfos do |t|
       t.float :lat
       t.float :lng
-      t.float :data_weight
+      
       t.integer :school_id
       t.timestamps null: false
     end

@@ -35,10 +35,9 @@ ActiveRecord::Schema.define(version: 20150330091614) do
   create_table "geoinfos", force: :cascade do |t|
     t.float    "lat"
     t.float    "lng"
-    t.float    "data_weight"
     t.integer  "school_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -47,15 +46,6 @@ ActiveRecord::Schema.define(version: 20150330091614) do
     t.string   "searchable_type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-  end
-
-  create_table "school_geos", force: :cascade do |t|
-    t.float    "lat"
-    t.float    "lng"
-    t.float    "data_weight"
-    t.integer  "school_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "schools", force: :cascade do |t|
