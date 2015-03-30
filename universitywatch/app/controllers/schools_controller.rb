@@ -47,8 +47,8 @@ class SchoolsController < ApplicationController
   end
 
   def compare_two
-    @school_one = School.where(name: params[:first_school]).first
-    @school_two = School.where(name: params[:second_school]).first
+    @school_one = School.where(name: params[:first_school]).first.crimes
+    @school_two = School.where(name: params[:second_school]).first.crimes
 
     render :json => {first_school: @school_one, second_school: @school_two}
   end
