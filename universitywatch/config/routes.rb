@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   get '/abouttheproject' => 'schools#abouttheproject'
-
+  get '/data' => 'schools#data'
   root 'schools#index'
 
   # set up compare route

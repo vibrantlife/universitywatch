@@ -54,7 +54,9 @@ class SchoolsController < ApplicationController
   end
 
   def abouttheproject
+  end
 
+  def data
   end
 
   private
