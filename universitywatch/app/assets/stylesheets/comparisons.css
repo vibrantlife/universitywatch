@@ -1,3 +1,11 @@
+#comparison-charts{
+  margin: 80px;
+}
+
+#compare_btn {
+  width: 50%;
+}
+
 table {
   width: 100%;
   background: #eee;
