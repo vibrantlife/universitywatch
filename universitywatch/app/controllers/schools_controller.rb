@@ -63,6 +63,7 @@ end
   def states
   end
 
+
   def compare
     @schools = School.all
     render 'schools/comparison'
@@ -73,6 +74,9 @@ end
     @school_two = School.where(name: params[:second_school]).first.crimes
 
     render :json => {first_school: @school_one, second_school: @school_two}
+  end
+
+  def abouttheproject
   end
 
   private

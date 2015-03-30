@@ -46,10 +46,10 @@ crimes_array.each do |school|
             name: school["INSTNM"],
             school_type: school["Sector_desc"],
             state: school["State"],
-            city: school["City"],
+            city: school["City"].titleize,
             population: population,
             acronym: acronym,
-            street: school["Address"],
+            street: school["Address"].titleize,
             zip: school["ZIP"]
             )
 
