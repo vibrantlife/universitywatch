@@ -53,6 +53,10 @@ class SchoolsController < ApplicationController
   def states
   end
 
+  def abouttheproject
+
+  end
+
   private
 
   def school_params

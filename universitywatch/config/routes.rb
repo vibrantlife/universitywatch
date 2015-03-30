@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+
+  get '/abouttheproject' => 'schools#abouttheproject'
+
   root 'schools#index'
 
   # set up compare route
@@ -13,8 +17,6 @@ Rails.application.routes.draw do
     end
     resources :crimes, only: [:index]
   end
-
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.
