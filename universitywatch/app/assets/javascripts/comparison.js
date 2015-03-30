@@ -84,6 +84,10 @@ $(function() {
                 var table_content_2012 = $('.table_twelf');
                 var table_content_2013 = $('.table_thirteen');
 
+                $('.table_eleven').html('');
+                $('.table_twelf').html('');
+                $('.table_thirteen').html('');
+
                 var school_first_2011 = response.first_school[0];
                 var school_second_2011 = response.second_school[0];
                 var school_first_2012 = response.first_school[1];
