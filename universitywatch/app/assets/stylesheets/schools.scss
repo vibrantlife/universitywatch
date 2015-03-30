@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  font-family: 'Cabin', sans-serif;
+}
+
 .banner-panel {
   background-color: #F8F8F8;
 }
@@ -43,6 +47,7 @@
 p.category-title {
   font-weight: bold;
   text-align: center;
+  font-family: 'Rokkitt', serif;
 }
 
 
@@ -51,3 +56,6 @@ p.category-title {
 }
 
 
+.error-message {
+  color: #BE2625 ;
+}
