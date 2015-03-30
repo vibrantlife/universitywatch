@@ -1,0 +1,2 @@
+class SchoolGeosController < ApplicationController
+end
