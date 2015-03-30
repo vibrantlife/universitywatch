@@ -26,12 +26,16 @@
 
 <script>
     $(document).ready(function(){
+      $('#previous').hide();
+      $('#next').hide();
       console.log("here");
       var map = new Datamap({
         element: $('#state_container')[0],
         scope: 'usa'
       });
       $('.datamaps-subunit').on('click', function(){
+        $('#previous').show();
+        $('#next').show();
           var $state = $(this);
           var classes= $state.attr("class").split(' ');
           var stateName = classes[1];
