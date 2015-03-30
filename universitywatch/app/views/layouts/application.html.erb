@@ -12,13 +12,15 @@
 
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
-<body>
+<body class="controller_<%= controller_name %>">
 
   <%= render "schools/navbar"  %>
 
 
 <%= yield %>
-
+  <script>
+  $('body').triggerHandler('loaded: <%= controller_name %>');
+  </script>
 
 </body>
 </html>

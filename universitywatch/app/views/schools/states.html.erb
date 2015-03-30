@@ -9,6 +9,7 @@
     <div id="state_container" style="position: relative; width: 80%; height: 800px; margin: 0 auto"></div>
   </div>
 
+
   <div class="row">
     <%= render "schools/dropdown_state_types" %>
   </div>
@@ -17,14 +18,10 @@
       <div class="row">
         <div id="school_table">
         </div>
+        <button id="next">More...</button>
       </div>
-      <div id="page-selection"></div>
   </div>
-
 </div>
-
-
-
 
 <script>
     $(document).ready(function(){
@@ -33,8 +30,19 @@
         element: $('#state_container')[0],
         scope: 'usa'
       });
-      $('.datamaps-subunit').on('click', getStateSchools);
+      $('.datamaps-subunit').on('click', function(){
+          var $state = $(this);
+          var classes= $state.attr("class").split(' ');
+          var stateName = classes[1];
+          getStateSchools(stateName, 1);
+      });
 
+      $('#next').click(function(){
+          var currentPage = parseInt($('#school_table').data('currentPage'));
+     var stateName = $('#school_table').data('stateName');
+
+          getStateSchools(stateName, currentPage + 1);
+        });
     });
 </script>
 

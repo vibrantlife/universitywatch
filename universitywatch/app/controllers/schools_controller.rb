@@ -38,13 +38,12 @@ def state
     format.json {
       render :json => {
         :current_page => @schools.current_page,
-        :per_page => 5,
+        :per_page => @schools.per_page,
         :total_entries => @schools.total_entries,
         :entries => @schools
       }
     }
   end
-  p @schools
 end
 
   # route: schools/state/:statename/:school_type
