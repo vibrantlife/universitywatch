@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'errors/file_note_found'
+
+  get 'errors/unprocessable'
+
+  get 'errors/internal_server_error'
+
   root 'schools#index'
 
   # set up compare route
@@ -18,7 +24,10 @@ Rails.application.routes.draw do
     resources :crimes, only: [:index]
   end
 
-  
+  match '/404', to: 'errors#file_not_found', via: :all
+  match '/422', to: 'errors#unprocessable', via: :all
+  match '/500', to: 'errors#internal_server_error', via: :all
+
 
 
 
