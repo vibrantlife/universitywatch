@@ -1,2 +1,0 @@
-class SchoolGeosController < ApplicationController
-end
