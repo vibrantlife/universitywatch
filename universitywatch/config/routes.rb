@@ -5,9 +5,11 @@ Rails.application.routes.draw do
 
   resources :schools, only: [:index, :show] do
     collection do
+      get 'json_search/:school_name', :action => 'json_search', :as => 'json_search'
       post 'search', :action => 'search_school', :as => 'search'
       get 'state/:state_name', :action => 'state', :as => 'state'
       get 'states', :action => 'states', :as => 'states'
+      get 'state/:state_name/:school_type', :action => 'type', :as => 'type'
     end
     resources :crimes, only: [:index]
   end

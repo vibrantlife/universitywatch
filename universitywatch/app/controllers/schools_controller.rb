@@ -10,7 +10,6 @@ class SchoolsController < ApplicationController
      @crimes.each { |crime| @manslaughter2011 << crime.manslaughter}
      @nonforcible_sex2011 = []
      @crimes.each { |crime| @nonforcible_sex2011 << crime.nf_sex}
-
   end
 
   def show
@@ -22,8 +21,14 @@ class SchoolsController < ApplicationController
   end
 
   def search_school
-    school = School.where(school_params).first
-    redirect_to school_path(school)
+    school = School.where(school_params)[0]
+    redirect_to school
+  end
+
+  def json_search
+    p params
+    search_value = School.search_by_school_info(params[:school_name]).limit(10)
+    render json: search_value
   end
 
   def state
@@ -31,6 +36,19 @@ class SchoolsController < ApplicationController
     @schools = School.where(state: state)
     render :json => @schools
   end
+
+  # route: schools/state/:statename/:school_type
+  # schools/state/CA/private
+  def type
+    state = params[:state_name]
+    school_type = params[:school_type]
+    state_school_type = School.where(state: state, school_type: school_type)
+    render :json => state_school_type
+  end
+  # select school type
+  # a = []
+  # School.all.each {|school| a << school.school_type}
+  # a.uniq
 
   def states
   end
