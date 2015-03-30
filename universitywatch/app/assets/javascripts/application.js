@@ -17,6 +17,7 @@
 //= require topojson
 //= require datamaps.none.min
 //= require datamaps.all.min
+//= require underscore
 //= require turbolinks
 //= require_tree .
 
