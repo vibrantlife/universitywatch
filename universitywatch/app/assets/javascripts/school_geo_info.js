@@ -3,7 +3,9 @@ $(function(){
 	var result = [];
 	var School_instance = function() {
 		this.lat = '',
-		this.lng = ''
+		this.lng = '',
+		this.data_weight = 0,
+		this.school_id = 0
 	}
 
 	var callingGoogle = function() {
@@ -17,8 +19,10 @@ $(function(){
 					  })
 					    .done(function(data) {
 					    	var new_school = new School_instance();
-					    	new_school.lat = data.results[0].geometry.location.lat,
-					    	new_school.lng = data.results[0].geometry.location.lng
+					    	new_school.lat = data.results[0].geometry.location.lat;
+					    	new_school.lng = data.results[0].geometry.location.lng;
+					    	new_school.data_weight = Math.floor((Math.random()*15 + 1);
+					    	new_school.school_id = i + 1;
 					    	result.push(new_school);
 					    	console.log('new_school: ' + new_school);
 					    	console.log('result: ' + result);
@@ -30,7 +34,11 @@ $(function(){
 					    })
 			}, 1000);
 		}
-		console.log(result);
+		$.ajax({
+			url: '/schools/create_geo_location',
+			type: 'post',
+			data: {result[i].}
+		})
 	}
 
 	$('.run_data').on('click', function(){
