@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # set up compare route
   post 'schools/create_geo_location', :to => 'geoinfos#create', :as => 'create_geo_location'
+
   resources :schools, only: [:index, :show] do
     collection do
       get 'json_search/:school_name', :action => 'json_search', :as => 'json_search'
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
     end
     resources :crimes, only: [:index]
   end
+
+  
 
 
 

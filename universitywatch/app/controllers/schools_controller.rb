@@ -53,7 +53,7 @@ class SchoolsController < ApplicationController
   def states
   end
 
-
+  
 
 
 
@@ -76,9 +76,6 @@ class SchoolsController < ApplicationController
   end
 
   private
-
-
- 
 
   def school_params
     params.require(:school).permit(:name)
