@@ -17,14 +17,16 @@
           <li><a href="#">Data</a></li>
           <li><a href="#">About Us</a></li>
         </ul>
+        <% if !current_page?('/') %>
         <div>
           <form class="navbar-form navbar-right" role="search">
              <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search School...">
              </div>
              <button type="submit" class="btn btn-default">Search</button>
-          </form>    
+          </form>
         </div>
+        <% end %>
       </div><!-- /.navbar-collapse -->
       </nav>
     </div>
