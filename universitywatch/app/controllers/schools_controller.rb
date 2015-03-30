@@ -33,8 +33,7 @@ end
 
 def state
   state = params[:state_name]
-  @schools = School.where(state: state)
-  @schools.paginate :page => params[:page]
+  @schools = School.where(state: state).paginate :page => params[:page]
   respond_to do |format|
     format.json {
       render :json => {

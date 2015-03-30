@@ -14,7 +14,7 @@
     var classes= $(this).attr("class").split(' ');
     state = classes[1];
     $.ajax({
-      url: '/schools/state/' + state,
+      url: '/schools/state/' + state ,
       type: 'GET',
       dataType: 'json',
     })
