@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get 'states', :action => 'states', :as => 'states'
       get 'compare', :action => 'compare', :as => 'compare'
       get 'compare_two', :action => 'compare_two', :as => 'compare_two'
+      get 'state/:state_name/:school_type', :action => 'type', :as => 'type'
     end
     resources :crimes, only: [:index]
   end
