@@ -1,12 +1,3 @@
-// $(document).ready(function(){
-//   console.log("here");
-//   var map = new Datamap({
-//     element: $('#state_container'),
-//     scope: 'usa'
-//   });
-//   $('.datamaps-subunit').on('click', getStateSchools);
-// });
-
 function drawSchoolResults(stateName, pageNumber, response){
      $('#school_table').data('currentPage', pageNumber);
      $('#school_table').data('stateName', stateName);

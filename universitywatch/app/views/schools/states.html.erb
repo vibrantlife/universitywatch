@@ -40,6 +40,10 @@
           var classes= $state.attr("class").split(' ');
           var stateName = classes[1];
           getStateSchools(stateName, 1);
+          // Scroll down to the Table when state is clicked:
+          $('body').animate({
+              scrollTop: $("#school_table").offset().top},
+              'slow');
       });
 
       $('#next').click(function(){
