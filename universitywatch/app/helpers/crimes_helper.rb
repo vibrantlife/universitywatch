@@ -11,7 +11,17 @@ module CrimesHelper
       @crime_type_hash[@school_name] = @school_crime_num
       @crime_type_data << @crime_type_hash
     end
-    p @top_10_crime_type
+      school_names = []
+      crime_values = []
+      @crime_type_data.each do |hash|
+        school_names << hash.keys
+        crime_values << hash.values
+      end
+
+      @crime_data = [school_names.flatten!, crime_values.flatten!]
+      return @crime_data
   end
+
+
 
 end
