@@ -57,25 +57,25 @@ var generatedHeatMap = function(school_weight_array){
 $(function(){
 	var school_weight_data = [];
 	var heatmap_objects_array = [];
-	var i = -1;
-	var intervaler = setInterval(function(){
-		$.ajax({
-				url: '/schools/heatmap_data'
-			}).done(function(response){
-				console.log(response);
-				var new_three_factors_array = [response.school_data_weight_array[i][0], response.school_data_weight_array[i][1], response.school_data_weight_array[i][2]];
-				// var new_data = { location: new google.maps.LatLng(response.school_data_weight_array[i][0], response.school_data_weight_array[i][1]), weight: response.school_data_weight_array[i][2]};
-				//school_weight_data.push(new_data);
-				school_weight_data.push(new_three_factors_array);
-			}).fail(function(error){
-				console.log('error');
-			});
-			i += 1;
-			if (i == 99){
-				clearInterval(intervaler);
-				console.log('success');
-			}
-		}, 100);
+	// var i = -1;
+	// var intervaler = setInterval(function(){
+	// 	$.ajax({
+	// 			url: '/schools/heatmap_data'
+	// 		}).done(function(response){
+	// 			console.log(response);
+	// 			var new_three_factors_array = [response.school_data_weight_array[i][0], response.school_data_weight_array[i][1], response.school_data_weight_array[i][2]];
+	// 			// var new_data = { location: new google.maps.LatLng(response.school_data_weight_array[i][0], response.school_data_weight_array[i][1]), weight: response.school_data_weight_array[i][2]};
+	// 			//school_weight_data.push(new_data);
+	// 			school_weight_data.push(new_three_factors_array);
+	// 		}).fail(function(error){
+	// 			console.log('error');
+	// 		});
+	// 		i += 1;
+	// 		if (i == 99){
+	// 			clearInterval(intervaler);
+	// 			console.log('success');
+	// 		}
+	// 	}, 100);
 
 	$('body').on('click', '.run_heatmap_data', function(){
 		// generatedHeatMap(school_weight_data);
