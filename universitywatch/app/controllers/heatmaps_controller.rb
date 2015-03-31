@@ -5,7 +5,8 @@ class HeatmapsController < ApplicationController
 	end
 
 	def show
-		response_data = JSON.parse(Heatmap.last.geodatainfos)
+		response_data = Heatmap.last.geodatainfos
+		p response_data
 		render status: 200, json: response_data
 	end
 end

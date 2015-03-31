@@ -80,7 +80,7 @@ class SchoolsController < ApplicationController
   end
 
   def heatmap_data
-    schools = School.first(50)
+    schools = School.first(100)
     @school_data_weight_array = []
     schools.each do |school|
       if school.geoinfo.lat
