@@ -1,0 +1,91 @@
+.crime-badges {
+  height: 300px;
+  text-align: center;
+}
+
+.badge-13, .badge-12, .badge-11 {
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /*background-size: 70%;*/
+  height: 100px;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  line-height: 120px;
+}
+
+
+.crime-total-number {
+  font-size: 3em;
+  color: white;
+  font-weight: bold;
+}
+
+.badge-13 {
+  background-image: url("badge2013.png");
+}
+
+.badge-11 {
+  background-image: url("badge2011.png");
+}
+
+.badge-12 {
+  background-image: url("badge2012.png");
+}
+
+
+/*.acronym-section {
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 300px;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  line-height: 300px;
+  background-image: url("acronymbadge.png");
+  margin: 0 auto;
+  text-align: center;
+}*/
+
+.acronym-section{
+  margin: 0 auto;
+  height: 300px;
+  line-height: 300px;
+}
+
+.rotating-circle {
+  border: 4px solid #262C3A;
+  width: 120px;
+  height:120px;
+  border-radius: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 50%;
+}
+
+.rotating-circle:hover{
+  -webkit-animation: rotate 2s linear infinite;
+  border: 3px dotted #00DDD8;
+}
+
+.rotating-circle h3 {
+  margin-top: 40%;
+  font-weight: bold;
+  transform : scale(1,1.5);
+  -webkit-transform:scale(1,1.5); /* Safari and Chrome */
+  -moz-transform:scale(1,1.5); /* Firefox */
+  -ms-transform:scale(1,1.5); /* IE 9+ */
+  -o-transform:scale(1,1.5); /* Opera */
+}
+
+@-webkit-keyframes rotate {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(180deg);
+    }
+}
+
