@@ -82,10 +82,44 @@ end
   def data
   end
 
+
+
+  def geo_location
+    @schools = School.all
+    render 'schools/get_geo_info'
+  end
+
+
+  def geo_info
+    @schools = School.all
+    @school_array = []
+    @schools.each do |school|
+      string = "#{school.street} #{school.city} #{school.state}"
+      @school_array.push(string)
+    end
+    p @school_array[0]
+    render json: {school_address_array: @school_array}
+  end
+
+  def heatmap_page
+    render 'geoinfos/get_heatmap_data'
+  end
+
+  def heatmap_data
+    schools = School.first(50)
+    @school_data_weight_array = []
+    schools.each do |school|
+      if school.geoinfo.lat
+        new_data = [school.geoinfo.lat, school.geoinfo.lng, school.forced_2013_sexual_assault]
+        @school_data_weight_array.push(new_data)
+      end
+    end
+    render json: {school_data_weight_array: @school_data_weight_array}
+  end
+
   private
 
   def current_pagination_params
-
   end
 
   def school_params
