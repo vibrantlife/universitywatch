@@ -137,12 +137,11 @@ $(function(){
 	// 		}
 	// 	}, 100);
 
-	// $('body').on('click', function(){
-	// 	// load_data_from_server();
-	// 	// generatedHeatMap(school_weight_data);
-	// 	// console.log(school_weight_data);
-	// 	console.log('click run_heatmap_data');
-	// });
+	$('body').on('click', function(){
+		// load_data_from_server();
+		// console.log(school_weight_data);
+		console.log('click run_heatmap_data');
+	});
 
 	$('body').on('click', '.show_heatmap', function(){
 		$.ajax({
