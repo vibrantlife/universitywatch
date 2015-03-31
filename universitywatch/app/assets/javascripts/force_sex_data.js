@@ -1,7 +1,5 @@
 var generatedHeatMap = function(school_weight_array){
 	var map, pointarray, heatmap;
-
-	debugger;
 			function initialize() {
 			  var mapOptions = {
 			    zoom: 5,
@@ -12,9 +10,6 @@ var generatedHeatMap = function(school_weight_array){
 
 			  map = new google.maps.Map(document.getElementById('heatmap-canvas'),
 			      mapOptions);
-
-			  debugger;
-
 			  var pointArray = new google.maps.MVCArray(school_weight_array);
 
 			  heatmap = new google.maps.visualization.HeatmapLayer({
@@ -66,38 +61,45 @@ $(function(){
 		$.ajax({
 				url: '/schools/heatmap_data'
 			}).done(function(response){
-				console.log(response);
-				var count = response.length;
 				var new_data = { location: new google.maps.LatLng(response.school_data_weight_array[i][0], response.school_data_weight_array[i][1]), weight: response.school_data_weight_array[i][2]};
 				school_weight_data.push(new_data);
-				console.log('success');
 			}).fail(function(error){
 				console.log('error');
 			});
 			i += 1;
-			if (i == 9){
+			if (i == 49){
 				clearInterval(intervaler);
 				console.log('success');
 			}
 		}, 100);
 
 	$('body').on('click', '.run_heatmap_data', function(){
-		//generatedHeatMap(school_weight_data);
-		var weight_data= JSON.stringify(school_weight_data);
-		debugger;
+		generatedHeatMap(school_weight_data);
+		console.log(school_weight_data);
+		var weight_data = JSON.stringify(school_weight_data);
 		$.ajax({
 			url: '/heatmaps/store_array',
 			type: 'post',
 			dataType: 'json',
-			data: { weightdatainfo: weight_data}
+			data: {weight_data: weight_data}
+		}).done(function(callback){
+			console.log(callback);
+			console.log('why success');
+		}).fail(function(error){
+			console.log('why error');
+		});
+		console.log('click run_heatmap_data');
+	});
+
+	$('body').on('click', '.show_heatmap', function(){
+		$.ajax({
+			url: '/heatmaps/show',
 		}).done(function(arrayFromServer){
-			console.log(arrayFromServer);
-			debugger;
+			//generatedHeatMap(arrayFromServer);
 			console.log('success');
 		}).fail(function(error){
 			console.log('error');
 		});
-
 		console.log('click');
 	});
 

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # set up compare route
   post 'schools/create_geo_location', :to => 'geoinfos#create', :as => 'create_geo_location'
   post 'heatmaps/store_array', :to => 'heatmaps#create', :as => 'store_array'
+  get 'heatmaps/show', :to => 'heatmaps#show', :as => 'show_heatmap'
 
   resources :schools, only: [:index, :show] do
     collection do

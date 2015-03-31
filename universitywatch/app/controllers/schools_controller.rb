@@ -80,11 +80,13 @@ class SchoolsController < ApplicationController
   end
 
   def heatmap_data
-    schools = School.first(10)
+    schools = School.first(50)
     @school_data_weight_array = []
     schools.each do |school|
-      new_data = [school.geoinfo.lat, school.geoinfo.lng, school.forced_2013_sexual_assault]
-      @school_data_weight_array.push(new_data)
+      if school.geoinfo.lat
+        new_data = [school.geoinfo.lat, school.geoinfo.lng, school.forced_2013_sexual_assault]
+        @school_data_weight_array.push(new_data)
+      end
     end
     render json: {school_data_weight_array: @school_data_weight_array}
   end

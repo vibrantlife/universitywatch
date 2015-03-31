@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(version: 20150331000820) do
   end
 
   create_table "heatmaps", force: :cascade do |t|
-    t.text     "geodatainfos", default: [],              array: true
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.text     "geodatainfos"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
