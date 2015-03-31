@@ -2,10 +2,19 @@ Rails.application.routes.draw do
 
 
   get '/abouttheproject' => 'schools#abouttheproject'
+  get '/data' => 'schools#data'
+  get 'heatmaps/create'
+
+  get 'errors/file_note_found'
+  get 'errors/unprocessable'
+  get 'errors/internal_server_error'
 
   root 'schools#index'
 
   # set up compare route
+  post 'schools/create_geo_location', :to => 'geoinfos#create', :as => 'create_geo_location'
+  post 'heatmaps/store_array', :to => 'heatmaps#create', :as => 'store_array'
+  get 'heatmaps/show', :to => 'heatmaps#show', :as => 'show_heatmap'
 
   resources :schools, only: [:index, :show] do
     collection do
@@ -16,6 +25,11 @@ Rails.application.routes.draw do
       get 'compare', :action => 'compare', :as => 'compare'
       get 'compare_two', :action => 'compare_two', :as => 'compare_two'
       get 'state/:state_name/:school_type', :action => 'type', :as => 'type'
+
+      get 'geo_location_info', :action => 'geo_location', :as => 'geo_location_info'
+      get 'geo_info', :action => 'geo_info', :as => 'geo_info'
+      get 'heatmap_page', :action => 'heatmap_page', :as => 'heatmap_page'
+      get 'heatmap_data', :action => 'heatmap_data', :as => 'heatmap_data'
     end
   end
     resources :crimes, only: [:index] do
@@ -31,6 +45,10 @@ Rails.application.routes.draw do
       get 'arson', :action => 'arson', :as => 'arson'
     end
   end
+
+  match '/404', to: 'errors#file_not_found', via: :all
+  match '/422', to: 'errors#unprocessable', via: :all
+  match '/500', to: 'errors#internal_server_error', via: :all
 
 
 

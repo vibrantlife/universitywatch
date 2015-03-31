@@ -29,16 +29,18 @@
       </div>
     </div>
 
+
     <div class="col-lg-4 col-md-4 col-s-12 col-xs-12 crime-badges">
       <div class="row">
         <h3 class="section-header-spacing">Total Crimes per Year</h3>
       </div>
       <div class="row">
-        <div class="col-md-6 col-md-offset-3 badge-13"><span class="crime-total-number">17</span></div>
+        <div class="col-md-6 col-md-offset-3 badge-13"><span class="crime-total-number"><%= get_status(@school, 2013) %></span></div>
       </div>
       <div class="row">
-        <div class="col-md-3 col-md-offset-3 badge-11"><span class="crime-total-number">17</span></div>
-        <div class="col-md-3 badge-12"><span class="crime-total-number">17</span></div>
+        <div class="col-md-3 col-md-offset-3 badge-11"><span class="crime-total-number"><%= get_status(@school, 2011)%></span></div>
+        <div class="col-md-3 badge-12"><span class="crime-total-number">
+        <%= get_status(@school, 2012) %></span></div>
       </div>
     </div>
 

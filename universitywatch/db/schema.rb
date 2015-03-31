@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329002019) do
+ActiveRecord::Schema.define(version: 20150331000820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,20 @@ ActiveRecord::Schema.define(version: 20150329002019) do
     t.integer  "arson"
     t.integer  "school_id"
     t.integer  "year"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "geoinfos", force: :cascade do |t|
+    t.float    "lat"
+    t.float    "lng"
+    t.integer  "school_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "heatmaps", force: :cascade do |t|
+    t.text     "geodatainfos"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

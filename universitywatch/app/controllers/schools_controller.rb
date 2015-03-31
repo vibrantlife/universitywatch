@@ -21,71 +21,104 @@ class SchoolsController < ApplicationController
 end
 
 
-def search_school
-  school = School.where(school_params)[0]
-  if school
-    redirect_to school
-  else
-    flash[:errors] = "No results. Please try again."
-    redirect_to root_url
+  def search_school
+    school = School.where(school_params)[0]
+    if school
+      redirect_to school
+    else
+      flash[:errors] = "No results. Please try again."
+      redirect_to root_url
+    end
   end
-end
 
-def json_search
-  # p params
-  search_value = School.search_by_school_info(params[:school_name]).limit(10)
-  render json: search_value
-end
+  def json_search
+    # p params
+    search_value = School.search_by_school_info(params[:school_name]).limit(10)
+    render json: search_value
+  end
 
-def state
-  state = params[:state_name]
-  @schools = School.where(state: state).paginate :page => params[:page]
-  respond_to do |format|
-    format.json {
-      render :json => {
-        :current_page => @schools.current_page,
-        :per_page => @schools.per_page,
-        :total_entries => @schools.total_entries,
-        :entries => @schools
+  def state
+    state = params[:state_name]
+    @schools = School.where(state: state).paginate :page => params[:page]
+    respond_to do |format|
+      format.json {
+        render :json => {
+          :current_page => @schools.current_page,
+          :per_page => @schools.per_page,
+          :total_entries => @schools.total_entries,
+          :entries => @schools
+        }
       }
-    }
+    end
   end
-end
 
-def type
-  state = params[:state_name]
-  school_type = params[:school_type]
-  state_school_type = School.where(state: state, school_type: school_type)
-  render :json => state_school_type
-end
+  def type
+    state = params[:state_name]
+    school_type = params[:school_type]
+    state_school_type = School.where(state: state, school_type: school_type)
+    render :json => state_school_type
+  end
 
-def states
-end
+  def states
+  end
 
 
-def compare
-  @schools = School.all
-  render 'schools/comparison'
-end
+  def compare
+    @schools = School.all
+    render 'schools/comparison'
+  end
 
-def compare_two
-  @school_one = School.where(name: params[:first_school]).first.crimes
-  @school_two = School.where(name: params[:second_school]).first.crimes
+  def compare_two
+    @school_one = School.where(name: params[:first_school]).first.crimes
+    @school_two = School.where(name: params[:second_school]).first.crimes
 
-  render :json => {first_school: @school_one, second_school: @school_two}
-end
+    render :json => {first_school: @school_one, second_school: @school_two}
+  end
 
-def abouttheproject
-end
+  def abouttheproject
+  end
 
-private
+  def data
+  end
 
-def current_pagination_params
 
-end
 
-def school_params
-  params.require(:school).permit(:name)
-end
+  def geo_location
+    @schools = School.all
+    render 'schools/get_geo_info'
+  end
+
+
+  def geo_info
+    @schools = School.all
+    @school_array = []
+    @schools.each do |school|
+      string = "#{school.street} #{school.city} #{school.state}"
+      @school_array.push(string)
+    end
+    p @school_array[0]
+    render json: {school_address_array: @school_array}
+  end
+
+  def heatmap_page
+    render 'geoinfos/get_heatmap_data'
+  end
+
+  def heatmap_data
+    schools = School.first(50)
+    @school_data_weight_array = []
+    schools.each do |school|
+      if school.geoinfo.lat
+        new_data = [school.geoinfo.lat, school.geoinfo.lng, school.forced_2013_sexual_assault]
+        @school_data_weight_array.push(new_data)
+      end
+    end
+    render json: {school_data_weight_array: @school_data_weight_array}
+  end
+
+  private
+  def school_params
+    params.require(:school).permit(:name)
+  end
 
 end
