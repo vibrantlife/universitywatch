@@ -22,12 +22,12 @@ Rails.application.routes.draw do
     collection do
       get 'murder', :action => 'murder', :as => 'murder'
       get 'manslaughter', :action => 'manslaughter', :as => 'manslaughter'
-      get 'sexual-assault-forcible', :action => 'sexual-assault-forcible', :as => 'sexual-assault-forcible'
-      get 'sexual-assault-non-forcible', :action => 'sexual-assault-non-forcible', :as => 'sexual-assault-non-forcible'
+      get 'sexualassaultforcible', :action => 'sexualassaultforcible', :as => 'sexualassaultforcible'
+      get 'sexualassaultnonforcible', :action => 'sexualassaultnonforcible', :as => 'sexualassaultnonforcible'
       get 'robbery', :action => 'robbery', :as => 'robbery'
-      get 'aggravated-assault', :action => 'aggravated-assault', :as => 'aggravated-assault'
+      get 'aggravated_assault', :action => 'aggravated_assault', :as => 'aggravated_assault'
       get 'burglary', :action => 'burglary', :as => 'burglary'
-      get 'motor-vehicle-theft', :action => 'motor-vehicle-theft', :as => 'motor-vehicle-theft'
+      get 'auto_theft', :action => 'auto_theft', :as => 'auto_theft'
       get 'arson', :action => 'arson', :as => 'arson'
     end
   end

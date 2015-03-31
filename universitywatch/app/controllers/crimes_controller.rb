@@ -20,6 +20,36 @@ class CrimesController < ApplicationController
    #  puts murder_data
   end
 
+  def manslaughter
+    CrimesHelper.crime_selector("manslaughter")
+  end
 
+  def sexualassaultforcible
+    CrimesHelper.crime_selector("f_sex")
+  end
+
+  def sexualassaultnonforcible
+    CrimesHelper.crime_selector("nf_sex")
+  end
+
+  def robbery
+    CrimesHelper.crime_selector("robbery")
+  end
+
+  def aggravated_assault
+    CrimesHelper.crime_selector("ag_assault")
+  end
+
+  def burglary
+    CrimesHelper.crime_selector("burglary")
+  end
+
+  def auto_theft
+    CrimesHelper.crime_selector("auto_theft")
+  end
+
+  def arson
+    CrimesHelper.crime_selector("arson")
+  end
 
 end
