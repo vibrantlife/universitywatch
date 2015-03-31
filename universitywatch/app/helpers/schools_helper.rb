@@ -20,9 +20,13 @@ module SchoolsHelper
     total_crimes
   end
 
-  def get_status(crime_type, school, year)
-    number = school.crimes.where(year: year)[0][crime_type]
-    number / school.population
+
+
+  def get_status(school, year)
+    crime_for_year = school.crimes.where(year: year)[0]
+    sum = crime_for_year.murder + crime_for_year.manslaughter + crime_for_year.f_sex + crime_for_year.nf_sex + crime_for_year.robbery + crime_for_year.ag_assault + crime_for_year.burglary + crime_for_year.auto_theft + crime_for_year.arson
+    # (sum / school.population.to_f) * 100
+    sum
   end
 
 end
