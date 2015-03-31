@@ -157,8 +157,6 @@ $(function(){
 	});
 
 
-});
-
 	$('body').on('click', '.display_heatmap', function(){
 		var lat, lng, weight;
 		var final_array = [];
