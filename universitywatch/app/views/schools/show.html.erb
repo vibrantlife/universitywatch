@@ -37,10 +37,102 @@
   </div>
   <div class="row">
     <div class="col-lg-12 col-md-12">
-      <h1>TABLE DATA CHART</h1>
-      <p>2013</p>
+      <h1>School Data for 2011-2013</h1>
+      <% @crimes.where(year: 2013).each do |crime| %>
+        <table class="profile_page_table table table-striped table-responsive">
+          <caption class="text-left">Data for 2013</caption>
+          <tr>
+            <th>Murder</th>
+            <td><%= crime.murder %>
+          </tr>
+          <tr>
+            <th>manslaughter</th>
+            <td><%= crime.manslaughter %>
+          </tr>
+          <tr>
+            <th>Forcible Sex</th>
+            <td><%= crime.f_sex %>
+          </tr>
+          <tr>
+            <th>Non-Forcible Sex</th>
+            <td><%= crime.nf_sex %>
+          </tr>
+          <tr>
+            <th>Robbery</th>
+            <td><%= crime.robbery %>
+          </tr>
+          <tr>
+            <th>Aggravated Assault</th>
+            <td><%= crime.ag_assault %>
+          </tr>
+          <tr>
+            <th>Burglary</th>
+            <td><%= crime.burglary %>
+          </tr>
+          <tr>
+            <th>Auto Theft</th>
+            <td><%= crime.auto_theft %>
+          </tr>
+          <tr>
+            <th>Arson</th>
+            <td><%= crime.arson %>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+
+    <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <% @crimes.where(year: 2012).each do |crime| %>
+        <table class="profile_page_table table table-striped table-responsive">
+          <caption class="text-left">Data for 2012</caption>
+          <tr>
+            <th>Murder</th>
+            <td><%= crime.murder %>
+          </tr>
+          <tr>
+            <th>manslaughter</th>
+            <td><%= crime.manslaughter %>
+          </tr>
+          <tr>
+            <th>Forcible Sex</th>
+            <td><%= crime.f_sex %>
+          </tr>
+          <tr>
+            <th>Non-Forcible Sex</th>
+            <td><%= crime.nf_sex %>
+          </tr>
+          <tr>
+            <th>Robbery</th>
+            <td><%= crime.robbery %>
+          </tr>
+          <tr>
+            <th>Aggravated Assault</th>
+            <td><%= crime.ag_assault %>
+          </tr>
+          <tr>
+            <th>Burglary</th>
+            <td><%= crime.burglary %>
+          </tr>
+          <tr>
+            <th>Auto Theft</th>
+            <td><%= crime.auto_theft %>
+          </tr>
+          <tr>
+            <th>Arson</th>
+            <td><%= crime.arson %>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
       <% @crimes.where(year: 2011).each do |crime| %>
-        <table class="table table-striped table-responsive">
+        <table class="profile_page_table table table-striped table-responsive">
+          <caption class="text-left">Data for 2011</caption>
           <tr>
             <th>Murder</th>
             <td><%= crime.murder %>
@@ -99,9 +191,9 @@
                 2013: 'bar'
               },
         colors: {
-                    2011: '#ff0000',
-                    2012: '#00ff00',
-                    2013: '#0000ff'
+                    2011: '#003058',
+                    2012: '#00DDD8',
+                    2013: '#517398'
                 }
       },
       axis: {
