@@ -132,8 +132,24 @@ array.each do |school|
   school_info << {name: school_name, acronym: acronym}
 end
 
+
 school_info.each do |school|
   if School.find_by(name: school[:name])
     School.find_by(name: school[:name]).update_attributes(acronym: school[:acronym])
   end
 end
+# File.open(File.expand_path('db/geolocations.json', Rails.root), 'w') do |f|
+
+#     f.write(Geoinfo.all.to_json)
+
+# end
+
+new_file = File.read(File.expand_path('db/geolocations.json', Rails.root))
+geolocations_array = JSON.parse(new_file)
+# p new_file
+
+geolocations_array.each do |location|
+    p location
+    Geoinfo.create!(lat: location["lat"], lng: location["lng"], school_id: location["school_id"])
+end
+

@@ -20,6 +20,4 @@ $(document).ready(function(){
       console.log("fail")
     })
   });
-
-
 });
