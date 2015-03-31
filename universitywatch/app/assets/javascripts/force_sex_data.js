@@ -107,7 +107,6 @@ $(function(){
 				url: '/schools/heatmap_data'
 			}).done(function(response){
 				data_from_server = response;
-
 				// var new_three_factors_array = [response.school_data_weight_array[i][0], response.school_data_weight_array[i][1], response.school_data_weight_array[i][2]];
 				// var new_data = { location: new google.maps.LatLng(response.school_data_weight_array[i][0], response.school_data_weight_array[i][1]), weight: response.school_data_weight_array[i][2]};
 				//school_weight_data.push(new_data);
@@ -138,12 +137,12 @@ $(function(){
 	// 		}
 	// 	}, 100);
 
-	$('body').on('click', '.run_heatmap_data', function(){
-		// load_data_from_server();
-		// generatedHeatMap(school_weight_data);
-		// console.log(school_weight_data);
-		console.log('click run_heatmap_data');
-	});
+	// $('body').on('click', function(){
+	// 	// load_data_from_server();
+	// 	// generatedHeatMap(school_weight_data);
+	// 	// console.log(school_weight_data);
+	// 	console.log('click run_heatmap_data');
+	// });
 
 	$('body').on('click', '.show_heatmap', function(){
 		$.ajax({
