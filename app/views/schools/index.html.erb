@@ -1,0 +1,155 @@
+
+
+<div class="container-fluid">
+  <!--   <div class="banner-panel row"> -->
+    <div class="row">
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+        <div class="description pull-left">
+          UniversityWatch blah blah blah blah
+          description about 2013 crime stats:
+        </div>
+      </div>
+    </div>
+
+
+    <div class="ticking row">
+      <div class="col-md-3 auto-odo">3061</div>
+      <div class="col-md-3 assaults-odo">2103</div>
+      <div class="col-md-3 forcible-odo">4852</div>
+      <div class="col-md-3 robbery-odo">1368</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3"> auto vehicle thefts </div>
+      <div class="col-md-3"> aggravated assaults</div>
+      <div class="col-md-3">forcible sexual assaults</div>
+      <div class="col-md-3">robberies</div>
+
+</div>
+
+<div class="container-fluid scatter-section">
+  <%= render "geoinfos/get_heatmap_data" %>
+</div>
+
+
+    <div class="row">
+      <div class="search-bar">
+        <%= form_for "school", url: search_schools_path, :html => {class: 'form-wrapper'}, action: "search_school" do |f| %>
+          <%= f.text_field :name, class: 'search-bar' %>
+          <%= f.submit "Search", :class => 'submit_btn' %>
+        <% end %>
+        <% if flash[:errors] %>
+          <p class="error-message"><%= flash[:errors] %></p>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+<div class="container-fluid crime-categories">
+  <div id ="icon-set-wrapper">
+      <div class="row">
+
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail no-border">
+            <%= image_tag "icon-murder.png" %>
+            <div class="caption">
+              <h3 class ="icon-label"><a href="#" class="btn btn-default crime-btn murder" role="button">Murder</a></h3>
+              <p class="definition-text murder-def">The willful (non-negligent) killing of one human being by another.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail no-border">
+            <%= image_tag "icon-manslaughter.png" %>
+            <div class="caption">
+              <h3 class ="icon-label"><a href="#" class="btn btn-default crime-btn manslaughter" role="button">Manslaughter</a></h3>
+              <p class="definition-text manslaughter-def">The killing of another person through gross negligence.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail no-border">
+            <%= image_tag "icon-sexual-assault-f.png" %>
+            <div class="caption">
+              <h3 class ="icon-label"><a href="#" class="btn btn-default crime-btn saf" role="button">Sexual Offense - Forcible</a></h3>
+              <p class="definition-text saf-def">Any sexual act directed against another person, forcibly and/or against that person's will; or not forcibly or against the person's will where the victim is incapable of giving consent.</p>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- end row -->
+
+      <div class = "row">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail no-border">
+            <%= image_tag "icon-sexual-assault-nonforcible.png" %>
+            <div class="caption">
+              <h3 class ="icon-label"><a href="#" class="btn btn-default crime-btn san" role="button">Sexual Offense - Non-forcible</a></h3>
+              <p class="definition-text san-def">Unlawful, non-forcible sexual intercourse.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail no-border">
+            <%= image_tag "icon-robbery.png" %>
+            <div class="caption">
+              <h3 class ="icon-label"><a href="#" class="btn btn-default crime-btn robbery" role="button">Robbery</a></h3>
+              <p class="definition-text robbery-def">The taking or attempting to take anything of value from the care, custody, or control of a person or persons by force or threat of force or violence and/or by putting the victim in fear.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail no-border">
+            <%= image_tag "icon-aggravated-assault.png" %>
+            <div class="caption">
+              <h3 class ="icon-label"><a href="#" class="btn btn-default crime-btn ag-assault" role="button">Aggravated Assault</a></h3>
+              <p class="definition-text ag-assault-def">An unlawful attack by one person upon another for the purpose of inflicting severe or aggravated bodily injury. This type of assault usually is accompanied by the use of a weapon or by means likely to produce death or great bodily harm.</p>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- end row -->
+
+      <div class="row">
+
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail no-border">
+            <%= image_tag "icon-burglary.png"  %>
+            <div class="caption">
+              <h3 class ="icon-label"><a href="#" class="btn btn-default crime-btn burglary" role="button">Burglary</a></h3>
+              <p class="definition-text burglary-def">The unlawful entry of a structure to commit a felony or a theft.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail no-border">
+            <%= image_tag "icon-motor-vehicle-theft.png" %>
+            <div class="caption">
+              <h3 class ="icon-label"><a href="#" class="btn btn-default crime-btn auto-theft" role="button">Motor Vehicle Theft</a></h3>
+              <p class="definition-text auto-theft-def">The theft or attempted theft of a motor vehicle.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail no-border">
+            <%= image_tag "icon-arson.png" %>
+            <div class="caption">
+              <h3 class ="icon-label"><a href="#" class="btn btn-default crime-btn arson" role="button">Arson</a></h3>
+              <p class="definition-text arson-def">Any willful or malicious burning or attempt to burn, with or without intent to defraud, a dwelling house, public building, motor vehicle or aircraft, personal property of another, etc.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- end row -->
+  </div> <!-- icon wrapper end -->
+</div>
+</div>
+

@@ -1,0 +1,30 @@
+<h1>Top 10: Schools with Most Non-Forcible Sexual Assaults</h1>
+
+<div id="chart">
+ </div>
+<script>
+  var chart = c3.generate({
+      bindto: '#chart',
+      data: {
+        columns: [
+          ['2013', <%= @top_nf_sex_stats %>]
+        ],
+        types: {
+                2013: 'bar'
+              },
+        colors: {
+                    2011: '#003058',
+                    2012: '#00DDD8',
+                    2013: '#517398'
+                }
+      },
+      axis: {
+              x: {
+                  type: 'category',
+                  categories:
+                  ["<%= @top_nf_sex_schools[0].html_safe %>", "<%= @top_nf_sex_schools[1].html_safe %>", "<%= @top_nf_sex_schools[2].html_safe %>", "<%= @top_nf_sex_schools[3].html_safe %>", "<%= @top_nf_sex_schools[4].html_safe %>", "<%= @top_nf_sex_schools[5].html_safe %>", "<%= @top_nf_sex_schools[6].html_safe %>", "<%= @top_nf_sex_schools[7].html_safe %>", "<%= @top_nf_sex_schools[8].html_safe %>", "<%= @top_nf_sex_schools[9].html_safe %>"]}
+            },
+  });
+
+</script>
+

@@ -1,0 +1,64 @@
+// Place all the styles related to the schools controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: 'Cabin', sans-serif;
+}
+
+
+.col-sm-12 {
+  height: 450px;
+  width: 95%;
+}
+
+.col-sm-2 {
+/*  border: 1px dotted yellow;
+*/  text-align: center;
+}
+
+.large-text {
+  font-size: 4em;
+  padding: 1em;
+}
+
+.container-fluid {
+  text-align: center;
+  padding: 1em;
+}
+
+.crime-categories {
+  background-color: #F8F8F8;
+  height: 50%;
+}
+
+.col-md-4 p {
+  text-align: justify;
+}
+
+.col-md-4 img {
+  width: 100px;
+}
+
+
+p.category-title {
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Rokkitt', serif;
+}
+
+
+.scatter-section {
+  margin: 3em;
+}
+
+
+.error-message {
+  color: #BE2625 ;
+}
+
+.profile_page_table {
+  color: black;
+}
+
+

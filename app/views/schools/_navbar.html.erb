@@ -1,0 +1,34 @@
+  <div class="container-fluid">
+  <div class="row">
+
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "UniversityWatch", root_path, class: "navbar-brand" %>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Search by State", states_schools_path %><span class="sr-only">(current)</span></a></li>
+          <li><%= link_to "Data", data_path %></li>
+          <li><%= link_to "About the Project", abouttheproject_path %></li>
+          <li><%= link_to "Compare Schools", compare_schools_path %></li>
+        </ul>
+        <% if !current_page?('/') %>
+        <div>
+          <form class="navbar-form navbar-right" role="search">
+             <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search School...">
+             </div>
+             <button type="submit" class="btn btn-default">Search</button>
+          </form>
+        </div>
+        <% end %>
+      </div><!-- /.navbar-collapse -->
+      </nav>
+    </div>
+</div><!-- /.container-fluid -->
