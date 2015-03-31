@@ -9,7 +9,7 @@ module SchoolsHelper
     return three_scores.sum / 3
   end
 
-  def total_crimes(crime_type, year)
+  def self.total_crimes(crime_type, year)
     schools = School.all
     total_crimes = 0
     schools.each do |school|

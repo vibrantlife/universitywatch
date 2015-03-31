@@ -21,19 +21,18 @@ class SchoolsController < ApplicationController
 end
 
 
-  def search_school
-    school = School.where(school_params)[0]
-    if school
-      redirect_to school
-    else
-      flash[:errors] = "No results. Please try again."
-      # @error = "No results. Please try again."
-      redirect_to root_url
-    end
+def search_school
+  school = School.where(school_params)[0]
+  if school
+    redirect_to school
+  else
+    flash[:errors] = "No results. Please try again."
+    redirect_to root_url
   end
+end
 
 def json_search
-  p params
+  # p params
   search_value = School.search_by_school_info(params[:school_name]).limit(10)
   render json: search_value
 end
@@ -53,40 +52,40 @@ def state
   end
 end
 
-  def type
-    state = params[:state_name]
-    school_type = params[:school_type]
-    state_school_type = School.where(state: state, school_type: school_type)
-    render :json => state_school_type
-  end
+def type
+  state = params[:state_name]
+  school_type = params[:school_type]
+  state_school_type = School.where(state: state, school_type: school_type)
+  render :json => state_school_type
+end
 
-  def states
-  end
+def states
+end
 
 
-  def compare
-    @schools = School.all
-    render 'schools/comparison'
-  end
+def compare
+  @schools = School.all
+  render 'schools/comparison'
+end
 
-  def compare_two
-    @school_one = School.where(name: params[:first_school]).first.crimes
-    @school_two = School.where(name: params[:second_school]).first.crimes
+def compare_two
+  @school_one = School.where(name: params[:first_school]).first.crimes
+  @school_two = School.where(name: params[:second_school]).first.crimes
 
-    render :json => {first_school: @school_one, second_school: @school_two}
-  end
+  render :json => {first_school: @school_one, second_school: @school_two}
+end
 
-  def abouttheproject
-  end
+def abouttheproject
+end
 
-  private
+private
 
-  def current_pagination_params
+def current_pagination_params
 
-  end
+end
 
-  def school_params
-    params.require(:school).permit(:name)
-  end
+def school_params
+  params.require(:school).permit(:name)
+end
 
 end
