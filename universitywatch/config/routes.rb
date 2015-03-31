@@ -17,8 +17,21 @@ Rails.application.routes.draw do
       get 'compare_two', :action => 'compare_two', :as => 'compare_two'
       get 'state/:state_name/:school_type', :action => 'type', :as => 'type'
     end
-    resources :crimes, only: [:index]
   end
+    resources :crimes, only: [:index] do
+    collection do
+      get 'murder', :action => 'murder', :as => 'murder'
+      get 'manslaughter', :action => 'manslaughter', :as => 'manslaughter'
+      get 'sexualassaultforcible', :action => 'sexualassaultforcible', :as => 'sexualassaultforcible'
+      get 'sexualassaultnonforcible', :action => 'sexualassaultnonforcible', :as => 'sexualassaultnonforcible'
+      get 'robbery', :action => 'robbery', :as => 'robbery'
+      get 'aggravated_assault', :action => 'aggravated_assault', :as => 'aggravated_assault'
+      get 'burglary', :action => 'burglary', :as => 'burglary'
+      get 'auto_theft', :action => 'auto_theft', :as => 'auto_theft'
+      get 'arson', :action => 'arson', :as => 'arson'
+    end
+  end
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
