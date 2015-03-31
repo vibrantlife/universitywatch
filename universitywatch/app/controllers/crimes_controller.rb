@@ -4,19 +4,27 @@ class CrimesController < ApplicationController
   end
 
   def murder
-   CrimesHelper.crime_selector("murder")
+   @crime_data = CrimesHelper.crime_selector("murder")
+   p @top_murder_schools = @crime_data[0]
+   p @top_murder_stats = @crime_data[1].join(', ')
   end
 
   def manslaughter
-    CrimesHelper.crime_selector("manslaughter")
+    @crime_data = CrimesHelper.crime_selector("manslaughter")
+    p @top_manslaughter_schools = @crime_data[0]
+    p @top_manslaughter_stats = @crime_data[1].join(', ')
   end
 
   def sexualassaultforcible
-    CrimesHelper.crime_selector("f_sex")
+    @crime_data = CrimesHelper.crime_selector("f_sex")
+    p @top_f_sex_schools = @crime_data[0]
+    p @top_f_sex_stats = @crime_data[1].join(', ')
   end
 
   def sexualassaultnonforcible
-    CrimesHelper.crime_selector("nf_sex")
+    @crime_data = CrimesHelper.crime_selector("nf_sex")
+    p @top_nf_sex_schools = @crime_data[0]
+    p @top_nf_sex_stats = @crime_data[1].join(', ')
   end
 
   def robbery
@@ -26,19 +34,27 @@ class CrimesController < ApplicationController
   end
 
   def aggravated_assault
-    CrimesHelper.crime_selector("ag_assault")
+    @crime_data = CrimesHelper.crime_selector("ag_assault")
+    p @top_ag_assault_schools = @crime_data[0]
+    p @top_ag_assault_stats = @crime_data[1].join(', ')
   end
 
   def burglary
-    CrimesHelper.crime_selector("burglary")
+    @crime_data = CrimesHelper.crime_selector("burglary")
+    p @top_burglary_schools = @crime_data[0]
+    p @top_burglary_stats = @crime_data[1].join(', ')
   end
 
   def auto_theft
-    CrimesHelper.crime_selector("auto_theft")
+    @crime_data = CrimesHelper.crime_selector("auto_theft")
+    p @top_auto_theft_schools = @crime_data[0]
+    p @top_auto_theft_stats = @crime_data[1].join(', ')
   end
 
   def arson
-    CrimesHelper.crime_selector("arson")
+    @crime_data = CrimesHelper.crime_selector("arson")
+    p @top_arson_schools = @crime_data[0]
+    p @top_arson_stats = @crime_data[1].join(', ')
   end
 
 end
