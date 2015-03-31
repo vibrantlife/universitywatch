@@ -121,9 +121,19 @@
 # end
 
 
-File.open(File.expand_path('db/geolocations.json', Rails.root), 'w') do |f|
+# File.open(File.expand_path('db/geolocations.json', Rails.root), 'w') do |f|
     
-    f.write(Geoinfo.all.to_json)
+#     f.write(Geoinfo.all.to_json)
     
+# end
+
+file = File.open(File.expand_path('db/geolocations.json', Rails.root))
+geolocations_array = JSON.parse(file)
+
+geolocations_array.each do |location|
+    Geolocation.create(lat: location.lat, lng: location.lng, school_id: location.school_id)
 end
+
+
+
 
