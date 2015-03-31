@@ -135,22 +135,9 @@ array.each do |school|
 end
 
 school_info.each do |school|
+  begin
     School.find_by(name: school.name).update_attributes(acronym: school.acronym)
+    rescue
+      p "it didn't work..."
+  end
 end
-
-
-# bad_school_data = School.all.select do |school|
-#     school.crimes.select do |crime|
-#         crime.murder == 0 &&
-#         crime.manslaughter == 0 &&
-#         crime.f_sex == 0 &&
-#         crime.nf_sex == 0 &&
-#         crime.robbery == 0 &&
-#         crime.ag_assault == 0 &&
-#         crime.burglary == 0 &&
-#         crime.auto_theft == 0 &&
-#         crime.arson == 0
-#     end.length == 3
-# end
-
-
