@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'heatmaps/create'
+
   get 'errors/file_note_found'
 
   get 'errors/unprocessable'
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
 
   # set up compare route
   post 'schools/create_geo_location', :to => 'geoinfos#create', :as => 'create_geo_location'
+  post 'heatmaps/store_array', :to => 'heatmaps#create', :as => 'store_array'
 
   resources :schools, only: [:index, :show] do
     collection do

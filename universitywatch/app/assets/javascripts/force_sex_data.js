@@ -69,7 +69,6 @@ $(function(){
 				console.log(response);
 				var count = response.length;
 				var new_data = { location: new google.maps.LatLng(response.school_data_weight_array[i][0], response.school_data_weight_array[i][1]), weight: response.school_data_weight_array[i][2]};
-				console.log(new_data);
 				school_weight_data.push(new_data);
 				console.log('success');
 			}).fail(function(error){
@@ -83,7 +82,22 @@ $(function(){
 		}, 100);
 
 	$('body').on('click', '.run_heatmap_data', function(){
-		generatedHeatMap(school_weight_data);
+		//generatedHeatMap(school_weight_data);
+		var weight_data= JSON.stringify(school_weight_data);
+		debugger;
+		$.ajax({
+			url: '/heatmaps/store_array',
+			type: 'post',
+			dataType: 'json',
+			data: { weightdatainfo: weight_data}
+		}).done(function(arrayFromServer){
+			console.log(arrayFromServer);
+			debugger;
+			console.log('success');
+		}).fail(function(error){
+			console.log('error');
+		});
+
 		console.log('click');
 	});
 
