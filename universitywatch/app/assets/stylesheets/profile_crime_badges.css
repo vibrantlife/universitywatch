@@ -1,10 +1,10 @@
 .crime-badges {
   border: 2px solid black;
+  height: 300px;
+  text-align: center;
 }
 
-.badge-13 {
-  border: 1px dotted pink;
-  background-image: url("badge2013.png");
+.badge-13, .badge-12, .badge-11 {
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -13,12 +13,24 @@
   -webkit-background-size: contain;
   -moz-background-size: contain;
   -o-background-size: contain;
-  text-align: center;
   line-height: 120px;
 }
+
 
 .crime-total-number {
   font-size: 2em;
   color: white;
   font-weight: bold;
+}
+
+.badge-13 {
+  background-image: url("badge2013.png");
+}
+
+.badge-11 {
+  background-image: url("badge2011.png");
+}
+
+.badge-12 {
+  background-image: url("badge2012.png");
 }
