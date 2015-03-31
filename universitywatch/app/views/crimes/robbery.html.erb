@@ -1,7 +1,5 @@
 <h1>I'm the robbery temp</h1>
 
-<h1>I'm the forcible sex template</h1>
-
  <div id="chart">
   <p>I'm in the chart div</p>
  </div>
@@ -11,14 +9,12 @@
       data: {
         columns: [
         // iterate through crime hash and place school name in array[0] and value of crime in array[1]
-          ['2011', 1, 2, 3, 4, 5],
-          ['2012', 2, 4, 6, 7, 7],
-          ['2013', 1, 2, 3, 4, 5]
+          // ['2011', 1, 2, 3, 4, 5],
+          // ['2012', 2, 4, 6, 7, 7],
+          ['2013', <%= @top_robbery_stats %>]
         ],
         types: {
           //names of schools will go in the key space
-                2011: 'bar',
-                2012: 'bar',
                 2013: 'bar'
               },
         colors: {
@@ -32,7 +28,7 @@
               x: {
                   type: 'category',
                   //names of schools will go tin these categories. iterate through and assign them to the correct places!
-                  categories: ['Murder', 'Manslaughter', 'Forcible Sex', 'Non-Forcible Sex', 'Robbery', 'Aggravated Assault', 'Burglary', 'Auto Theft', 'Arson'] }
+                  categories: ['<%= @top_robbery_schools[0] %>', '<%= @top_robbery_schools[1] %>', '<%= @top_robbery_schools[2] %>', '<%= @top_robbery_schools[3] %>', '<%= @top_robbery_schools[4] %>', '<%= @top_robbery_schools[5] %>', '<%= @top_robbery_schools[6] %>', '<%= @top_robbery_schools[7] %>', '<%= @top_robbery_schools[8] %>', '<%= @top_robbery_schools[9] %>',]}
             },
   });
 
