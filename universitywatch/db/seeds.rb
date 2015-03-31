@@ -106,6 +106,38 @@ crimes_array.each do |school|
 
 end
 
+file = File.read(File.expand_path('db/acronymdata.json', Rails.root))
+accronym_array = JSON.parse(file)
+
+array = accronym_array["results"]["university"]
+school_info = []
+array_of_garbage = []
+
+array.each_with_index do |school, index|
+  if school["acronym"]["text"] === ""
+    array_of_garbage << school
+    # array.delete_at(index)
+  end
+end
+
+array = (array - array_of_garbage)
+
+array.each do |school|
+  full_names = school["acronym"]["text"].split(",")
+  split_name = full_names[0].split(" ")
+  school_name = split_name[2..-1].join(" ")
+  acronym = split_name[0]
+  other_schools = full_names[1..-1]
+  other_schools.each do |school_name|
+    school_info << {name: school_name, acronym: acronym}
+  end
+  school_info << {name: school_name, acronym: acronym}
+end
+
+school_info.each do |school|
+    School.find_by(name: school.name).update_attributes(acronym: school.acronym)
+end
+
 
 # bad_school_data = School.all.select do |school|
 #     school.crimes.select do |crime|
