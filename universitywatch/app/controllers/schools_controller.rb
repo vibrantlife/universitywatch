@@ -79,6 +79,9 @@ end
   def abouttheproject
   end
 
+  def data
+  end
+
   private
 
   def current_pagination_params
