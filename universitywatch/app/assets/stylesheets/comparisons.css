@@ -31,9 +31,9 @@ td {
 
 td:nth-child(2) {
   width: 40%;
-  color: white;
-  text-shadow: 1px 1px grey;
-  text-align: right;
+  color: gray;
+/*  text-shadow: 1px 1px grey;
+*/  text-align: right;
   background-image: -webkit-linear-gradient(to left, #00DDD8, #00DDD8);
   background-image: -moz-linear-gradient(to left, #00DDD8, #00DDD8);
   background-image: linear-gradient(to left, #00DDD8, #00DDD8);
