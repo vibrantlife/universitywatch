@@ -12,4 +12,10 @@ class School < ActiveRecord::Base
     }
 
 
+    def forced_2013_sexual_assault
+      self.crimes.where(year: 2013)[0][:f_sex]
+    end
+
+
+
 end

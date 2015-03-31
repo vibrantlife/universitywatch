@@ -25,4 +25,5 @@ module SchoolsHelper
     number / school.population
   end
 
+  
 end

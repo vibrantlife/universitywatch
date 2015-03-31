@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
       get 'geo_location_info', :action => 'geo_location', :as => 'geo_location_info'
       get 'geo_info', :action => 'geo_info', :as => 'geo_info'
+      get 'heatmap_page', :action => 'heatmap_page', :as => 'heatmap_page'
+      get 'heatmap_data', :action => 'heatmap_data', :as => 'heatmap_data'
     end
     resources :crimes, only: [:index]
   end
