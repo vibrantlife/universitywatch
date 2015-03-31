@@ -1,1 +1,39 @@
 <h1>I'm the aggravated assault temp</h1>
+
+<h1>I'm the forcible sex template</h1>
+
+ <div id="chart">
+  <p>I'm in the chart div</p>
+ </div>
+<script>
+  var chart = c3.generate({
+      bindto: '#chart',
+      data: {
+        columns: [
+        // iterate through crime hash and place school name in array[0] and value of crime in array[1]
+          ['2011', 1, 2, 3, 4, 5],
+          ['2012', 2, 4, 6, 7, 7],
+          ['2013', 1, 2, 3, 4, 5]
+        ],
+        types: {
+          //names of schools will go in the key space
+                2011: 'bar',
+                2012: 'bar',
+                2013: 'bar'
+              },
+        colors: {
+          // will need to select 7 more colors :D
+                    2011: '#003058',
+                    2012: '#00DDD8',
+                    2013: '#517398'
+                }
+      },
+      axis: {
+              x: {
+                  type: 'category',
+                  //names of schools will go tin these categories. iterate through and assign them to the correct places!
+                  categories: ['Murder', 'Manslaughter', 'Forcible Sex', 'Non-Forcible Sex', 'Robbery', 'Aggravated Assault', 'Burglary', 'Auto Theft', 'Arson'] }
+            },
+  });
+
+</script>
