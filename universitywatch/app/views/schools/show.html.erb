@@ -2,10 +2,14 @@
 <div class="container">
 
   <div class="banner-panel row">
-    <div class="col-lg-1 col-md-1 circle"><%= @school.acronym %></div>
+    <div class="col-lg-1 col-md-1 circle acronym-section">
+      <div class="rotating-circle">
+      <h4><%= @school.acronym %></h4>
+      </div>
+    </div>
     <div class="col-lg-1 col-md-1"></div>
     <div class="col-lg-5 col-md-5">
-      <h3><%= @school.name %></h3>
+      <h2><%= @school.name %></h2>
       <div class="col-lg-6 col-md-6">
         <p>Location</p>
         <p><%= @school.city %>, <%= @school.state %></p>
@@ -30,7 +34,7 @@
 
     <div class="col-lg-5 col-md-5 crime-badges">
       <div class="row">
-        <h4>Total Crimes per Year</h4>
+        <h3>Total Crimes per Year</h3>
       </div>
       <div class="row">
         <div class="col-md-6 col-md-offset-3 badge-13"><span class="crime-total-number">17</span></div>
@@ -60,7 +64,7 @@
             <td><%= crime.murder %>
           </tr>
           <tr>
-            <th>manslaughter</th>
+            <th>Manslaughter</th>
             <td><%= crime.manslaughter %>
           </tr>
           <tr>
