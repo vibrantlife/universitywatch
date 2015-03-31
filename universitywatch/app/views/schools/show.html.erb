@@ -1,24 +1,26 @@
 
 <div class="container">
+
   <div class="banner-panel row">
-    <div class="col-lg-1 col-md-1 circle"><%= @school.acronym %></div>
-    <div class="col-lg-1 col-md-1"></div>
-    <div class="col-lg-5 col-md-5">
-      <h3><%= @school.name %></h3>
+    <div class="col-lg-2 col-md-2 col-s-12 col-xs-12  circle acronym-section">
+      <div class="rotating-circle">
+      <h3><%= @school.acronym %></h3>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-xs-12 col-s-12">
+      <h2 class="section-header-spacing"><%= @school.name %></h2>
       <div class="col-lg-6 col-md-6">
-        <p>Location</p>
-        <p><%= @school.city %>, <%= @school.state %></p>
+        <p class="profile-title">Location</p>
+        <p class="profile-detail"><%= @school.city %>, <%= @school.state %></p>
         <br>
-        <p>School Population</p>
-        <p><%= @school.population %></p>
+        <p class="profile-title">School Population</p>
+        <p class="profile-detail"><%= @school.population %></p>
       </div>
       <div class="col-lg-6 col-md-6">
-        <p>Type</p>
-        <p><%= @school.school_type %></p>
+        <p class="profile-title">Type</p>
+        <p class="profile-detail"><%= @school.school_type %></p><br>
 
-        <br>
-
-        <p>Tidbit?</p>
+        <p class="profile-title">Tweet This Page</p>
         <p>
           <a href="https://twitter.com/share" class="twitter-share-button" data-count="none">
             Tweet
@@ -26,158 +28,191 @@
         </p>
       </div>
     </div>
-    <div class="col-lg-5 col-md-5">
-      <p>2011: <%= get_status(@school, 2011) %></p>
-      <p>2012: <%= get_status(@school, 2012) %></p>
-      <p>2013: <%= get_status(@school, 2013) %></p>
+
+
+    <div class="col-lg-4 col-md-4 col-s-12 col-xs-12 crime-badges">
+      <div class="row">
+        <h3 class="section-header-spacing">Total Crimes per Year</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 badge-13"><span class="crime-total-number"><%= get_status(@school, 2013) %></span></div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-md-offset-3 badge-11"><span class="crime-total-number"><%= get_status(@school, 2011)%></span></div>
+        <div class="col-md-3 badge-12"><span class="crime-total-number">
+        <%= get_status(@school, 2012) %></span></div>
+      </div>
     </div>
+
   </div> <!-- End Row Div -->
 
-  <div class="row">
+  <div class="row stacked-bar-chart">
     <div class="col-lg-12 col-md-12">
       <h1>STACKED BAR CHART</h1>
       <div id="chart"></div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-lg-12 col-md-12">
-      <h1>School Data for 2011-2013</h1>
-      <% @crimes.where(year: 2013).each do |crime| %>
-        <table class="profile_page_table table table-striped table-responsive">
-          <caption class="text-left">Data for 2013</caption>
-          <tr>
-            <th>Murder</th>
-            <td><%= crime.murder %>
-          </tr>
-          <tr>
-            <th>manslaughter</th>
-            <td><%= crime.manslaughter %>
-          </tr>
-          <tr>
-            <th>Forcible Sex</th>
-            <td><%= crime.f_sex %>
-          </tr>
-          <tr>
-            <th>Non-Forcible Sex</th>
-            <td><%= crime.nf_sex %>
-          </tr>
-          <tr>
-            <th>Robbery</th>
-            <td><%= crime.robbery %>
-          </tr>
-          <tr>
-            <th>Aggravated Assault</th>
-            <td><%= crime.ag_assault %>
-          </tr>
-          <tr>
-            <th>Burglary</th>
-            <td><%= crime.burglary %>
-          </tr>
-          <tr>
-            <th>Auto Theft</th>
-            <td><%= crime.auto_theft %>
-          </tr>
-          <tr>
-            <th>Arson</th>
-            <td><%= crime.arson %>
-          </tr>
-        </table>
-      <% end %>
-    </div>
-  </div>
 
-    <div class="row">
-    <div class="col-lg-12 col-md-12">
-      <% @crimes.where(year: 2012).each do |crime| %>
-        <table class="profile_page_table table table-striped table-responsive">
-          <caption class="text-left">Data for 2012</caption>
-          <tr>
-            <th>Murder</th>
-            <td><%= crime.murder %>
-          </tr>
-          <tr>
-            <th>manslaughter</th>
-            <td><%= crime.manslaughter %>
-          </tr>
-          <tr>
-            <th>Forcible Sex</th>
-            <td><%= crime.f_sex %>
-          </tr>
-          <tr>
-            <th>Non-Forcible Sex</th>
-            <td><%= crime.nf_sex %>
-          </tr>
-          <tr>
-            <th>Robbery</th>
-            <td><%= crime.robbery %>
-          </tr>
-          <tr>
-            <th>Aggravated Assault</th>
-            <td><%= crime.ag_assault %>
-          </tr>
-          <tr>
-            <th>Burglary</th>
-            <td><%= crime.burglary %>
-          </tr>
-          <tr>
-            <th>Auto Theft</th>
-            <td><%= crime.auto_theft %>
-          </tr>
-          <tr>
-            <th>Arson</th>
-            <td><%= crime.arson %>
-          </tr>
-        </table>
-      <% end %>
-    </div>
-  </div>
+  <div class="row col-lg-12"><h1>SCHOOL DATA FOR 2011-2013</h1></div>
+  <div class="row table-data">
+    <div class="col-lg-4 col-md-4">
 
-  <div class="row">
-    <div class="col-lg-12 col-md-12">
       <% @crimes.where(year: 2011).each do |crime| %>
         <table class="profile_page_table table table-striped table-responsive">
-          <caption class="text-left">Data for 2011</caption>
-          <tr>
-            <th>Murder</th>
-            <td><%= crime.murder %>
+          <h3 class="text-left">2011</h3>
+          <thead>
+          <tr class="header-2011">
+            <th class="text-left">Crime</th>
+            <th class="text-left">Total</th>
           </tr>
-          <tr>
-            <th>manslaughter</th>
-            <td><%= crime.manslaughter %>
+          </thead>
+          <tbody class="table-hover">
+            <tr>
+              <td class="text-left">Murder</td>
+              <td class="text-left"><%= crime.murder %></td>
+            </tr>
+            <tr>
+              <td class="text-left">Manslaughter</td>
+              <td class="text-left"><%= crime.manslaughter %></td>
+            </tr>
+            <tr>
+              <td class="text-left">Sex Offense - Forcible</td>
+              <td class="text-left"><%= crime.f_sex %></td>
+            </tr>
+            <tr>
+              <td class="text-left">Sex Offense - Non-forcible</th>
+              <td class="text-left"><%= crime.nf_sex %></td>
+            </tr>
+            <tr>
+              <td class="text-left">Robbery</td>
+              <td class="text-left"><%= crime.robbery %></td>
+            </tr>
+            <tr>
+              <td class="text-left">Aggravated Assault</td>
+              <td class="text-left"><%= crime.ag_assault %></td>
+            </tr>
+            <tr>
+              <td class="text-left">Burglary</th>
+              <td class="text-left"><%= crime.burglary %></td>
+            </tr>
+            <tr>
+              <td class="text-left">Auto Theft</td>
+              <td class="text-left"><%= crime.auto_theft %></td>
+            </tr>
+            <tr>
+              <td class="text-left last-col">Arson</td>
+              <td class="text-left last-col"><%= crime.arson %></td>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+
+    <div class="col-lg-4 col-md-4">
+      <% @crimes.where(year: 2012).each do |crime| %>
+       <table class="profile_page_table table table-striped table-responsive">
+         <h3 class="text-left">2012</h3>
+         <thead>
+         <tr class="header-2012">
+           <th class="text-left">Crime</th>
+           <th class="text-left">Total</th>
+         </tr>
+         </thead>
+         <tbody class="table-hover">
+           <tr>
+             <td class="text-left">Murder</td>
+             <td class="text-left"><%= crime.murder %></td>
+           </tr>
+           <tr>
+             <td class="text-left">Manslaughter</td>
+             <td class="text-left"><%= crime.manslaughter %></td>
+           </tr>
+           <tr>
+             <td class="text-left">Sex Offense - Forcible</td>
+             <td class="text-left"><%= crime.f_sex %></td>
+           </tr>
+           <tr>
+             <td class="text-left">Sex Offense - Non-forcible</th>
+             <td class="text-left"><%= crime.nf_sex %></td>
+           </tr>
+           <tr>
+             <td class="text-left">Robbery</td>
+             <td class="text-left"><%= crime.robbery %></td>
+           </tr>
+           <tr>
+             <td class="text-left">Aggravated Assault</td>
+             <td class="text-left"><%= crime.ag_assault %></td>
+           </tr>
+           <tr>
+             <td class="text-left">Burglary</th>
+             <td class="text-left"><%= crime.burglary %></td>
+           </tr>
+           <tr>
+             <td class="text-left">Auto Theft</td>
+             <td class="text-left"><%= crime.auto_theft %></td>
+           </tr>
+           <tr>
+             <td class="text-left last-col">Arson</td>
+             <td class="text-left last-col"><%= crime.arson %></td>
+           </tr>
+         </tbody>
+       </table>
+      <% end %>
+    </div>
+
+    <div class="col-lg-4 col-md-4">
+      <% @crimes.where(year: 2013).each do |crime| %></td>
+        <table class="profile_page_table table table-striped table-responsive">
+          <h3 class="text-left">2013</h3>
+          <thead>
+          <tr class="header-2013">
+            <th class="text-left">Crime</th>
+            <th class="text-left">Total</th>
           </tr>
-          <tr>
-            <th>Forcible Sex</th>
-            <td><%= crime.f_sex %>
-          </tr>
-          <tr>
-            <th>Non-Forcible Sex</th>
-            <td><%= crime.nf_sex %>
-          </tr>
-          <tr>
-            <th>Robbery</th>
-            <td><%= crime.robbery %>
-          </tr>
-          <tr>
-            <th>Aggravated Assault</th>
-            <td><%= crime.ag_assault %>
-          </tr>
-          <tr>
-            <th>Burglary</th>
-            <td><%= crime.burglary %>
-          </tr>
-          <tr>
-            <th>Auto Theft</th>
-            <td><%= crime.auto_theft %>
-          </tr>
-          <tr>
-            <th>Arson</th>
-            <td><%= crime.arson %>
-          </tr>
+          </thead>
+          <tbody class="table-hover">
+            <tr>
+              <td class="text-left">Murder</td>
+              <td class="text-left"><%= crime.murder %></td>
+            </tr>
+            <tr>
+              <td class="text-left">Manslaughter</td>
+              <td class="text-left"><%= crime.manslaughter %></td>
+            </tr>
+            <tr>
+              <td class="text-left">Sex Offense - Forcible</td>
+              <td class="text-left"><%= crime.f_sex %></td>
+            </tr>
+            <tr>
+              <td class="text-left">Sex Offense - Non-forcible</th>
+              <td class="text-left"><%= crime.nf_sex %></td>
+            </tr>
+            <tr>
+              <td class="text-left">Robbery</td>
+              <td class="text-left"><%= crime.robbery %></td>
+            </tr>
+            <tr>
+              <td class="text-left">Aggravated Assault</td>
+              <td class="text-left"><%= crime.ag_assault %></td>
+            </tr>
+            <tr>
+              <td class="text-left">Burglary</th>
+              <td class="text-left"><%= crime.burglary %></td>
+            </tr>
+            <tr>
+              <td class="text-left">Auto Theft</td>
+              <td class="text-left"><%= crime.auto_theft %></td>
+            </tr>
+            <tr>
+              <td class="text-left last-col">Arson</td>
+              <td class="text-left last-col"><%= crime.arson %></td>
+            </tr>
+          </tbody>
         </table>
       <% end %>
     </div>
   </div>
-
+</div>
 
 </div> <!-- End Container Div -->
 <script>

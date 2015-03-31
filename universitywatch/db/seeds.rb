@@ -135,6 +135,5 @@ end
 school_info.each do |school|
   if School.find_by(name: school[:name])
     School.find_by(name: school[:name]).update_attributes(acronym: school[:acronym])
-    p "worked"
   end
 end

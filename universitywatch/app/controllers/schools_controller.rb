@@ -27,31 +27,30 @@ end
       redirect_to school
     else
       flash[:errors] = "No results. Please try again."
-      # @error = "No results. Please try again."
       redirect_to root_url
     end
   end
 
-def json_search
-  p params
-  search_value = School.search_by_school_info(params[:school_name]).limit(10)
-  render json: search_value
-end
-
-def state
-  state = params[:state_name]
-  @schools = School.where(state: state).paginate :page => params[:page]
-  respond_to do |format|
-    format.json {
-      render :json => {
-        :current_page => @schools.current_page,
-        :per_page => @schools.per_page,
-        :total_entries => @schools.total_entries,
-        :entries => @schools
-      }
-    }
+  def json_search
+    # p params
+    search_value = School.search_by_school_info(params[:school_name]).limit(10)
+    render json: search_value
   end
-end
+
+  def state
+    state = params[:state_name]
+    @schools = School.where(state: state).paginate :page => params[:page]
+    respond_to do |format|
+      format.json {
+        render :json => {
+          :current_page => @schools.current_page,
+          :per_page => @schools.per_page,
+          :total_entries => @schools.total_entries,
+          :entries => @schools
+        }
+      }
+    end
+  end
 
   def type
     state = params[:state_name]
@@ -118,10 +117,6 @@ end
   end
 
   private
-
-  def current_pagination_params
-  end
-
   def school_params
     params.require(:school).permit(:name)
   end
