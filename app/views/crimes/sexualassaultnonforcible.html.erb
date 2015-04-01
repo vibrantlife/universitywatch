@@ -1,4 +1,4 @@
-<h1>Top 10: Schools with Most Non-Forcible Sexual Assaults</h1>
+<h1 class="crime-title">Top 10: Schools with Most Non-Forcible Sexual Assaults</h1>
 
 <div id="chart">
  </div>
@@ -24,6 +24,12 @@
                   categories:
                   ["<%= @top_nf_sex_schools[0].html_safe %>", "<%= @top_nf_sex_schools[1].html_safe %>", "<%= @top_nf_sex_schools[2].html_safe %>", "<%= @top_nf_sex_schools[3].html_safe %>", "<%= @top_nf_sex_schools[4].html_safe %>", "<%= @top_nf_sex_schools[5].html_safe %>", "<%= @top_nf_sex_schools[6].html_safe %>", "<%= @top_nf_sex_schools[7].html_safe %>", "<%= @top_nf_sex_schools[8].html_safe %>", "<%= @top_nf_sex_schools[9].html_safe %>"]}
             },
+  });
+
+  $('.c3-event-rect').click(function() {
+    var school_index = parseInt($(this).attr("class").split(" ")[2].split("")[14]);
+    var school_id = <%=@top_school_ids%>[school_index]
+    window.location.href = "/schools/" + school_id;
   });
 
 </script>

@@ -14,6 +14,7 @@ class SchoolsController < ApplicationController
 
  def show
   @school = School.find(params[:id])
+  school_id = params[:id].to_i
   @crimes = @school.crimes
   @crime_2011 = @crimes.where(year: 2011)[0]
   @crime_2012 = @crimes.where(year: 2012)[0]
