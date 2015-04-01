@@ -15,6 +15,11 @@
   margin-bottom: 8%;
 }
 
+#first-school, #second-school{
+  padding: 10px;
+  font-size: 1.2em;
+}
+
 table {
   width: 100%;
   background: #eee;
