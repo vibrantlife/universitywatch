@@ -1,4 +1,4 @@
-<h1>Top 10: Schools with Most Aggravated Assaults</h1>
+<h1 class="crime-title">Top 10: Schools with Most Aggravated Assaults</h1>
 
 
   <div id="chart">
@@ -25,6 +25,12 @@
                   categories:
                   ["<%= @top_ag_assault_schools[0].html_safe %>", "<%= @top_ag_assault_schools[1].html_safe %>", "<%= @top_ag_assault_schools[2].html_safe %>", "<%= @top_ag_assault_schools[3].html_safe %>", "<%= @top_ag_assault_schools[4].html_safe %>", "<%= @top_ag_assault_schools[5].html_safe %>", "<%= @top_ag_assault_schools[6].html_safe %>", "<%= @top_ag_assault_schools[7].html_safe %>", "<%= @top_ag_assault_schools[8].html_safe %>", "<%= @top_ag_assault_schools[9].html_safe %>"]}
             },
+  });
+
+  $('.c3-event-rect').click(function() {
+    var school_index = parseInt($(this).attr("class").split(" ")[2].split("")[14]);
+    var school_id = <%=@top_school_ids%>[school_index]
+    window.location.href = "/schools/" + school_id;
   });
 
 </script>

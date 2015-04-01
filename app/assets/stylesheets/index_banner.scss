@@ -1,0 +1,136 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+div.index-banner {
+  /*border: 1px solid black;*/
+}
+
+.index-banner {
+  background: #00DDD8;
+}
+
+.headline-white {
+  color: white;
+}
+
+.left-col-logo {
+  text-align: center;
+}
+
+.left-col-logo img {
+  width: 80%;
+  margin: 10%;
+}
+
+.banner-stats {
+  text-align: center;
+}
+
+.banner-right-content {
+  padding-right: 10px;
+  text-align: left;
+}
+
+
+
+
+/*search bar*/
+
+
+.search-bar {
+  padding: 5%;
+  display: inline-block;
+}
+
+/* zocial */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+/** {
+  box-sizing: border-box;
+}*/
+
+.cont {
+  position: relative;
+  margin:20px auto;
+  width: 60%;
+  display: inline;
+}
+
+.srchFld {
+  border: 0;
+  border-radius:7px;
+  padding: 0 17px;
+  padding-right:55px;
+  display:inline-block;
+  float: left;
+  width: 80%;
+  border-bottom:5px solid #bdc3c7;
+  height: 50px;
+  font-family: 'Roboto', sans-serif;
+  color: #7f8c8d;
+  font-size:19px;
+  margin-bottom: 10%;
+
+}
+
+/*.srchFld:focus {
+  outline-color: rgba(white,0);
+}*/
+
+.srchBtn {
+  border: 0;
+  border-radius:7px;
+  padding: 0 17px;
+  background: #003058;
+  display:inline-block;
+  float: right;
+  width: 15%;
+  border-bottom:5px solid rgb(37, 96, 145);
+  color:white;
+  height: 50px;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  font-size:18px;
+  cursor: pointer;
+}
+
+/*.srchBtn:active {
+  border-bottom:0px solid #c0392b;
+}*/
+
+.ico {
+  position: absolute;
+  right: 162px;
+  top: 0px;
+  display: inline;
+  font-size:35px;
+  color:#7f8c8d;
+}
+
+
+@media screen and (max-width: 1600px) {
+  .ico {
+    right: 113px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .ico {
+    right: 186px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .ico {
+    right: 186px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .ico {
+    right: 186px;
+  }
+}
+
+
