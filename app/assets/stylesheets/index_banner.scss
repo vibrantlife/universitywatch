@@ -10,6 +10,8 @@ div.index-banner {
 
 .headline-white {
   color: white;
+  font-size: 3em;
+  margin-bottom: 25px;
 }
 
 .left-col-logo {
@@ -18,11 +20,23 @@ div.index-banner {
 
 .left-col-logo img {
   width: 80%;
-  margin: 10%;
+  margin-top: 5%;
+  margin-left: 70px;
 }
 
 .banner-stats {
   text-align: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.banner-stats h1 {
+  font-size: 45px;
+  color: white;
+}
+
+.stats-small-caption {
+  font-size: 16px;
 }
 
 .banner-right-content {
@@ -30,8 +44,16 @@ div.index-banner {
   text-align: left;
 }
 
+.banner-small-caption {
+  font-size: 1.45em;
+  color: #393939;
+}
 
-
+.banner-container {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5%
+}
 
 /*search bar*/
 
@@ -39,6 +61,7 @@ div.index-banner {
 .search-bar {
   padding: 5%;
   display: inline-block;
+  padding-bottom: 0px;
 }
 
 /* zocial */
