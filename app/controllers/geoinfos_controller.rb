@@ -7,7 +7,7 @@ class GeoinfosController < ApplicationController
 	end
 
 	def heatmap
-
+		# render "geoinfos/heatmap"
 	end
 
 	private
