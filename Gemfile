@@ -35,6 +35,7 @@ gem 'bower-rails'
 gem "d3-rails"
 gem 'will_paginate', '~> 3.0.6'
 gem 'underscore-rails'
+gem 'jquery-turbolinks'
 
 
 # Use ActiveModel has_secure_password
