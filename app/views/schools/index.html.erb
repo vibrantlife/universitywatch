@@ -2,10 +2,19 @@
 
 <%= render "schools/index_banner"%>
 
-<div class="container-fluid scatter-section">
-  <%= render "geoinfos/get_heatmap_data" %>
-</div>
+    <div class="row">
+      <div class="search-bar">
+        <%= form_for "school", url: search_schools_path, :html => {class: 'form-wrapper'}, action: "search_school" do |f| %>
+          <%= f.text_field :name, class: 'search-bar' %>
+          <%= f.submit "Search", :class => 'submit_btn' %>
+        <% end %>
+        <% if flash[:errors] %>
+          <p class="error-message"><%= flash[:errors] %></p>
+        <% end %>
+      </div>
+    </div>
 
+  </div>
 
 <div class="container-fluid crime-categories">
   <div id ="icon-set-wrapper">
