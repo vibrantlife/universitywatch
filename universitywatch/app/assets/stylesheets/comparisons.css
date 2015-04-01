@@ -1,9 +1,18 @@
 #comparison-charts{
-  margin: 80px;
+  margin: 100px;
+  text-align: left;
 }
 
 #compare_btn {
   width: 50%;
+}
+
+#compare-btn-wrapper {
+  text-align: center;
+}
+
+#search-wrapper {
+  margin-bottom: 8%;
 }
 
 table {
@@ -31,7 +40,7 @@ td {
 
 td:nth-child(2) {
   width: 40%;
-  color: gray;
+  color: black;
 /*  text-shadow: 1px 1px grey;
 */  text-align: right;
   background-image: -webkit-linear-gradient(to left, #00DDD8, #00DDD8);
@@ -42,7 +51,8 @@ td:nth-child(2) {
 
 td:nth-child(3) {
   width: 40%;
-  color: white;
+  color: black;
+  text-align: left;
   text-shadow: 1px 1px grey;
   background-image: -webkit-linear-gradient(right, #517398, #517398);
   background-image: -moz-linear-gradient(right, #517398, #517398);
