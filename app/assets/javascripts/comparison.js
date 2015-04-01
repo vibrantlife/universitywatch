@@ -64,7 +64,7 @@ var print_comparison_chart = function() {
 }
 
 
-$(function() {
+$(function(){
     $('#compare_btn').on('click', function() {
         var firstSchool = $('#first-school').val();
         var secondSchool = $('#second-school').val();
@@ -114,4 +114,4 @@ $(function() {
     });
 
 
-})
+});
