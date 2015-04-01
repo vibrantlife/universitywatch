@@ -33,7 +33,7 @@
 
 
     <div class="row">
-      <div class="search-bar">
+      <div class="search">
         <%= form_for "school", url: search_schools_path, :html => {class: 'form-wrapper'}, action: "search_school" do |f| %>
           <%= f.text_field :name, class: 'search-bar' %>
           <%= f.submit "Search", :class => 'submit_btn' %>
