@@ -34,16 +34,6 @@ function drawSchoolResults(stateName, pageNumber, response){
 
   };
 
-//get schools based on state and type
-// we need to get the state
-// get the type from text between a tags
-
-
-// var getSchoolsByType = function(){
-//   // $('#dropdown-type').on('click', 'a', console.log('dropdown clicked'));
-//   console.log('working function');
-// }
-
 // search bar
 $(document).ready(function(){
   $(".search-bar").on("keyup", function(){
