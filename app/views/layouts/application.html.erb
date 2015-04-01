@@ -18,11 +18,13 @@
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
 </head>
-<body class="controller_<%= controller_name %>">
-
-  <%= render "schools/navbar_update"  %>
-  <%= render "schools/footer" %>
+<body>
+<div class="container-fluid">
+ <%= render "schools/navbar_update"  %>
 <%= yield %>
-
+<footer>
+  <%= render "schools/footer" %>
+</footer>
+</div>
 </body>
 </html>
