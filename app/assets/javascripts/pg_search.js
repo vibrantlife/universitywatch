@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
   $(".search-bar").on("keyup", function(event){
     var data = $(this).val();
     console.log(data);
