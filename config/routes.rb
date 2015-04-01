@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/data' => 'schools#data'
   get 'heatmaps/create'
 
+  get '/heatmaps' => 'geoinfos#heatmap'
+
   get 'errors/file_note_found'
   get 'errors/unprocessable'
   get 'errors/internal_server_error'

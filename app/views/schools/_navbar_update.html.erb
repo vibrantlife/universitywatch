@@ -1,33 +1,3 @@
-<!-- <nav id="custom_nav">
-  <ul id="nav_ul">
-    <li class="nav_li"><%= link_to "University Watch", root_path %></li>
-    <li class="nav_li"><%= link_to "Search by State", states_schools_path %></li>
-    <li class="nav_li"><%= link_to "Compare Schools", compare_schools_path %></li>
-    <li class="nav_li"><%= link_to "Data", data_path %></li>
-    <li class="nav_li"><%= link_to "About the Project", abouttheproject_path %></li>
-
-
-
-    <li class="dropdown dropdown-large">
-      <a class="nav_li" href="#" class="dropdown-toggle"> View Schools with Top Crimes <b class="caret"></b></a>
-
-      <ul class="dropdown-menu">
-          <ul>
-            <li><%= link_to "Arson", arson_crimes_path%></li>
-            <li><%= link_to "Aggravated Assault", aggravated_assault_crimes_path %></li>
-            <li><%= link_to "Auto Theft", auto_theft_crimes_path %></li>
-            <li><%= link_to "Burglary", burglary_crimes_path %></li>
-            <li><%= link_to "Manslaughter", manslaughter_crimes_path %></li>
-            <li><%= link_to "Murder", murder_crimes_path %></li>
-            <li><a href="#">Example</a></li>
-            <li class="divider"></li>
-          </ul>
-        </ul>
-      </li -->
-
-      <!-- attempated navbar above  -->
-
-
 
       <div id="custom_nav">
         <div class="container">
@@ -43,6 +13,7 @@
               <li class="nav_li"><%= link_to "Search by State", states_schools_path %></li>
               <li class="nav_li"><%= link_to "Compare Schools", compare_schools_path %></li>
               <li class="nav_li"><%= link_to "Data", data_path %></li>
+              <li class="nav_li"><%= link_to "Heatmaps", heatmaps_path%></li>
               <li class="nav_li"><%= link_to "About the Project", abouttheproject_path %></li>
 
               <li>
@@ -51,9 +22,9 @@
                   <li><%= link_to "Arson", arson_crimes_path%></li>
                   <li><%= link_to "Aggravated Assault", aggravated_assault_crimes_path %></li>
                   <li><%= link_to "Auto Theft", auto_theft_crimes_path %></li>
-                  <li><%= link_to "Burglary", burglary_crimes_path %></li>
-                  <li><%= link_to "Manslaughter", manslaughter_crimes_path %></li>
                   <li><%= link_to "Murder", murder_crimes_path %></li>
+                  <li><%= link_to "Sexual Assault - Forcible", sexualassaultforcible_crimes_path %></li>
+                  <li><%= link_to "Sexual Assault - Non-Forcible", sexualassaultnonforcible_crimes_path %></li>
                   <li class="dropdown-submenu">
 
                   </li>
@@ -61,28 +32,4 @@
               </div><!--/.nav-collapse -->
             </div>
           </div>
-
-
-
-
-
-
-
-
-
-
-          <!-- navbar number 2 -->
-
-
-
-          <% if !current_page?('/') %>
-          <div>
-            <form class="navbar-form navbar-right" role="search">
-             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search School...">
-            </div>
-            <button type="submit" class="btn btn-default">Search</button>
-          </form>
-        </div>
-        <% end %>
       </nav>

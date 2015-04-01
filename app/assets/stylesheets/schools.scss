@@ -27,10 +27,6 @@ body {
   padding: 1em;
 }
 
-.crime-categories {
-  background-color: #F8F8F8;
-  height: 50%;
-}
 
 .col-md-4 p {
   text-align: justify;
@@ -49,7 +45,12 @@ p.category-title {
 
 
 .scatter-section {
-  margin: 3em;
+  margin: 5em;
+
+}
+
+.heatmap-title {
+  margin-bottom: 5%;
 }
 
 
