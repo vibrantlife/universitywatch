@@ -138,7 +138,7 @@ $(function(){
 	// 	}, 100);
 
 	$('body').on('click', function(){
-		load_data_from_server();
+		// load_data_from_server();
 		// console.log(school_weight_data);
 		console.log('click run_heatmap_data');
 	});
