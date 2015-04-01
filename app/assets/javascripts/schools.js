@@ -3,7 +3,7 @@ function drawSchoolResults(stateName, pageNumber, response){
      $('#school_table').data('stateName', stateName);
 
      $('#school_table').text('');
-      var tableSetup = '<div id="table_generator"><table class="table table-hover"><tr class="header-2011"><th>School Name</th><th>School Street</th><th>City, State</th></tr></table></div>';
+      var tableSetup = '<div id="table_generator"><table class="table table-hover"><tr class="state-chart-header"><th>School Name</th><th>School Street</th><th>City, State</th></tr></table></div>';
       $('#school_table').append(tableSetup);
       for(var i=0; i < response.entries.length; i++){
         var handlebarScript = '';
