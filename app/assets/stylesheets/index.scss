@@ -35,9 +35,18 @@ p.definition-text{
   background-color: #F8F8F8;
 }
 
-#icon-set-wrapper {
-  padding-bottom: 5%;
-  margin-left: 10%;
-  margin-right: 10%;
+.crime-categories {
+  background-color: #F8F8F8;
+  height: 50%;
 }
 
+#icon-set-wrapper {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin: 0 auto;
+  width: 55%;
+}
+
+h1.icon-header {
+  margin-bottom: 7%;
+}
