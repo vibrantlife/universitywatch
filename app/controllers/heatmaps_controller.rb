@@ -9,4 +9,8 @@ class HeatmapsController < ApplicationController
 		p response_data
 		render status: 200, json: response_data
 	end
+
+	def heatmap
+		render "geoinfos/heatmap"
+	end
 end

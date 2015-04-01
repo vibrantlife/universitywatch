@@ -47,7 +47,7 @@ function drawSchoolResults(stateName, pageNumber, response){
 // search bar
 $(document).ready(function(){
   $(".search-bar").on("keyup", function(){
-    var data = $(".search-bar").val();
+    var data = $(this).val();
     url = "/schools/json_search/" + data;
     $.ajax({
       url: url
