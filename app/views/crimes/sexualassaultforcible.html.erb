@@ -26,5 +26,11 @@
             },
   });
 
+  $('.c3-event-rect').click(function() {
+    var school_index = parseInt($(this).attr("class").split(" ")[2].split("")[14]);
+    var school_id = <%=@top_school_ids%>[school_index]
+    window.location.href = "/schools/" + school_id;
+  });
+
 </script>
 
