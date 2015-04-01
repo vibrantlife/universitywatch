@@ -1,9 +1,5 @@
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 
-div {
-  border: 1px solid black;
-}
-
 div.index-banner {
   /*border: 1px solid black;*/
 }
@@ -68,7 +64,7 @@ div.index-banner {
   padding-right:55px;
   display:inline-block;
   float: left;
-  width: 500px;
+  width: 80%;
   border-bottom:5px solid #bdc3c7;
   height: 50px;
   font-family: 'Roboto', sans-serif;
@@ -105,8 +101,36 @@ div.index-banner {
 
 .ico {
   position: absolute;
-  right: calc(100% - 490px);
+  right: 162px;
   top: 0px;
+  display: inline;
   font-size:35px;
   color:#7f8c8d;
 }
+
+
+@media screen and (max-width: 1600px) {
+  .ico {
+    right: 113px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .ico {
+    right: 186px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .ico {
+    right: 186px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .ico {
+    right: 186px;
+  }
+}
+
+
