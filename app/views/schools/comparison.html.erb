@@ -1,11 +1,11 @@
 <div class="container-fluid" id="comparison-charts">
-  <div class="row">
+  <div class="row" id ="search-wrapper">
     <div class="col-md-4">
         <div class="row">
             <%= text_field_tag 'first-school', nil, class: "search-bar form-control" %>
         </div>
     </div>
-        <div class ="col-md-4"><button id="compare_btn" class="btn btn-default">Compare</button></div>
+        <div class ="col-md-4" id="compare-btn-wrapper"><button id="compare_btn" class="btn btn-default">Compare</button></div>
     <div class="col-md-4">
         <div class="row">
             <%= text_field_tag 'second-school', nil, class: 'search-bar form-control' %>
@@ -14,12 +14,19 @@
 
   </div>
 
+  <h3 class ="data-year-caption">2011 School Data</h3>
   <div class="row table_eleven">
   </div>
 
+  <h3 class ="data-year-caption">2012 School Data</h3>
   <div class="row table_twelf">
   </div>
 
+  <h3 class ="data-year-caption">2013 School Data</h3>
   <div class="row table_thirteen">
   </div>
 </div>
+
+<script type="text/javascript">
+  $('.data-year-caption').hide();
+</script>
