@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   get '/abouttheproject' => 'schools#abouttheproject'
   get '/data' => 'schools#data'
-  get 'heatmaps/create'
 
   get '/heatmaps' => 'geoinfos#heatmap'
 
@@ -13,9 +12,6 @@ Rails.application.routes.draw do
 
   root 'schools#index'
 
-  # set up compare route
-  post 'schools/create_geo_location', :to => 'geoinfos#create', :as => 'create_geo_location'
-  post 'heatmaps/store_array', :to => 'heatmaps#create', :as => 'store_array'
   get 'heatmaps/show', :to => 'heatmaps#show', :as => 'show_heatmap'
 
   resources :schools, only: [:index, :show] do
@@ -28,9 +24,6 @@ Rails.application.routes.draw do
       get 'compare_two', :action => 'compare_two', :as => 'compare_two'
       get 'state/:state_name/:school_type', :action => 'type', :as => 'type'
 
-      get 'geo_location_info', :action => 'geo_location', :as => 'geo_location_info'
-      get 'geo_info', :action => 'geo_info', :as => 'geo_info'
-      get 'heatmap_page', :action => 'heatmap_page', :as => 'heatmap_page'
       get 'heatmap_data', :action => 'heatmap_data', :as => 'heatmap_data'
     end
   end
