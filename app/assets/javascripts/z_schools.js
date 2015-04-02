@@ -71,7 +71,8 @@ $(function(){
 
   prev.hide();
   next.hide();
-  var map = new Datamap({
+
+  var state_map = new Datamap({
     element: $('#state_container')[0],
     scope: 'usa'
   });
@@ -96,7 +97,7 @@ $(function(){
       getStateSchools(stateName, currentPage + 1);
     });
 
- prev.click(function(){
+  prev.click(function(){
      var currentPage = parseInt(school_table.data('currentPage'));
      var stateName = school_table.data('stateName');
 
