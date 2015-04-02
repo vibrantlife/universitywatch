@@ -28,6 +28,7 @@
     $(document).ready(function(){
       $('#previous').hide();
       $('#next').hide();
+      $('.state-chart-header').hide();
       console.log("here");
       var map = new Datamap({
         element: $('#state_container')[0],
@@ -36,6 +37,7 @@
       $('.datamaps-subunit').on('click', function(){
         $('#previous').show();
         $('#next').show();
+        $('.state-chart-header').show();
           var $state = $(this);
           var classes= $state.attr("class").split(' ');
           var stateName = classes[1];
