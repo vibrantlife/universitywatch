@@ -6,24 +6,28 @@
   </div>
 
   <div class="row" id ="search-wrapper">
-    <div class="col-md-4">
-        <div class="row">
-            <%= text_field_tag 'first-school', nil, class: "search-bar form-control" %>
-        </div>
+    <div class="row">
+      <div class="col-md-4">
+          <div class="row">
+              <%= text_field_tag 'first-school', nil, class: "search-bar form-control" %>
+          </div>
+      </div>
+          <div class ="col-md-4" id="compare-btn-wrapper"><button id="compare_btn" class="btn btn-default">Compare</button></div>
+      <div class="col-md-4">
+          <div class="row">
+              <%= text_field_tag 'second-school', nil, class: 'search-bar form-control' %>
+          </div>
+      </div>
     </div>
-        <div class ="col-md-4" id="compare-btn-wrapper"><button id="compare_btn" class="btn btn-default">Compare</button></div>
-    <div class="col-md-4">
-        <div class="row">
-            <%= text_field_tag 'second-school', nil, class: 'search-bar form-control' %>
-        </div>
+
+    <div class="row student-pop">
+      <div class="col-md-2 grey-background"></div>
+      <div class="school1-name col-md-4 grey-background"></div>
+      <div class="school2-name col-md-4 col-md-offset-2 grey-background"></div>
     </div>
 
   </div>
   <div class="annual-data-section">
-    <div class="row student-pop">
-      <div class="school1-name col-md-6"></div>
-      <div class="school2-name col-md-6"></div>
-    </div>
     <h2 class ="data-year-caption">2011 School Data</h2>
     <div class="row table_eleven">
     </div>

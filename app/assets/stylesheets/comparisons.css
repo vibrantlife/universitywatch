@@ -1,4 +1,3 @@
-
 #compare_btn {
   width: 50%;
 }
@@ -8,6 +7,8 @@
 }
 
 #search-wrapper {
+  margin-right: 4%;
+  margin-left: 4%;
   margin-bottom: 8%;
 }
 
@@ -17,17 +18,40 @@
 }
 
 .student-pop {
-  margin-top: 5%;
-  margin-bottom: 5%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  margin-bottom: 8%;
+}
+
+.grey-background{
+  background-color: #555;
+  color: #fff;
 }
 
 
-.school1-name, .school2-name {
+.school1-name{
   margin-right: -15px;
-  margin-left: -15px;
+  margin-left: 0px;
 }
+
+.school2-name {
+  margin-left: 25px;
+}
+
+.school-name-as-header{
+  font-size: 1.5em;
+}
+
+.box-to-footer{
+  height: 170px;
+}
+
+/*.school-population-on-the-top{
+  font-size: 1.2em;
+}*/
 .annual-data-section {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   text-align: left;
 }
