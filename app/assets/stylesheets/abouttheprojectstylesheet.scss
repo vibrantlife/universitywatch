@@ -3,9 +3,6 @@
   margin: 0 auto;
 }
 
-* {
-  border: 1px solid pink;
-}
 
 .banner {
   height: 500px;
@@ -48,13 +45,13 @@
 
 
 
-.tech-used-image img {
+.tech-used-image img, .success-img {
   height: 500px;
 }
 
 .title-header {
   font-size: 4em;
-  color: white;
+  color: black;
   text-shadow: 1px 1px grey;
 }
 
@@ -62,6 +59,7 @@
   color: white;
   padding: 15px;
 }
+
 .color-block {
   height: 40%;
   background: #262c3a;
@@ -71,16 +69,16 @@
   color: white;
 }
 
-.tech .title-header{
+.success-img {
+  margin-bottom: 5%
+}
+
+.fa {
   color: black;
 }
 
-.fa-cogs {
-  color: black;
-}
 
-
-.tech, .about-content {
+.tech, .about-content, .success-section {
   padding: 5%;
 }
 
