@@ -49,8 +49,12 @@ i.fa-users, i.fa-wrench {
 }
 
 
-.tech-used-image img, .success-img, {
+.tech-used-image img, .success-img, .hurdles-img {
   height: 500px;
+}
+
+.hurdles-img {
+
 }
 
 .tech-used-image {
@@ -91,6 +95,9 @@ i.fa-users, i.fa-wrench {
   padding: 7%;
 }
 
+.hurdles-section {
+  background-color: #262c3a;
+}
 
 .stretch-img {
   width: 70%;
@@ -99,13 +106,15 @@ i.fa-users, i.fa-wrench {
 .stretch-section {
   background-image: url("stretchrocket.png");
   background-repeat: no-repeat;
-  background-size: 100%;
-  height: 500px;
+  background-size: 70%;
+  background-position: center;
+  height: 550px;
   padding: 3% 7%;
   margin-top: 7%;
   margin-bottom: 7%;
   text-align: left;
 }
+
 
 .team-section {
   height: 500px;
