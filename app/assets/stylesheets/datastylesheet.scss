@@ -1,26 +1,37 @@
 
 .data-banner {
-  background-image: url("databackground.png");
   height: 265px;
-  background-size: contain;
   text-align: center;
   margin-bottom: 5%;
 }
 
 .data-banner h1{
   font-size: 4em;
-  /*text-shadow: 1px 2px black;*/
-  color: black;
+  color: #333333;
   line-height: 200px;
+}
+
+.data-bkgd {
+  width: 100%;
 }
 
 .background {
     margin-bottom: 8%;
 }
 
+.data-banner .info-container p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+}
+
 .info-container{
     width: 85%;
     margin: auto;
+}
+
+.center-links {
+  text-align: center;
+  padding-top: 5%;
 }
 
 .info-container p
