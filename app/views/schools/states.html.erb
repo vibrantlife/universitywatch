@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid page-width">
   <div class="row">
       <div class="search_by_state">
-        Search By State
+        <h1 class="page-header">Search by State</h1>
       </div>
   </div>
 
@@ -23,45 +23,5 @@
       </div>
   </div>
 </div>
-
-<script>
-    $(document).ready(function(){
-      $('#previous').hide();
-      $('#next').hide();
-      console.log("here");
-      var map = new Datamap({
-        element: $('#state_container')[0],
-        scope: 'usa'
-      });
-      $('.datamaps-subunit').on('click', function(){
-        $('#previous').show();
-        $('#next').show();
-          var $state = $(this);
-          var classes= $state.attr("class").split(' ');
-          var stateName = classes[1];
-          getStateSchools(stateName, 1);
-
-          // Scroll down to the Table when state is clicked:
-          $('body').animate({
-              scrollTop: $("#school_table").offset().top},
-              'slow');
-      });
-
-      $('#next').click(function(){
-          var currentPage = parseInt($('#school_table').data('currentPage'));
-          var stateName = $('#school_table').data('stateName');
-
-          getStateSchools(stateName, currentPage + 1);
-        });
-
-     $('#previous').click(function(){
-         var currentPage = parseInt($('#school_table').data('currentPage'));
-         var stateName = $('#school_table').data('stateName');
-
-         getStateSchools(stateName, currentPage - 1);
-       });
-
-    });
-</script>
 
 

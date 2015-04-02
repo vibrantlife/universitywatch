@@ -1,29 +1,45 @@
-function drawSchoolResults(stateName, pageNumber, response){
-     $('#school_table').data('currentPage', pageNumber);
-     $('#school_table').data('stateName', stateName);
+$(function(){
+  var school_table = $('#school_table'),
+      tableSetup = '<div id="table_generator"><table class="table table-hover"><tr><th>School Name</th><th>School Street</th><th>City, State</th></tr></table></div>',
+      handlebarScript = '',
+      clear_school_table = school_table.text(''),
+      prev = $('#previous'),
+      next = $('#next');
 
-     $('#school_table').text('');
-      var tableSetup = '<div id="table_generator"><table class="table table-hover"><tr><th>School Name</th><th>School Street</th><th>City, State</th></tr></table></div>';
-      $('#school_table').append(tableSetup);
-      for(var i=0; i < response.entries.length; i++){
-        var handlebarScript = '';
-        handlebarScript = '<tr><th><a href="/schools/'+response.entries[i].id+'">'+response.entries[i].name+'</a></th><th>'+response.entries[i].street+'</th><th>' + response.entries[i].city + ', ' + response.entries[i].state + '</th></tr>';
+  var handlebarScriptFunc = function(collectionofSchool, idx){
+    return '<tr><th><a href="/schools/'+collectionofSchool[idx].id+'">'+collectionofSchool[idx].name+'</a></th><th>'+collectionofSchool[idx].street+'</th><th>' + collectionofSchool[idx].city + ', ' + collectionofSchool[idx].state + '</th></tr>';
+  }
+
+  var iterateCollections = function(counter, collectionofSchool){
+    for(var i=0; i < counter; i++){
+        handlebarScript = '';
+        handlebarScript = handlebarScriptFunc(collectionofSchool, i);
         $('.table-hover').append(handlebarScript);
-      }
-}
+    }
+  }
 
-// get list of all schools for state
+  var drawSchoolResults = function(stateName, pageNumber, response){
+        school_table.data('currentPage', pageNumber);
+        school_table.data('stateName', stateName);
+        school_table.text('');
+        school_table.append(tableSetup);
+
+      var collectionofSchool = response.entries,
+          count_of_school = collectionofSchool.length;
+
+      iterateCollections(count_of_school, collectionofSchool);
+  };
+
+  // get list of all schools for state
   var getStateSchools = function(stateName, pageNumber){
     $.ajax({
-      url: '/schools/state/' + stateName + '/?page=' + pageNumber ,
+      url: '/schools/state/' + stateName + '/?page=' + pageNumber,
       type: 'GET',
       dataType: 'json',
     })
     .done(function(response) {
       console.log("success", response.entries);
-// ;      $('#dropdown-type').removeAttr('style');
       drawSchoolResults(stateName, pageNumber,response);
-      // $('#dropdown-type').on('click', 'a', getSchoolsByType(stateName));
     })
     .fail(function() {
       console.log("error");
@@ -34,55 +50,57 @@ function drawSchoolResults(stateName, pageNumber, response){
 
   };
 
-// search bar
-$(document).ready(function(){
-  $(".search-bar").on("keyup", function(){
-    var data = $(this).val();
-    url = "/schools/json_search/" + data;
+  //filtering schools by type
+  var getSchoolsByType = function(stateName){
+    var type = $(this).text();
+    console.log(stateName, type);
     $.ajax({
-      url: url
+      url: '/schools/state/' + stateName + '/' + type,
+      type: 'GET',
+      dataType: 'json',
     })
-    .done(function(response){
-      console.log(response)
-      availableTags = [];
-      for (var i = 0; i < response.length; i++){
-        availableTags.push(response[i].name);
-      }
-      $(".search-bar").autocomplete({
-        source: availableTags
-      });
+    .done(function(schoolsTypeData) {
+      clear_school_table;
+      school_table.append(tableSetup);
+      iterateCollections(schoolsTypeData.length, schoolsTypeData);
     })
-    .fail(function(){
-      console.log("fail")
-    })
+    .fail(function() {
+      console.log("error");
+    });
+  }
+
+  prev.hide();
+  next.hide();
+  var map = new Datamap({
+    element: $('#state_container')[0],
+    scope: 'usa'
   });
+  $('.datamaps-subunit').on('click', function(){
+    prev.show();
+    next.show();
+      var $state = $(this);
+      var classes= $state.attr("class").split(' ');
+      var stateName = classes[1];
+      getStateSchools(stateName, 1);
+
+      // Scroll down to the Table when state is clicked:
+      $('body').animate({
+          scrollTop: school_table.offset().top},
+          'slow');
+  });
+
+  next.click(function(){
+      var currentPage = parseInt(school_table.data('currentPage'));
+      var stateName = school_table.data('stateName');
+
+      getStateSchools(stateName, currentPage + 1);
+    });
+
+ prev.click(function(){
+     var currentPage = parseInt(school_table.data('currentPage'));
+     var stateName = school_table.data('stateName');
+
+     getStateSchools(stateName, currentPage - 1);
+   });
 
 });
-
-//filtering schools by type
-var getSchoolsByType = function(stateName){
-  var type = $(this).text();
-  console.log(stateName, type);
-  $.ajax({
-    url: '/schools/state/' + stateName + '/' + type,
-    type: 'GET',
-    dataType: 'json',
-  })
-  .done(function(schoolsTypeData) {
-    $('#school_table').text('');
-    var tableSetup = '<div id="table_generator"><table class="table table-hover"><tr><th>School Name</th><th>School Street</th><th>City, State</th></tr></table></div>';
-    $('#school_table').append(tableSetup);
-    for(var i=0; i < schoolsTypeData.length; i++){
-      var handlebarScript = '';
-      handlebarScript = '<tr><th><a href="/schools/'+schoolsTypeData[i].id+'">'+schoolsTypeData[i].name+'</a></th><th>'+schoolsTypeData[i].street+'</th><th>' + schoolsTypeData[i].city + ', ' + schoolsTypeData[i].state + '</th></tr>';
-      $('.table-hover').append(handlebarScript);
-    }
-  })
-  .fail(function() {
-    console.log("error");
-  })
-  .always(function() {
-    console.log("complete");
-  });
-
-}

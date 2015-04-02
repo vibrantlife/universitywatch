@@ -1,3 +1,12 @@
+.page-width {
+  width: 80%;
+  text-align: left;
+}
+
+.page-header {
+  text-align: left;
+}
+
 /* description */
 .description {
 	font-color: #ccc;
@@ -10,9 +19,16 @@
 	font-size: 3em;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
 
 h1, h2, h3, h4 {
   font-family: 'Oswald', sans-serif;
+}
+
+.page-header {
+  font-size: 4em;
 }
 
 p {
