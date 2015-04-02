@@ -11,7 +11,7 @@ $(function(){
 
 	ticking('.auto-odo', 3261, 40);
 	ticking('.assaults-odo', 2303, 40);
-	ticking('.forcible-odo', 4052, 40);
+	ticking('.forcible-odo', 5052, 40);
 	ticking('.robbery-odo', 1568, 40);
 
 });
