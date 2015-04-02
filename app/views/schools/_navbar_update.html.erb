@@ -9,11 +9,14 @@
           </div>
           <div id ="navbar-padding-override" class="collapse navbar-collapse">
             <ul id ="nav-items" class="nav navbar-nav">
+              <a class="navbar-brand">
+                <%= link_to image_tag('binoculars.png'), root_path, id: "logo", html: {height: "42", width: "42"} %>
+              </a>
               <li class="nav_li"><%= link_to "University Watch", root_path %></li>
               <li class="nav_li"><%= link_to "Search by State", states_schools_path %></li>
               <li class="nav_li"><%= link_to "Compare Schools", compare_schools_path %></li>
               <li class="nav_li"><%= link_to "Data", data_path %></li>
-              <li class="nav_li"><%= link_to "Heatmaps", heatmaps_path%></li>
+              <li class="nav_li"><%= link_to "Heatmap", heatmaps_path%></li>
               <li class="nav_li"><%= link_to "About the Project", abouttheproject_path %></li>
 
               <li>
