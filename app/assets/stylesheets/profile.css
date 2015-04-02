@@ -104,4 +104,8 @@ p.profile-detail {
   background-image: url("badge2012.png");
 }
 
+.crime-total-number:hover {
+  font-size: 4em;
+  text-shadow: 1px 1px #3f3f3f;
+}
 
