@@ -3,27 +3,53 @@
   margin: 0 auto;
 }
 
-
+* {
+  border: 1px solid pink;
+}
 
 .banner {
   height: 500px;
-  background-image: url("backgroundgraph.png");
-  background-size: cover;
   text-align: center;
   margin-bottom: 5%;
 }
 
-.banner h1{
-  font-size: 4em;
-  /*text-shadow: 1px 2px black;*/
-  color: black;
-  line-height: 200px;
+.sub-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2%;
 }
-.tech-used-image {
-  background-image: url("technologiesused.png");
-  background-size: 105%;
+
+
+
+
+
+.about-banner {.sub-container { h1 {
+  font-size: 4em;} }
+}
+
+.aboutgraph {
+  width: 100%;
+}
+
+
+.about-content {
+  background-image: url("about_team_2.jpg");
+  background-size: 100%;
   background-repeat: no-repeat;
-  height:600px;
+  height: 500px;
+}
+
+.team-members span, h3 {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  text-shadow: 1px 1px grey;
+}
+
+
+
+.tech-used-image img {
+  height: 500px;
 }
 
 .title-header {
@@ -45,10 +71,18 @@
   color: white;
 }
 
-.tech li {
-  color: white;
+.tech .title-header{
+  color: black;
 }
 
+.fa-cogs {
+  color: black;
+}
+
+
+.tech, .about-content {
+  padding: 5%;
+}
 
 
 .large-bullets {
