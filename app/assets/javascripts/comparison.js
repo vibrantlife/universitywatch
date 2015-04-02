@@ -85,7 +85,7 @@ $(function(){
                         $('.student-pop').css('top', '10px');
                         $('.student-pop').css('display', 'block');
                     } else {
-                        $('.student-pop').fadeOut('slow');
+                        $('.student-pop').fadeOut('fast');
                     }
                 });
                 var table_content_2011 = $('.table_eleven');
