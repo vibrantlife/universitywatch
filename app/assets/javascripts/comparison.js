@@ -87,6 +87,8 @@ $(function(){
                 $('.table_twelf').html('');
                 $('.table_thirteen').html('');
                 $('.data-year-caption').show();
+                $('.school1-name').html('');
+                $('.school2-name').html('');
 
                 $('.school1-name').append("<h2>"+ firstSchool + "</h2> <p class='stats-small-caption'> Student Population: " + response.first_school_pop + "</p>");
                 $('.school2-name').append("<h2>"+ secondSchool + "</h2> <p class='stats-small-caption'>Student Population: " + response.second_school_pop + "</p>");
