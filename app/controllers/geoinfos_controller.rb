@@ -6,6 +6,10 @@ class GeoinfosController < ApplicationController
 	  render status: 200, json: school.to_json
 	end
 
+	def heatmap
+		# render "geoinfos/heatmap"
+	end
+
 	private
 	def geoinfo_params
 		params.require(:geoinfo).permit(:lat, :lng, :id)

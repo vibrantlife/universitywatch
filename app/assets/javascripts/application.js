@@ -11,6 +11,7 @@
 // about supported directives.
 //= require c3
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require d3
@@ -21,12 +22,3 @@
 //= require turbolinks
 //= require_tree .
 
-
-// $(function(){
-//   var googleApiLink = '' + school_acronym + '&key=';
-//   $.getJSON( googleApiLink, {
-//     format: 'JSON'
-//   }).done(function(data){
-
-//   })
-// });

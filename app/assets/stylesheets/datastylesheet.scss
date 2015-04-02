@@ -1,8 +1,8 @@
 
 .data-banner {
   background-image: url("databackground.png");
-  height: 500px;
-  background-size: cover;
+  height: 265px;
+  background-size: contain;
   text-align: center;
   margin-bottom: 5%;
 }
@@ -12,4 +12,34 @@
   /*text-shadow: 1px 2px black;*/
   color: black;
   line-height: 200px;
+}
+
+.background {
+    margin-bottom: 8%;
+}
+
+.info-container{
+    width: 85%;
+    margin: auto;
+}
+
+.info-container p
+{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 3%;
+  font-size: 22px;
+  text-align: left;
+  line-height: 1.8;
+  font-family: 'Cabin', sans-serif;
+  color: #000000;
+}
+
+.info-container a {
+    color: #517398;
+}
+
+.info-container a:hover {
+    color: #003058;
+    text-decoration: none;
 }

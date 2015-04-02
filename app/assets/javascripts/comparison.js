@@ -64,7 +64,7 @@ var print_comparison_chart = function() {
 }
 
 
-$(function() {
+$(function(){
     $('#compare_btn').on('click', function() {
         var firstSchool = $('#first-school').val();
         var secondSchool = $('#second-school').val();
@@ -79,7 +79,6 @@ $(function() {
             }
         })
             .done(function(response) {
-                console.log(response);
                 var table_content_2011 = $('.table_eleven');
                 var table_content_2012 = $('.table_twelf');
                 var table_content_2013 = $('.table_thirteen');
@@ -87,8 +86,12 @@ $(function() {
                 $('.table_eleven').html('');
                 $('.table_twelf').html('');
                 $('.table_thirteen').html('');
-
                 $('.data-year-caption').show();
+                $('.school1-name').html('');
+                $('.school2-name').html('');
+
+                $('.school1-name').append("<h2>"+ firstSchool + "</h2> <p class='stats-small-caption'> Student Population: " + response.first_school_pop + "</p>");
+                $('.school2-name').append("<h2>"+ secondSchool + "</h2> <p class='stats-small-caption'>Student Population: " + response.second_school_pop + "</p>");
 
                 var school_first_2011 = response.first_school[0];
                 var school_second_2011 = response.second_school[0];
@@ -97,9 +100,9 @@ $(function() {
                 var school_first_2013 = response.first_school[2];
                 var school_second_2013 = response.second_school[2];
 
-                var table_cells_2011 = '<table><tr><th></th><th>' + firstSchool + '</th><th>' + secondSchool + '</th></tr><tr><td>Aggravated Assault</td><td>' + school_first_2011["ag_assault"] + '</td><td>' + school_second_2011["ag_assault"] + '</td></tr><tr><td>Arson</td><td>' + school_first_2011["arson"] + '</td><td>' + school_second_2011["arson"] + '</td></tr><tr><td>Motor Vehicle Theft</td><td>' + school_first_2011["auto_theft"] + '</td><td>' + school_second_2011["auto_theft"] + '</td></tr><tr><td>Burglary</td><td>' + school_first_2011["burglary"] + '</td><td>' + school_second_2011["burglary"] + '</td></tr><tr><td>Sex Offenses - Forcible</td><td>' + school_first_2011["f_sex"] + '</td><td>' + school_second_2011["f_sex"] + '</td></tr><tr><td>Manslaughter</td><td>' + school_first_2011["manslaughter"] + '</td><td>' + school_second_2011["manslaughter"] + '</td></tr><tr><td>Murder</td><td>' + school_first_2011["murder"] + '</td><td>' + school_second_2011["murder"] + '</td></tr><tr><td>Sex Offenses - Non-forcible</td><td>' + school_first_2011["nf_sex"] + '</td><td>' + school_second_2011["nf_sex"] + '</td></tr><tr><td>Robbery</td><td>' + school_first_2011["robbery"] + '</td><td>' + school_second_2011["robbery"] + '</td></tr></table>';
-                var table_cells_2012 = '<table><tr><th></th><th>' + firstSchool + '</th><th>' + secondSchool + '</th></tr><tr><td>Aggravated Assault</td><td>' + school_first_2012["ag_assault"] + '</td><td>' + school_second_2012["ag_assault"] + '</td></tr><tr><td>Arson</td><td>' + school_first_2012["arson"] + '</td><td>' + school_second_2012["arson"] + '</td></tr><tr><td>Motor Vehicle Theft</td><td>' + school_first_2012["auto_theft"] + '</td><td>' + school_second_2012["auto_theft"] + '</td></tr><tr><td>Burglary</td><td>' + school_first_2012["burglary"] + '</td><td>' + school_second_2012["burglary"] + '</td></tr><tr><td>Sex Offenses - Forcible</td><td>' + school_first_2012["f_sex"] + '</td><td>' + school_second_2012["f_sex"] + '</td></tr><tr><td>Manslaughter</td><td>' + school_first_2012["manslaughter"] + '</td><td>' + school_second_2012["manslaughter"] + '</td></tr><tr><td>Murder</td><td>' + school_first_2012["murder"] + '</td><td>' + school_second_2012["murder"] + '</td></tr><tr><td>Sex Offenses - Non-forcible</td><td>' + school_first_2012["nf_sex"] + '</td><td>' + school_second_2012["nf_sex"] + '</td></tr><tr><td>Robbery</td><td>' + school_first_2012["robbery"] + '</td><td>' + school_second_2012["robbery"] + '</td></tr></table>';
-                var table_cells_2013 = '<table><tr><th></th><th>' + firstSchool + '</th><th>' + secondSchool + '</th></tr><tr><td>Aggravated Assault</td><td>' + school_first_2013["ag_assault"] + '</td><td>' + school_second_2013["ag_assault"] + '</td></tr><tr><td>Arson</td><td>' + school_first_2013["arson"] + '</td><td>' + school_second_2013["arson"] + '</td></tr><tr><td>Motor Vehicle Theft</td><td>' + school_first_2013["auto_theft"] + '</td><td>' + school_second_2013["auto_theft"] + '</td></tr><tr><td>Burglary</td><td>' + school_first_2013["burglary"] + '</td><td>' + school_second_2013["burglary"] + '</td></tr><tr><td>Sex Offenses - Forcible</td><td>' + school_first_2013["f_sex"] + '</td><td>' + school_second_2013["f_sex"] + '</td></tr><tr><td>Manslaughter</td><td>' + school_first_2013["manslaughter"] + '</td><td>' + school_second_2013["manslaughter"] + '</td></tr><tr><td>Murder</td><td>' + school_first_2013["murder"] + '</td><td>' + school_second_2013["murder"] + '</td></tr><tr><td>Sex Offenses - Non-forcible</td><td>' + school_first_2013["nf_sex"] + '</td><td>' + school_second_2013["nf_sex"] + '</td></tr><tr><td>Robbery</td><td>' + school_first_2013["robbery"] + '</td><td>' + school_second_2013["robbery"] + '</td></tr></table>';
+                var table_cells_2011 = '<table><tr><th></th><th>' + firstSchool + '</th><th>' + secondSchool + '</th></tr><tr><td>Aggravated Assault</td><td>' + school_first_2011["ag_assault"] + '</td><td>' + school_second_2011["ag_assault"] + '</td></tr><tr><td>Arson</td><td>' + school_first_2011["arson"] + '</td><td>' + school_second_2011["arson"] + '</td></tr><tr><td>Motor Vehicle Theft</td><td>' + school_first_2011["auto_theft"] + '</td><td>' + school_second_2011["auto_theft"] + '</td></tr><tr><td>Burglary</td><td>' + school_first_2011["burglary"] + '</td><td>' + school_second_2011["burglary"] + '</td></tr><tr><td>Sex Offenses - Forcible</td><td>' + school_first_2011["f_sex"] + '</td><td>' + school_second_2011["f_sex"] + '</td></tr><tr><td>Sex Offenses - Non-forcible</td><td>' + school_first_2011["nf_sex"] + '</td><td>' + school_second_2011["nf_sex"] + '</td></tr><tr><td>Manslaughter</td><td>' + school_first_2011["manslaughter"] + '</td><td>' + school_second_2011["manslaughter"] + '</td></tr><tr><td>Murder</td><td>' + school_first_2011["murder"] + '</td><td>' + school_second_2011["murder"] + '</td></tr><tr><td>Robbery</td><td>' + school_first_2011["robbery"] + '</td><td>' + school_second_2011["robbery"] + '</td></tr></table>';
+                var table_cells_2012 = '<table><tr><th></th><th>' + firstSchool + '</th><th>' + secondSchool + '</th></tr><tr><td>Aggravated Assault</td><td>' + school_first_2012["ag_assault"] + '</td><td>' + school_second_2012["ag_assault"] + '</td></tr><tr><td>Arson</td><td>' + school_first_2012["arson"] + '</td><td>' + school_second_2012["arson"] + '</td></tr><tr><td>Motor Vehicle Theft</td><td>' + school_first_2012["auto_theft"] + '</td><td>' + school_second_2012["auto_theft"] + '</td></tr><tr><td>Burglary</td><td>' + school_first_2012["burglary"] + '</td><td>' + school_second_2012["burglary"] + '</td></tr><tr><td>Sex Offenses - Forcible</td><td>' + school_first_2012["f_sex"] + '</td><td>' + school_second_2012["f_sex"] + '</td></tr><tr><td>Sex Offenses - Non-forcible</td><td>' + school_first_2012["nf_sex"] + '</td><td>' + school_second_2012["nf_sex"] + '</td></tr><tr><td>Manslaughter</td><td>' + school_first_2012["manslaughter"] + '</td><td>' + school_second_2012["manslaughter"] + '</td></tr><tr><td>Murder</td><td>' + school_first_2012["murder"] + '</td><td>' + school_second_2012["murder"] + '</td></tr><tr><td>Robbery</td><td>' + school_first_2012["robbery"] + '</td><td>' + school_second_2012["robbery"] + '</td></tr></table>';
+                var table_cells_2013 = '<table><tr><th></th><th>' + firstSchool + '</th><th>' + secondSchool + '</th></tr><tr><td>Aggravated Assault</td><td>' + school_first_2013["ag_assault"] + '</td><td>' + school_second_2013["ag_assault"] + '</td></tr><tr><td>Arson</td><td>' + school_first_2013["arson"] + '</td><td>' + school_second_2013["arson"] + '</td></tr><tr><td>Motor Vehicle Theft</td><td>' + school_first_2013["auto_theft"] + '</td><td>' + school_second_2013["auto_theft"] + '</td></tr><tr><td>Burglary</td><td>' + school_first_2013["burglary"] + '</td><td>' + school_second_2013["burglary"] + '</td></tr><tr><td>Sex Offenses - Forcible</td><td>' + school_first_2013["f_sex"] + '</td><td>' + school_second_2013["f_sex"] + '</td></tr><tr><td>Sex Offenses - Non-forcible</td><td>' + school_first_2013["nf_sex"] + '</td><td>' + school_second_2013["nf_sex"] + '</td></tr><tr><td>Manslaughter</td><td>' + school_first_2013["manslaughter"] + '</td><td>' + school_second_2013["manslaughter"] + '</td></tr><tr><td>Murder</td><td>' + school_first_2013["murder"] + '</td><td>' + school_second_2013["murder"] + '</td></tr><tr><td>Robbery</td><td>' + school_first_2013["robbery"] + '</td><td>' + school_second_2013["robbery"] + '</td></tr></table>';
 
 
                 table_content_2011.append(table_cells_2011);
@@ -113,5 +116,5 @@ $(function() {
 
     });
 
+});
 
-})

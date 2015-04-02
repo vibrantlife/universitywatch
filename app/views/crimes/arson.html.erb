@@ -1,7 +1,11 @@
-<h1>Top 10: Schools with Most Arson Crimes</h1>
+<div class="container-fluid page-width">
+  <div class="row">
+    <h1 class="crime-title page-header">Top 10: Schools with Most Arson Crimes</h1>
+  </div>
 
-<div id="chart">
- </div>
+  <div id="chart">
+  </div>
+</div>
 <script>
   var chart = c3.generate({
       bindto: '#chart',
@@ -26,5 +30,10 @@
             },
   });
 
+  $('.c3-event-rect').click(function() {
+    var school_index = parseInt($(this).attr("class").split(" ")[2].split("")[14]);
+    var school_id = <%=@top_school_ids%>[school_index]
+    window.location.href = "/schools/" + school_id;
+  });
 </script>
 

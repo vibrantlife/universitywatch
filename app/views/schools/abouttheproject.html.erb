@@ -1,7 +1,10 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="banner">
-      <h1>about the project</h1>
+    <div class="banner about-banner">
+      <div class="sub-container">
+        <h1>about the project</h1>
+      </div>
+      <%= image_tag("backgroundgraph.png", :alt => "background graph", :class => "aboutgraph") %>
     </div>
   </div>
   <div class="row large-header">
@@ -9,117 +12,109 @@
   </div>
 </div>
 
-<div class="main-container about-content">
-  <div class="container-fluid">
+<div class="main-container ">
+  <div class="container-fluid about-content">
     <div class="row">
-      <div class="col-md-6 color-block">
+      <div class="col-md-6 col-md-offset-6 white-text">
         <i class="fa fa-users fa-2x"></i>
-        <span class="title-header">team members</span>
-        <p>afton</p>
-        <p>jessie</p>
-        <p>lukas</p>
-        <p>yumiko</p>
-        <p>nichole shelton <em>team lead</em></p>
-      </div>
-      <div class="col-md-6">
-        <img src="https://scontent-2.2914.fna.fbcdn.net/hphotos-xta1/t31.0-8/11015207_10152880493023661_2978569646082734768_o.jpg" height="600px">
-
-      </div>
+          <span class="title-header">team members</span>
+          <h3>Afton Hencky</h3>
+          <h3>Jessie Wu</h3>
+          <h3>Lukas Jones</h3>
+          <h3>Yumiko Huang</h3>
+          <h3>Nichole Shelton <em>team lead</em></h3>
+        </div>
     </div>
   </div>
 
-  <hr width="80%">
-
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-6 color-block tech">
+      <div class="col-md-6 tech">
         <i class="fa fa-cogs fa-spin fa-2x"></i>
         <span class="title-header">technology</span>
-        <ul class="large-bullets">
-          <li>yay</li>
-          <li>yay</li>
-          <li>yay</li>
-          <li>yay</li>
-          <li>yay</li>
-        </ul>
+        <div class="large-bullets">
+          <p>yay</p>
+          <p>yay</p>
+          <p>yay</p>
+          <p>yay</p>
+          <p>yay</p>
+        </div>
       </div>
       <div class="col-md-6 tech-used-image">
-
+        <%= image_tag("technologiesused.png", :alt => "tech used image") %>
       </div>
     </div>
   </div>
-  <hr width="80%">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-6 color-block">
+      <div class="col-md-6 ">
+        <%= image_tag("successbkgd.png", :alt => "successes image", :class => "success-img") %>
+      </div>
+      <div class="col-md-6 success-section">
         <i class="fa fa-smile-o fa-2x"></i>
         <span class="title-header">successes</span>
-      </div>
-      <div class="col-md-6">
-        <ul class="large-bullets">
-          <li>yay</li>
-          <li>yay</li>
-          <li>yay</li>
-          <li>yay</li>
-          <li>yay</li>
-        </ul>
-      </div>
-    </div>
-    <hr width="80%">
-    <div class="row">
-      <div class="col-md-6 color-block">
-          <i class="fa fa-wrench fa-2x"></i>
-          <span class="title-header">hurtles</span>
- <!--          <i class="fa fa-meh-o "></i> -->
+        <div class="large-bullets">
+          <p>yay</p>
+          <p>yay</p>
+          <p>yay</p>
+          <p>yay</p>
+          <p>yay</li>
         </div>
-      <div class="col-md-6">
-        <ul class="large-bullets">
-          <li>no</li>
-          <li>no</li>
-          <li>no</li>
-          <li>no</li>
-          <li>no</li>
-        </ul>
       </div>
     </div>
-
-  <hr width="80%">
-  <div class="row">
-    <div class="col-md-6 color-block">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 color-block white-text">
+            <i class="fa fa-wrench fa-2x"></i>
+            <span class="title-header">hurtles</span>
+        </div>
+      <div class="col-md-6 color-block">
+        <div class="large-bullets">
+          <p>no</p>
+          <p>no</p>
+          <p>no</p>
+          <p>no</p>
+          <p>no</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row stretch-section">
       <i class="fa fa-rocket fa-2x"></i>
       <span class="title-header">stretch goals</span>
-    </div>
-    <div class="col-md-6">
-      <ul class="large-bullets">
-          <li>cool</li>
-          <li>cool</li>
-          <li>cool</li>
-          <li>cool</li>
-          <li>cool</li>
-        </ul>
+      <div class="large-bullets">
+        <p>Heatmaps for all crimes</p>
+        <p>Filtering state search by type of school</p>
+        <p>Optimizing speed</p>
+        <p>Functioning search form in the navigation bar</p>
+      </div>
     </div>
   </div>
-  <hr width="80%">
 
-  <div class="row">
-    <div class="col-md-6 color-block">
+<div class="container-fluid">
+  <div class="row team-section">
+    <div class="col-md-6 ">
+      <%= image_tag("teampic.jpg", :class =>"team-photo") %>
+    </div>
+    <div class="col-md-6">
       <i class="fa fa-connectdevelop fa-2x"></i>
       <span class="title-header">group dynamics</span>
-
-    </div>
-    <div class="col-md-6">
-      <ul class="large-bullets">
-          <li>cool</li>
-          <li>cool</li>
-          <li>cool</li>
-          <li>cool</li>
-          <li>cool</li>
-        </ul>
+      <div class="large-bullets">
+        <p>cool</p>
+        <p>cool</p>
+        <p>cool</p>
+        <p>cool</p>
+        <p>cool</p>
+      </div>
     </div>
   </div>
-  <hr width="80%">
-    <div class="row large-header">
-      <h3>thanks for watching</h3>
-      <h1> any questions?</h1>
-    </div>
+</div>
+
+<div class="container-fluid end-presentation">
+  <div class="row large-header">
+    <h3>thanks for watching</h3>
+    <h1> any questions?</h1>
+  </div>
+</div>
 </div>

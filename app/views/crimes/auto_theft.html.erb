@@ -1,7 +1,11 @@
-<h1>Top 10: Schools with Most Auto Thefts</h1>
+<div class="container-fluid page-width">
+  <div class="row">
+    <h1 class="crime-title page-header">Top 10: Schools with Most Auto Thefts</h1>
+  </div>
 
- <div id="chart">
- </div>
+  <div id="chart">
+  </div>
+</div>
 <script>
   var chart = c3.generate({
       bindto: '#chart',
@@ -24,6 +28,12 @@
                   categories:
                   ["<%= @top_auto_theft_schools[0].html_safe %>", "<%= @top_auto_theft_schools[1].html_safe %>", "<%= @top_auto_theft_schools[2].html_safe %>", "<%= @top_auto_theft_schools[3].html_safe %>", "<%= @top_auto_theft_schools[4].html_safe %>", "<%= @top_auto_theft_schools[5].html_safe %>", "<%= @top_auto_theft_schools[6].html_safe %>", "<%= @top_auto_theft_schools[7].html_safe %>", "<%= @top_auto_theft_schools[8].html_safe %>", "<%= @top_auto_theft_schools[9].html_safe %>"]}
             },
+  });
+
+  $('.c3-event-rect').click(function() {
+    var school_index = parseInt($(this).attr("class").split(" ")[2].split("")[14]);
+    var school_id = <%=@top_school_ids%>[school_index]
+    window.location.href = "/schools/" + school_id;
   });
 
 </script>
