@@ -22,14 +22,3 @@
 //= require turbolinks
 //= require_tree .
 
-
-// var ready;
-// ready = function() {
-
-//   comparison()
-//   pgSearch()
-
-// };
-
-// $(document).ready(ready());
-// $(document).on('page:load', ready);

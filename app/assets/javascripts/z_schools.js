@@ -6,9 +6,6 @@ $(function(){
       prev = $('#previous'),
       next = $('#next');
 
-      var tableSetup = '<div id="table_generator"><table class="table table-hover"><tr class="state-chart-header"><th>School Name</th><th>School Street</th><th>City, State</th></tr></table></div>';
-      $('#school_table').append(tableSetup);
-
   var handlebarScriptFunc = function(collectionofSchool, idx){
     return '<tr><th><a href="/schools/'+collectionofSchool[idx].id+'">'+collectionofSchool[idx].name+'</a></th><th>'+collectionofSchool[idx].street+'</th><th>' + collectionofSchool[idx].city + ', ' + collectionofSchool[idx].state + '</th></tr>';
   }
@@ -74,7 +71,8 @@ $(function(){
 
   prev.hide();
   next.hide();
-  var map = new Datamap({
+
+  var state_map = new Datamap({
     element: $('#state_container')[0],
     scope: 'usa'
   });
