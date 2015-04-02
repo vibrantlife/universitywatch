@@ -34,8 +34,9 @@ end
 
   def json_search
     # p params
-    search_value = School.search_by_school_info(params[:school_name]).limit(10)
-    render json: search_value
+    search_value = School.search_by_school_info(params[:school_name]).limit(50)
+    return_value = search_value.map{|x| x.name }.uniq!.map{ |x| School.where(name: x)[0] }.first(10)
+    render json: return_value
   end
 
   def state
