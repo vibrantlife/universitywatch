@@ -3,13 +3,23 @@
   padding: 0;
 }
 
-#custom_nav {
-  margin: 10px;
+#topnav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 0;
 }
 
 #nav_ul {
   overflow: auto;
   list-style-type: none;
+}
+
+/*#navbar-padding-override{
+  padding-left: 0;
+}*/
+
+#nav-items a{
+  color: #003058;
 }
 
 .nav_li {
@@ -26,8 +36,8 @@
 
 .nav_li  a {
   text-decoration: none;
-  color: #ccc;
-  font: 18px/1 Helvetica, Verdana, sans-serif;
+  text-transform: uppercase;
+  font: 16px/1 Helvetica, Verdana, sans-serif;
 
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -75,6 +85,11 @@
     border-left-color: #ccc;
     margin-top: 5px;
     margin-right: -10px;
+}
+
+#dropdown-nav{
+  text-transform: uppercase;
+  font-size: 16px;
 }
 
 .dropdown-submenu:hover>a:after {
