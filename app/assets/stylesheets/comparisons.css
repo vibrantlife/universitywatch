@@ -16,6 +16,16 @@
   font-size: 1.2em;
 }
 
+.student-pop {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+
+.school1-name, .school2-name {
+  margin-right: -15px;
+  margin-left: -15px;
+}
 .annual-data-section {
   width: 80%;
   margin: 0 auto;
@@ -26,47 +36,57 @@
   text-align: left;
 }
 
-table {
-  font-family: 'Roboto', sans-serif;
-  width: 100%;
-  background: #eee;
-  padding: 1em;
-  margin: 1em auto;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-}
+.annual-data-section {
+  table {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    background: #eee;
+    padding: 1em;
+    margin: 1em auto;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+  }
 
-th {font-size: 1.2em}
+  h2.data-year-caption {
+    margin-right: -15px;
+    margin-left: -15px;
+    }
+  th {font-size: 1.5em}
 
-td {
-  font-weight: bold;
-  border-bottom: 1px solid #fbfbfb;
-  color: #393939;
-  width: 20%;
-  font-size: 1.3em;
-  padding: .5em .25em;
-  background-size: 0% 100%;
-  background-repeat: no-repeat;
-  -webkit-transition: all .75s ease-out;
-  -moz-transition: all .75s ease-out;
-  transition: all .75s ease-out;
-}
+  td {
+    font-weight: bold;
+    border-bottom: 1px solid #fbfbfb;
+    color: #393939;
+    width: 20%;
+    font-size: 1.3em;
+    padding: .5em .25em;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    -webkit-transition: all .75s ease-out;
+    -moz-transition: all .75s ease-out;
+    transition: all .75s ease-out;
+  }
 
-td:nth-child(2) {
-  width: 40%;
-/*  text-shadow: 1px 1px grey;
-*/  text-align: right;
-  background-image: -webkit-linear-gradient(to left, #00DDD8, #00DDD8);
-  background-image: -moz-linear-gradient(to left, #00DDD8, #00DDD8);
-  background-image: linear-gradient(to left, #00DDD8, #00DDD8);
-  background-position: right top;
-}
+  td:nth-child(2) {
+    width: 40%;
+  /*  text-shadow: 1px 1px grey;
+  */  text-align: right;
+    background-image: -webkit-linear-gradient(to left, #00DDD8, #00DDD8);
+    background-image: -moz-linear-gradient(to left, #00DDD8, #00DDD8);
+    background-image: linear-gradient(to left, #00DDD8, #00DDD8);
+    background-position: right top;
+  }
 
-td:nth-child(3) {
-  width: 40%;
-  text-align: left;
-  background-image: -webkit-linear-gradient(right, #517398, #517398);
-  background-image: -moz-linear-gradient(right, #517398, #517398);
-  background-image: linear-gradient(right, #517398, #517398);
-  background-position: left top;
+  td:nth-child(3) {
+    width: 40%;
+    text-align: left;
+    background-image: -webkit-linear-gradient(right, #517398, #517398);
+    background-image: -moz-linear-gradient(right, #517398, #517398);
+    background-image: linear-gradient(right, #517398, #517398);
+    background-position: left top;
+  }
+
+  .table_eleven, .table_twelf, .table_thirteen {
+    margin-bottom: 5%;
+  }
 }

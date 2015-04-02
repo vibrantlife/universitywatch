@@ -72,8 +72,11 @@ end
   def compare_two
     @school_one = School.where(name: params[:first_school]).first.crimes
     @school_two = School.where(name: params[:second_school]).first.crimes
+    @school_one_pop = School.where(name: params[:first_school]).first.population
+    @school_two_pop = School.where(name: params[:second_school]).first.population
 
-    render :json => {first_school: @school_one, second_school: @school_two}
+
+    render :json => {first_school: @school_one, second_school: @school_two, first_school_pop: @school_one_pop, second_school_pop: @school_two_pop}
   end
 
   def abouttheproject

@@ -79,7 +79,6 @@ $(function() {
             }
         })
             .done(function(response) {
-                console.log(response);
                 var table_content_2011 = $('.table_eleven');
                 var table_content_2012 = $('.table_twelf');
                 var table_content_2013 = $('.table_thirteen');
@@ -87,8 +86,10 @@ $(function() {
                 $('.table_eleven').html('');
                 $('.table_twelf').html('');
                 $('.table_thirteen').html('');
-
                 $('.data-year-caption').show();
+
+                $('.school1-name').append("<h2>"+ firstSchool + "</h2> <p class='stats-small-caption'> Student Population: " + response.first_school_pop + "</p>");
+                $('.school2-name').append("<h2>"+ secondSchool + "</h2> <p class='stats-small-caption'>Student Population: " + response.second_school_pop + "</p>");
 
                 var school_first_2011 = response.first_school[0];
                 var school_second_2011 = response.second_school[0];
