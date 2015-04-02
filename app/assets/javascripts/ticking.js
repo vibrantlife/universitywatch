@@ -9,10 +9,10 @@ $(function(){
 		}, speed);
 	}
 
-	ticking('.auto-odo', 3261, 50);
-	ticking('.assaults-odo', 2303, 30);
-	ticking('.forcible-odo', 5052, 10);
-	ticking('.robbery-odo', 1568, 75);
+	ticking('.auto-odo', 3261, 40);
+	ticking('.assaults-odo', 2303, 40);
+	ticking('.forcible-odo', 4052, 40);
+	ticking('.robbery-odo', 1568, 40);
 
 });
 
