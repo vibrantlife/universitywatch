@@ -34,18 +34,22 @@
   background-size: 100%;
   background-repeat: no-repeat;
   height: 500px;
+  padding: 5%;
 }
 
-.team-members span, h3 {
+.white-text span, h3 {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   color: white;
   text-shadow: 1px 1px grey;
 }
 
+i.fa-users, i.fa-wrench {
+  color: white;
+}
 
 
-.tech-used-image img, .success-img {
+.tech-used-image img, .success-img, {
   height: 500px;
 }
 
@@ -61,8 +65,9 @@
 }
 
 .color-block {
-  height: 40%;
+  height: 500px;
   background: #262c3a;
+  padding: 5%;
 }
 
 .color-block p{
@@ -78,10 +83,24 @@
 }
 
 
-.tech, .about-content, .success-section {
+.tech, .success-section {
   padding: 5%;
 }
 
+
+.stretch-img {
+  width: 70%;
+}
+
+.stretch-section {
+  background-image: url("stretchrocket.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 500px;
+  padding: 3%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
 
 .large-bullets {
   font-size: 1.5em;
