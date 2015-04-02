@@ -28,13 +28,13 @@
         </div>
       </div>
       <div class="row banner-index-search">
-        <div class="search-bar col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 col-s-12 col-xs-12">
+        <div class="search-bar col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-s-12 col-xs-12">
           <%= form_for "school", url: search_schools_path, :html => {class: 'cont'}, action: "search_school" do |f| %>
           <div class="search-row">
             <%= f.text_field :name, class: 'search-bar srchFld' %>
-            <div class="entypo-search ico"></div>
+            <span class="entypo-search ico" style="margin-left:-50px;"></span>
+            <%= f.submit "Search", :class => 'srchBtn' %>
           </div>
-          <%= f.submit "Search", :class => 'srchBtn' %>
           <% end %>
           <% if flash[:errors] %>
           <p class="error-message"><%= flash[:errors] %></p>
