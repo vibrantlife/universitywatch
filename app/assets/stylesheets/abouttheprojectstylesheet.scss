@@ -37,7 +37,7 @@
   padding: 5%;
 }
 
-.white-text span, h3 {
+.white-text span, .white-text h3 {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   color: white;
@@ -51,6 +51,10 @@ i.fa-users, i.fa-wrench {
 
 .tech-used-image img, .success-img, {
   height: 500px;
+}
+
+.tech-used-image {
+  padding-top: 2%;
 }
 
 .title-header {
@@ -84,7 +88,7 @@ i.fa-users, i.fa-wrench {
 
 
 .tech, .success-section {
-  padding: 5%;
+  padding: 7%;
 }
 
 
@@ -97,9 +101,19 @@ i.fa-users, i.fa-wrench {
   background-repeat: no-repeat;
   background-size: 100%;
   height: 500px;
-  padding: 3%;
-  margin-top: 3%;
-  margin-bottom: 3%;
+  padding: 3% 7%;
+  margin-top: 7%;
+  margin-bottom: 7%;
+  text-align: left;
+}
+
+.team-section {
+  height: 500px;
+}
+
+.team-photo {
+  max-width: 100%;
+  height: auto;
 }
 
 .large-bullets {
@@ -115,56 +129,13 @@ i.fa-users, i.fa-wrench {
   font-size: 4em;
 }
 
-.footer {
-  bottom:0;
-  left:0;
-  position:fixed;
-    width: 100%;
-    height: 1em;
-    overflow:hidden;
-    margin:0 auto;
-  -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-  z-index:999;
+.end-presentation {
+  padding: 7% 0;
+  height: 400px;
 }
-.footer:hover {
-  -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
-  height: 4.5em;
+.end-presentation h3{
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 2%;
 }
-.footer #container{
-  margin-top:5px;
-  width:100%;
-  height:100%;
-  position:relative;
-  top:0;
-  left:0;
-  background: #3A3A3A;
-}
-.footer #cont{
-  position:relative;
-  top:-45px;
-  right:190px;
-  width:150px;
-  height:auto;
-  margin:0 auto;
-}
-.footer_center{
-  width:500px;
-  float:left;
-  text-align:center;
-}
-.footer p{
-  font-family: 'Helvetica';
-  font-size: 10px;
-  font-weight: 100;
-  margin-top:70px;
-  margin-left:40px;
-  color:white;
-}
+
