@@ -6,6 +6,9 @@ $(function(){
       prev = $('#previous'),
       next = $('#next');
 
+      var tableSetup = '<div id="table_generator"><table class="table table-hover"><tr class="state-chart-header"><th>School Name</th><th>School Street</th><th>City, State</th></tr></table></div>';
+      $('#school_table').append(tableSetup);
+
   var handlebarScriptFunc = function(collectionofSchool, idx){
     return '<tr><th><a href="/schools/'+collectionofSchool[idx].id+'">'+collectionofSchool[idx].name+'</a></th><th>'+collectionofSchool[idx].street+'</th><th>' + collectionofSchool[idx].city + ', ' + collectionofSchool[idx].state + '</th></tr>';
   }
@@ -49,7 +52,7 @@ $(function(){
     });
 
   };
-  
+
   //filtering schools by type
   var getSchoolsByType = function(stateName){
     var type = $(this).text();
@@ -96,7 +99,7 @@ $(function(){
       getStateSchools(stateName, currentPage + 1);
     });
 
- prev.click(function(){
+  prev.click(function(){
      var currentPage = parseInt(school_table.data('currentPage'));
      var stateName = school_table.data('stateName');
 
