@@ -8,7 +8,7 @@ Fork the repo
 
 And then execute:
 
-$ bundle
+  $ bundle
 
 == Dependencies
 
@@ -26,24 +26,24 @@ Google API
 
 Check our open issues to see features that need to be implemented
 
-$ Fork it
+  $ Fork it
 
-$ Create your feature branch (git checkout -b feature)
+  $ Create your feature branch (git checkout -b feature)
 
-$ Commit your changes (git commit -am feature)
+  $ Commit your changes (git commit -am feature)
 
-$ Push to the branch (git push origin feature)
+  $ Push to the branch (git push origin feature)
 
-$ Create a new Pull Request
+  $ Create a new Pull Request
 
 == Developers
 
-Nichole Shelton team lead
+{Nichole Shelton}[https://github.com/vibrantlife] team lead
 
-Afton Hencky
+{Afton Hencky}[https://github.com/ahencky]
 
-Jessie Wu
+{Jessie Wu}[https://github.com/jessiewuwu]
 
-Yumiko Huang
+{Yumiko Huang}[https://github.com/yumikohey]
 
-Lukas Jones
+{Lukas Jones}[https://github.com/lukasjones]
