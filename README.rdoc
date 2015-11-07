@@ -1,0 +1,49 @@
+== Objective
+
+This rails app aims to create transparency about crimes committed on college campuses across the United States. The goal is to share information about crimes committed on higher education campuses across the United States During 2011 - 2013.
+
+== Installation
+
+Fork the repo
+
+And then execute:
+
+  $ bundle
+
+== Dependencies
+
+Datamaps
+
+C3.js
+
+D3.js
+
+Boostrap
+
+Google API
+
+== Contributing
+
+Check our open issues to see features that need to be implemented
+
+  $ Fork it
+
+  $ Create your feature branch (git checkout -b feature)
+
+  $ Commit your changes (git commit -am feature)
+
+  $ Push to the branch (git push origin feature)
+
+  $ Create a new Pull Request
+
+== Developers
+
+{Nichole Shelton}[https://github.com/vibrantlife] team lead
+
+{Afton Hencky}[https://github.com/ahencky]
+
+{Jessie Wu}[https://github.com/jessiewuwu]
+
+{Yumiko Huang}[https://github.com/yumikohey]
+
+{Lukas Jones}[https://github.com/lukasjones]
